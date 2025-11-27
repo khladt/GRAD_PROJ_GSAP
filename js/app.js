@@ -44,6 +44,9 @@ function setAnimationScroll() {
     // 4. Add Animations (Using .from for better performance)
     // The '0' at the end ensures all these start at time 0 simultaneously
     runAnimation
+
+        //SCENE 1 ANIMATION SECTION
+
         .from('#Scene_1_fg_1', { opacity: 0, duration: 7 }, 5)
 
         .from('#Scene_1_fg_0', { y: -2500, duration: 7 }, 0)
@@ -59,15 +62,20 @@ function setAnimationScroll() {
         .to('.site-header', { opacity: 0, duration: 2.5 }, 0)
 
         .to('#Scene_1_fg_0', { opacity: 0, duration: 2 }, 8) 
-        .to('#Scene_1_fg_1', { opacity: 1, duration: 1 }, 6)
+        .to('#Scene_1_fg_1', { opacity: 1, duration: 1 }, 7)
 
-        .to('#Scene_1_fg_0', { y: -2500, duration: 7 }, 10)
-        .to('#Scene_1_fg_1', { y: -2500, duration: 7 }, 10)
-        .to('#Scene_1_layer_0', { y: -2200, duration: 6 }, 10)
-        .to('#Scene_1_fog_0', { y: -2200, duration: 5 }, 10)
-        .to('#Scene_1_layer_1', { y: -2200, duration: 4 }, 10)
-        .to('#Scene_1_fog_1', { y: -2200, duration: 4 }, 10)
-        .to('#Scene_1_Layer_2', { y: -2200, duration: 4 }, 10)
-        .to('#Scene_1_Tower', { y: -2200, duration: 4 }, 10)
-        .to('#Scene_1_bg', { y: -2200, duration: 3 }, 10);
+        .to('#Scene_1_fg_0', { y: -2500, duration: 11 }, 10)
+        .to('#Scene_1_fg_1', { y: -2500, duration: 11 }, 10)
+        .to('#Scene_1_layer_0', { y: -2200, duration: 8 }, 10)
+        .to('#Scene_1_fog_0', { y: -2200, duration: 8 }, 10)
+        .to('#Scene_1_layer_1', { y: -2200, duration: 7 }, 10)
+        .to('#Scene_1_fog_1', { y: -2200, duration: 6 }, 10)
+        .to('#Scene_1_Layer_2', { y: -2200, duration: 5 }, 10)
+        .to('#Scene_1_Tower', { y: -2200, duration: 5 }, 10)
+        .to('#Scene_1_bg', { y: -2200, duration: 4 }, 10);
+
+
+        //SCENE 2 ANIMATION SECTION
+
+
 }
