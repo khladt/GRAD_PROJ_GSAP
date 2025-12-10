@@ -22,13 +22,13 @@ html, body, #smooth-wrapper, #smooth-content {
     margin: 0;
     padding: 0;
     /* Optional: Ensure the background color covers everything */
-    background-color: #010102; 
+    background-color: #000000; 
 }
 
 body {
     margin: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #020304; /* Light green/off-white background */
+    background-color: #000000; /* Light green/off-white background */
     line-height: 1.6;
 }
 
@@ -39,7 +39,7 @@ img{
 }
 
 /* Change the width of the entire scrollbar */
-::-webkit-scrollbar {width: 0.5vh;}
+::-webkit-scrollbar {width: 1.5vh;}
 /* Change the background track color */
 ::-webkit-scrollbar-track {background: #010102;}
 /* Change the color and shape of the handle (the moving part) */
@@ -108,7 +108,7 @@ img{
     flex-direction: column;
     text-align: center;
     padding-top: 32vh;
-    background-color: #010102;
+    background-color: #000000;
 }
 
 
@@ -123,15 +123,16 @@ img{
     position: relative;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    background-color: #010102;
-
+    background-color: #000000;
+    min-height: 100vh;
+    width: 100vw;
     
 }
 
 .parallax-layer {
     position: absolute;
     inset: 0;
-    will-change: transform;
+    will-change: transform, opacity;
 }
 
 
@@ -191,7 +192,7 @@ img{
     margin: 0;
     font-family: monospace, sans-serif;
     font-size: 1.1vw;
-    line-height: 1.2vh;
+    line-height: 2.5vh;
     margin-bottom: 2vh;
 }
 
@@ -240,7 +241,7 @@ img{
 }
 
 /* ==========================================
-   SCENE 1 LAYERS
+   LAYERS
    ========================================== */
 
 .quinn-character-s1{
@@ -248,10 +249,10 @@ img{
     left: 5.9%;
     width: 19.8%;
     object-fit: contain;
-    will-change: opacity;
 }
 
-#S1-FG{
+#S1-FG,
+#S3-FG-0{
     position: absolute;
     z-index: 1;
 }
@@ -273,6 +274,7 @@ img{
   /* ========================================== */
 
 
+
 .wishlist-section{
     display: flex;
     width: 100%;
@@ -281,9 +283,8 @@ img{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 16vh;
     padding-bottom: 32vh;
-    background-color: #010102;
+    background-color: #000000;
 }
 
 
@@ -322,8 +323,7 @@ img{
 
 
 .site-footer {
-    background-color: #1a1a1a;
-    color: #999;
+    color: #ffffff;
     text-align: center;
     padding: 5px;
     font-size: 0.8em;
@@ -471,7 +471,7 @@ img{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #010102; /* Your primary dark background */
+    background-color: #000000; /* Your primary dark background */
     z-index: 99999; /* Ensures it sits above everything, including dialogue box */
     display: flex;
     justify-content: center;
@@ -514,11 +514,10 @@ img{
    MOBILE MEDIA QUERY (MAX-WIDTH: 768PX)
    ========================================== */
 
-@media (max-width: 768px) {
-    #story-parallax{
-        height: 100vh;
-        width: 100vw;
-    }
+@media (max-width: 820px) {
+
+    [id^="S2-"],
+    [id^="S3-"] {display: none !important;}
 
     .about-us-section {
         padding-top: 5vh;
@@ -605,5 +604,6 @@ img{
 
 
 }
+
 
 

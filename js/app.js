@@ -25,6 +25,44 @@ function hideLoader() {
 }
 
 
+let smootherInstance = null; 
+
+function killGSAP() {
+    ScrollTrigger.killAll();
+
+    if (smootherInstance) {
+        smootherInstance.kill();
+        smootherInstance = null; // Clear the reference
+        console.log("ScrollSmoother killed.");
+    }
+    
+
+    console.log("Old GSAP instance destroyed.");
+}
+
+function handleResizeOrRotate() {
+    // Use a timeout to wait for the resize/rotation to settle and the window.innerWidth to update
+    clearTimeout(window.resizeTimer); 
+    window.resizeTimer = setTimeout(() => {
+        
+        // 1. Destroy the old setup
+        killGSAP(); 
+        
+        // 2. Re-initialize the setup
+        initGSAP(); 
+        
+        // 3. Optional: Unlock scroll if it was locked by a previous initGSAP call 
+        //    (You'll need to adjust your lockScroll/unlockScroll logic to handle this)
+        unlockScroll();
+
+        console.log("GSAP reloaded based on new dimensions.");
+
+    }, 300); // 300ms delay to ensure stable width reading
+}
+
+
+
+
 function initGSAP() {
     lockScroll(); 
     
@@ -47,25 +85,14 @@ function initGSAP() {
     );
     
     assetLoadPromise.then(() => {
-        
-        ScrollSmoother.create({
-            wrapper: "#smooth-wrapper",
-            content: "#smooth-content",
-            smooth: 1.0,
-            effects: true,
-        });
-
         startGSAP();
         hideLoader(); 
     });
 }
 
-// --- INITIAL CALL ---
-window.addEventListener("DOMContentLoaded", initGSAP);
-
 
 function startGSAP() {
-    if (window.matchMedia("(min-width: 769px)").matches) {
+    if (window.matchMedia("(min-width: 821px)").matches) {
         // Desktop/Tablet Version
         startDesktopGSAP(); // Renamed your original function to reflect its purpose
     } else {
@@ -74,13 +101,32 @@ function startGSAP() {
     }
 }
 
+
+    const blinkingTimeline = gsap.timeline({
+    repeat: -1,
+    yoyo: false, 
+    paused: false
+    });
+
+    blinkingTimeline
+    .to('#S3-LE-0', {opacity: 0.0, duration: 1.0 }, "<+=0.5")
+    .to('#S3-LE-1', {opacity: 1.0, duration: 0.5 }, "<");
+
 function startDesktopGSAP() {
+        smootherInstance = ScrollSmoother.create({
+            wrapper: "#smooth-wrapper",
+            content: "#smooth-content",
+            smooth: 1.5,
+            normalizeScroll: true,
+            effects: true,
+        });
+
 
     let runAnimation = gsap.timeline({
         scrollTrigger: {
             trigger: "#story-parallax",
             start: "top top",
-            end: "+=15000vh", 
+            end: () => "+=" + 45 * window.innerHeight,            
             scrub: 1, 
             pin: true,
             anticipatePin: 1,
@@ -91,50 +137,56 @@ function startDesktopGSAP() {
     runAnimation
 
     //SCENE 1 ANIMATION SECTION
-    .to('#chara-quinn',{opacity:0},"<")
-    .to('#chara-seven',{opacity:1},"<")
+
+
+    .fromTo('.dialogue-box',{x:"300vh", y:"-100vh" ,scale: 0.0}, {x:"35vw",y:"-20vh" ,scale: 1, duration: 2 })
+    .to('.character-name', {text: "SEVEN", duration: 5 },"<")
+    .to('#chara-quinn',{opacity:0,duration:1},"<")
+    .to('#chara-seven',{opacity:1,duration:1},"<")
+    .call(changeSequence, ['is-front'])
+    .to('.dialogue-text',{text: "Quinnny-Que. KWEEEEEEN.", duration: 9 },"<")
+
 
     .fromTo('.site-header', { opacity: 1}, {opacity: 0, duration: 1 },0)
     
 
-    .fromTo('#S1-BG', { y: "-550%"}, {y:"0%", duration: 11 }, 0)
-    .fromTo('#S1-TOWER', { y: "-550%"}, {y:"0%", duration: 11 }, 0)
-    .fromTo('#S1-FOG-2', { y: "-550%"}, {y:"15%", duration: 11.3 }, 0) 
-    .fromTo('#S1-L2', { y: "-550%"}, {y:"-10%", duration: 11 }, 0) 
+    .fromTo('#S1-BG', { y: "-550%"}, {y:"0%", duration: 21 }, 0)
+    .fromTo('#S1-TOWER', { y: "-550%"}, {y:"0%", duration: 21 }, 0)
+    .fromTo('#S1-FOG-2', { y: "-550%"}, {y:"15%", duration: 21.3 }, 0) 
+    .fromTo('#S1-L2', { y: "-550%"}, {y:"-10%", duration: 21 }, 0) 
 
-    .fromTo('#S1-L1', { y: "-550%"}, {y:"1%", duration: 11 }, 0)
-    .fromTo('#S1-FOG-1', { y: "-550%"}, {y:"25%", duration: 11.5 }, 0) 
-    .fromTo('#S1-L0', { y: "-550%"}, {y:"0%", duration: 10.5 }, 0)
-    .fromTo('#S1-FOG-0', { y: "-550%"}, {y:"25%", duration: 10.8 }, 0) 
+    .fromTo('#S1-L1', { y: "-550%"}, {y:"1%", duration: 21 }, 0)
+    .fromTo('#S1-FOG-1', { y: "-550%"}, {y:"25%", duration: 21.5 }, 0) 
+    .fromTo('#S1-L0', { y: "-550%"}, {y:"0%", duration: 20.5 }, 0)
+    .fromTo('#S1-FOG-0', { y: "-550%"}, {y:"25%", duration: 20.8 }, 0) 
 
-    .fromTo('#S1-FG', { y: "-550%"}, {y: "20%", duration: 10 }, 0)
+    .fromTo('#S1-FG', { y: "-550%"}, {y: "20%", duration: 20 }, 0)
 
 
     .fromTo('.Seven', 
-        {x: "400%" ,y: "1000%"}, {y: "50%", duration: 4, duration: 10 }, "<")    
+        {x: "400%" ,y: "1000%"}, {y: "50%", duration: 24}, "<")    
 
     .fromTo('.Seven', 
         {filter: "brightness(0%) hue-rotate(40deg)"}, 
-        {filter: "brightness(90%) hue-rotate(340deg) saturate(70%) grayscale(30%)", duration: 6 }, 5) 
+        {filter: "brightness(90%) hue-rotate(340deg) saturate(70%) grayscale(30%)", duration: 16 }, "<+=5") 
 
 
-    .fromTo('.dialogue-box',{x:"300vh", y:"-100vh" ,scale: 0.0}, {x:"55vw",y:"-40vh" ,scale: 1, duration: 2 })
-    .to('.character-name', {text: "SEVEN", duration: 2 })
+    .to('.dialogue-box',{x:"55vw",y:"-40vh" ,scale: 1, duration: 2 },"<+=10")
+    .to('.character-name', {text: "SEVEN", duration: 5 })
     .to('#chara-quinn',{opacity:0,duration:1},"<")
     .to('#chara-seven',{opacity:1,duration:1},"<")
 
-    .call(changeSequence, ['is-front'])
     .call(changeSequence, ['is-front-wave'])
-    .fromTo('.dialogue-text',{text: "", duration: 1},{text: "All clear QUIINNNN!", duration: 2 },"<")
+    .to('.dialogue-text',{text: "All clear QUIINNNN!", duration: 9 },"<")
 
-    .to('.dialogue-box',{x:"25vw",y:"-30vh" ,scale: 1, duration: 2 },"+=5")
-    .to('.character-name', {text: "QUINN", duration: 3 },"<")
+    .to('.dialogue-box',{x:"25vw",y:"-30vh" ,scale: 1, duration: 9 },"+=5")
+    .to('.character-name', {text: "QUINN", duration: 7 },"<")
     .to('#chara-quinn',{opacity:1,duration:1},"<")
     .to('#chara-seven',{opacity:0,duration:1},"<")
 
-    .fromTo('.dialogue-text',{text: "", duration: 1}, {text: "Then Let's keep moving.", duration: 4 },"<")
-    .fromTo('#S1-QUINN-0', { opacity: 1}, {opacity: 0, duration: 1 })
-    .fromTo('#S1-QUINN-1', { opacity: 0}, {opacity: 1, duration: 1 },"<")
+    .to('.dialogue-text',{text: "SHHHH!. Want us to get caught? Let's just keep moving. *QUITELY*", duration: 15 },"<")
+    .fromTo('#S1-QUINN-0', { opacity: 1}, {opacity: 0, duration: 3 },"<")
+    .fromTo('#S1-QUINN-1', { opacity: 0}, {opacity: 1, duration: 3 },"<")
 
     //Scene 1 Ending
 
@@ -143,37 +195,119 @@ function startDesktopGSAP() {
     .to('#chara-seven',{opacity:0,duration:1},"<")
     .to('.dialogue-text', {text: "", duration: 0.5},"<")
 
-    .to('#S1-FG', {y: "-5%", duration: 7 },"<") 
-    .to('.Seven',{y: "-50%", duration: 4 }, "<")
-    .to('#S1-FOG-0', {y:"-15%", duration: 6.5 }, "<")
-    .to('#S1-L0', {y:"-50%", duration: 6 }, "<")
+    .to('#S1-FG', {y: "-5%", duration: 13 },"<") 
+    .to('.Seven',{y: "-100%", duration: 9 }, "<")
+    .to('#S1-FOG-0', {y:"-15%", duration: 11.5 }, "<")
+    .to('#S1-L0', {y:"-50%", duration: 11 }, "<")
 
-    .to('#S1-L1', {y:"-35%", duration: 5 }, "<")
-    .to('#S1-FOG-1', {y:"-28%", duration: 4.5 }, "<")
+    .to('#S1-L1', {y:"-35%", duration: 11 }, "<")
+    .to('#S1-FOG-1', {y:"-28%", duration: 10.5 }, "<")
 
-    .to('#S1-L2', {y:"-60%", duration: 4 }, "<")
-    .to('#S1-FOG-2', {y:"-30%", duration: 3.5 }, "<")
-    .to('#S1-TOWER', {y:"-40%", duration: 3 }, "<")
-    .to('#S1-BG', {y:"-35%", duration: 3 }, "<")
+    .to('#S1-L2', {y:"-60%", duration: 10 }, "<")
+    .to('#S1-FOG-2', {y:"-30%", duration: 8.5 }, "<")
+    .to('#S1-TOWER', {y:"-40%", duration: 8 }, "<")
+    .to('#S1-BG', {y:"-50%", duration: 8 },"<")
+
+    .to('#S1-FG', {y: "-100%", duration: 12 }) 
+    .to('.Seven',{y: "-100%", duration: 7 }, "<")
+    .to('#S1-FOG-0', {y:"-100%", duration: 7 }, "<")
+    .to('#S1-L0', {y:"-100%", duration: 7 }, "<")
+    .to('#S1-L1', {y:"-100%", duration: 7 }, "<")
+    .to('#S1-FOG-1', {y:"-100%", duration: 7 }, "<")
+    .to('#S1-L2', {y:"-100%", duration: 7 }, "<")
+    .to('#S1-FOG-2', {y:"-100%", duration: 7 }, "<")
+    .to('#S1-TOWER', {y:"-100%", duration: 7 }, "<")
+    .to('#S1-BG', {y:"-100%", duration: 7 },"<")
+
+
+//SCENE 2 ANIMATION SECTION
+.fromTo('#S2-FG', {y:"250%"}, {y:"-40%", duration: 21 })
+.fromTo('#S2-L0', {y:"200%"}, {y:"-30%", duration: 13 },"<")
+.fromTo('#S2-L1', {y:"150%"}, {y:"-15%", duration: 11 },"<")
+.fromTo('#S2-L2', {y:"100%"}, {y:"-5%", duration: 10 },"<")
+.fromTo('#S2-BG', {opacity:0.0,y:"30%"}, {opacity:1.0, y:"-30%", duration: 21 },"<")
+.fromTo('#S2-LW', {scale:0.9,opacity:0.0, x:"50vw" ,y:"-315%"}, {opacity:1.0,y:"0%", duration: 20.5 },"<")
+
+.to('#S2-FG', {y:"-100%", duration: 25 })
+.to('#S2-L0', {y:"-100%", duration: 23 },"<")
+.to('#S2-L1', {y:"-100%", duration: 22 },"<")
+.to('#S2-L2', {y:"-100%", duration: 21 },"<")
+.to('#S2-BG', {opacity:0.0,y:"-100%", duration: 20 },"<")
+.to('#S2-LW', {opacity:0.3,y:"100%", duration: 40 },"<")
+
+
+//SCENE 3 (with S2-LW) ANIMATION SECTION
+
+.fromTo('#S3-L0', {opacity:0.0}, {opacity:1.0,y:"-10%", duration: 1 },"<")
+.fromTo('#S3-BG', {opacity:0.0,y:"0%"}, {opacity:1.0,y:"0%", duration: 20 },"<")
+.call(() => blinkingTimeline.play(), [], "<")
+.to('.dialogue-box', {x:"50vw",y:"-50vh" ,scale: 1, duration: 2 },"<")
+.to('.character-name', {text: "SEVEN", duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+
+.fromTo('#S3-LE-0', {scale: 1.2,y:"-60%"}, {y:"-10%", duration: 30 },">")
+.fromTo('#S3-LE-1', {scale: 1.2,opacity:0.0,y:"-60%"}, {y:"-10%", duration: 30 },"<")
+
+.to('.dialogue-text', {text: "🎶 Take oOOOOn me (TAKE ON ME) Take mEEEeeEe on (TAKE ON ME) 🎶", duration: 20 },"<")
+.to('.dialogue-text', {text: "🎶 I'LL BEEE GOOONE, IN A DAY OR TWOOOOOOOOOOOOOOOO 🎶", duration: 20 },">+=10")
+
+.to('#S3-BG', {y:"-20%" ,duration: 30 },"<")
+.to('#S3-L0', {y:"-30%",duration: 30 },"<")
+
+
+.to('#S2-LW', {opacity:0.5,y:"10%",duration: 5},"<+20")
+.to('#S3-LE-0', {y:"-60%",duration: 8 },"<")
+.to('#S3-LE-1', {y:"-60%",duration: 8 },"<")
+.fromTo('#S3-FG-0', {y:"200%"}, {y:"45%", duration: 10 },"<")
+.fromTo('#S3-FG-1', {y:"200%"}, {y:"20%", duration: 12 },"<")
+.to('#S2-LW', {scaleY:0.0, opacity:0.0,y:"-5%",duration: 5},"<+=10")
+.to('#S3-BG', {y:"-30%" ,duration: 8 },"<")
+.to('#S3-L0', {y:"-50%",duration: 8 },"<")
+
+
+.to('.dialogue-box', {x:"55vw",y:"-40vh" ,scale: 0, duration: 2 },"<")
+.to('.dialogue-text', {text: "", duration: 10 },"<")
+.call(() => blinkingTimeline.paused(), [], "<")
+
+.to('.dialogue-box', {x:"55vw",y:"-40vh" ,scale: 0, duration: 2 },">")
+
+
+.to('#S3-FG-0', {y:"-30%", duration: 16 })
+.to('#S3-FG-1', {y:"-50%", duration: 13 },"<")
+.to('#S3-L0', {y:"-100%", duration: 16 },"<")
+.to('#S3-LE-0', {y:"-50%", duration: 16 },"<")
+.to('#S3-LE-1', {y:"-50%", duration: 16 },"<")
+.to('#S3-BG', {y:"-100%", duration: 16 },"<")
+
+
+
 
 
 
     //All scene Ending
-    .to('.site-header',{opacity: 1, duration: 4 })
-
-
-    //SCENE 2 ANIMATION SECTION
+    .to('.site-header',{opacity: 1, duration: 4 },"<")
 };
 
 
 
 
 function startMobileGSAP() {
+
+    smootherInstance = ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: 1.0,
+        normalizeScroll: true,
+        effects: true,
+    });
+
+
     let runAnimation = gsap.timeline({
         scrollTrigger: {
             trigger: "#story-parallax",
             start: "top top",
-            end: "+=15000vh", 
+            end: "+=9000vh", 
             scrub: 1, 
             pin: true,
             anticipatePin: 1,
@@ -221,14 +355,14 @@ function startMobileGSAP() {
 
     .call(changeSequence, ['is-front'])
     .call(changeSequence, ['is-front-wave'])
-    .fromTo('.dialogue-text',{text: "", duration: 1},{text: "All clear QUIINNNN!", duration: 2 },"<")
+    .to('.dialogue-text',{text: "All clear QUIINNNN!", duration: 2 },"<")
 
     .to('.dialogue-box',{x:"2vw",y:"-30vh" ,scale: 1, duration: 2 },"+=5")
     .to('.character-name', {text: "QUINN", duration: 3 },"<")
     .to('#chara-quinn',{opacity:1,duration:1},"<")
     .to('#chara-seven',{opacity:0,duration:1},"<")
 
-    .fromTo('.dialogue-text',{text: "", duration: 1}, {text: "Then Let's keep moving.", duration: 4 },"<")
+    .to('.dialogue-text', {text: "Then Let's keep moving.", duration: 4 },"<")
     .fromTo('#S1-QUINN-0', { opacity: 1}, {opacity: 0, duration: 1 })
     .fromTo('#S1-QUINN-1', { opacity: 0}, {opacity: 1, duration: 1 },"<")
 
@@ -291,3 +425,15 @@ function updateButtonText() {
 }
 
 //------------------------------------------------------------------------------
+
+
+
+window.addEventListener("DOMContentLoaded", () => {
+    initGSAP();
+    
+    // Listen for desktop window resize
+    window.addEventListener('resize', handleResizeOrRotate); 
+    
+    // Listen for mobile orientation change
+    window.addEventListener('orientationchange', handleResizeOrRotate); 
+});
