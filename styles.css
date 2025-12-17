@@ -21,7 +21,7 @@ html, body, #smooth-wrapper, #smooth-content {
 
 body {
     margin: 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Oswald', Arial, sans-serif;
     line-height: 1.6;
 }
 
@@ -43,8 +43,7 @@ img{
     top: 0;
     z-index: 1000; 
     color: white;
-    font-size: 0.9em;
-
+    font-size: 1.0em;
 }
 
 .navigation {
@@ -173,19 +172,23 @@ img{
 }
 
 .character-name {
-    font-size: 1.1vw;
+    font-size: 1.4vw;
     font-weight: bold;
     color: #ffd700;
     margin-bottom: 0.5vh;
     text-transform: uppercase;
+    font-family: 'VT323', sans-serif;
+
 }
 
 .dialogue-text {
     margin: 0;
-    font-family: monospace, sans-serif;
-    font-size: 1.0vw;
+    font-size: 1.2vw;
     line-height: 2.5vh;
     margin-bottom: 2vh;
+    font-family: 'VT323', sans-serif;
+
+
 }
 
 
@@ -358,7 +361,7 @@ img{
 .fog.ftwo {
     background-position: 50%;
     opacity: 0.9;
-    top: -1%;
+    top: 5%;
     animation-duration: 120s; }
 .fog.fthree {
     background-position: 100%;
@@ -399,6 +402,7 @@ img{
     cursor: pointer;
     font-size: 1vw;
     background-image: url('img/UI/Button_UI_NORMAL.webp');
+    font-family: 'Anton', Arial, sans-serif;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -474,9 +478,9 @@ img{
     padding: 3vh 0;
     border-top: 1px dashed #565555;
     margin-top: 5vh;
-    display: flex; /* Allow buttons to sit side-by-side */
+    display: flex;
     justify-content: center;
-    gap: 20px; /* Space between buttons */
+    gap: 20px;
 }
 
 .khladt-links p {
@@ -485,7 +489,6 @@ img{
     margin-bottom: 2vh;
 }
 
-/* Base CTA Link Style (for both Itch.io and YouTube buttons) */
 .cta-link {
     display: inline-flex;
     align-items: center;
@@ -496,9 +499,7 @@ img{
     transition: all 0.2s ease-in-out;
     font-size: 1.2vw;
     white-space: nowrap;
-    padding: 1vh 2vw; /* Use the dimensions from the base cta-link */
-    
-    /* Default style if no specific class is applied (reusing initial color) */
+    padding: 1vh 2vw;
     background-color: #28E1DC;
     color: #010102;
     border: 2px solid #28E1DC;
@@ -543,8 +544,8 @@ img{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #000000; /* Your primary dark background */
-    z-index: 99999; /* Ensures it sits above everything, including dialogue box */
+    background-color: #000000;
+    z-index: 99999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -553,11 +554,9 @@ img{
     transition: opacity 0.5s ease-out, visibility 0.5s;
 }
 
-/* Class to apply when loading is complete (hidden state) */
 #loader-wrapper.loaded {
     opacity: 0;
     visibility: hidden;
-    /* Optional: Ensure it stops blocking clicks */
     pointer-events: none; 
 }
 
@@ -568,69 +567,15 @@ img{
 
 .loader-content h1 {
     font-size: 4vw;
-    color: #28E1DC; /* Your accent color */
+    color: #28E1DC;
     margin-bottom: 2vh;
 }
 
-/* Simple loading bar styling (can be animated if needed) */
 .loading-bar {
     width: 20vw;
     height: 3px;
     background-color: #565555;
     margin: 0 auto;
-}
-
-
-
-
-/* --- Splash Screen (Autoplay Gate) Styles --- */
-
-#autoplay-gate {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #000000;
-    color: #ffffff;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.5s ease-in-out; 
-}
-
-#autoplay-gate.splash-active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-.splash-content {
-    max-width: 80%;
-    padding: 30px;
-    border: 2px solid #555;
-    border-radius: 10px;
-}
-
-.splash-content h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
-}
-
-.splash-content p {
-    font-size: 1.2em;
-    margin-bottom: 2em;
-}
-
-.splash-content .warning {
-    font-size: 0.9em;
-    margin-top: 1em;
-    color: #ffcc00;
 }
 
 
@@ -698,8 +643,7 @@ img{
     min-height: 9vh;
     z-index: 1000;
     
-    background-color: #000000;
-    border: 3px solid #565555;
+
     box-shadow: 32px 28px 32px rgba(0, 0, 0, 1.8);
     border-radius: 74px;
     display: flex;
@@ -714,7 +658,6 @@ img{
     aspect-ratio: 1 / 1;
 
     flex-shrink: 0;
-    border: 3px solid #565555;
     overflow: hidden;
     border-radius: 128px;
 }
@@ -722,7 +665,6 @@ img{
 .profile-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     display: block;
     position: absolute; 
@@ -736,15 +678,16 @@ img{
 }
 
 .character-name {
-    font-size: 3.1vw;
+    font-size: 4.6vw;
     font-weight: bold;
     color: #ffd700;
     text-transform: uppercase;
+    font-family: 'VT323', sans-serif;
 }
 
 .dialogue-text {
-    font-family: monospace, sans-serif;
-    font-size: 3.0vw;
+    font-family: 'VT323', sans-serif;
+    font-size: 4.0vw;
     line-height: 2.5vh;
 }
 
@@ -764,6 +707,8 @@ img{
     opacity: 0.6;
     animation-duration: 300s;}
 
+.site-footer {font-size: 1.1vh;}
+
 }
-}
+
 

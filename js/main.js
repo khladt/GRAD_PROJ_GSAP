@@ -9,14 +9,12 @@ import {
     updateButtonText 
 } from './utils.js';
 
-// --- GLOBAL VARIABLES & CONSTANTS ---
 const s = 'VIVI';
 const q = 'Quinn';
 const f = 'Falco';
 let splashGateShown = false; 
 
 
-// --- HANDLERS ---
 
 function handleResizeOrRotate() {
     clearTimeout(window.resizeTimer); 
@@ -41,8 +39,6 @@ function hideSplashGate() {
             splashGate.classList.remove('splash-active');
             splashGateShown = true; 
             unlockScroll();
-            // Note: smootherInstance is handled in desktop/mobile files via setSmootherInstance
-            // We need to refresh it if it exists, but that logic is cleaner inside the setters.
         }
     });
 }

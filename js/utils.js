@@ -1,16 +1,9 @@
-// --- utils.js ---
 
-// smootherInstance must be initialized and exported so other files can import and check its value.
 export let smootherInstance = null; 
 
-// This function allows external files (like gsap-desktop.js) to set the value 
-// of the exported smootherInstance variable.
+
 export function setSmootherInstance(instance) {
     smootherInstance = instance;
-    // Optional: If you want to refresh the instance right after setting it
-    if (smootherInstance && smootherInstance.refresh) {
-        smootherInstance.refresh();
-    }
 }
 
 export function lockScroll() {
@@ -52,8 +45,8 @@ export function killGSAP() {
 
 export function updateButtonText(fullscreenToggle) {
     if (document.fullscreenElement) {
-        fullscreenToggle.textContent = "Go Fullscreen (F11)";
-    } else {
         fullscreenToggle.textContent = "Exit Fullscreen (F11)";
+    } else {
+        fullscreenToggle.textContent = "Go Fullscreen (F11)";
     }
 }

@@ -223,7 +223,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('#S2-L2', {filter: "brightness(25%) saturate(7%)",y:"-185%", duration: 21 },"<")
 .to('#S2-BG', {y:"-150%", duration: 20 },"<")
 
-.fromTo('#S4-FG',{scale:2.5,y:'250%',x:'75%'},{y:'10%',duration: 15},'<')
+.fromTo('#S4-FG',{filter:"brightness(30%) saturate(0%)" ,scale:2.5,y:'250%',x:'75%'},{y:'10%',duration: 15},'<')
 
 .fromTo('.Quinn-lantern',{scale: 2.3,y:'30%',x:'-80%', opacity:0.0},{x:'-75%',opacity:0.5,duration: 20})
 
@@ -240,6 +240,7 @@ export function startDesktopGSAP(s, q, f) {
 .set('.Quinn-lantern',{className: 'Quinn-lantern c'},'<')
 
 .to('.Quinn-lantern',{opacity: 0.7,x:'-70%',duration: 10})
+.to('#S4-FG',{filter:"brightness(100%)",duration: 30},"<")
 
 .to('.Seven',{className:'Seven is-front',scaleX:1,duration:0},"<")
 
@@ -392,7 +393,6 @@ export function startDesktopGSAP(s, q, f) {
 
 .to('.Quinn-lantern',{x:'-3%',duration: 2},"<+=6")
 .to('#S4-FG',{x:'16%',duration: 3},"<")
-
 .set('.Quinn',{className: 'Quinn a'},'<') 
 .set('.Quinn-lantern',{className: 'Quinn-lantern c'},'<')
 
@@ -400,6 +400,15 @@ export function startDesktopGSAP(s, q, f) {
 .to('#S4-FG',{x:'12%',duration: 3},"<")
 .set('.Quinn',{className: 'Quinn b'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern d'},'<')
+
+.to('.Quinn-lantern',{x:'3%',duration: 2},"<+=6")
+.set('.Quinn',{className: 'Quinn c'},'<') 
+.set('.Quinn-lantern',{className: 'Quinn-lantern c'},'<')
+
+.to('.Quinn-lantern',{x:'6%',duration: 5},"<+=3")
+.set('.Quinn',{className: 'Quinn d'},'<')
+.set('.Quinn-lantern',{className: 'Quinn-lantern d'},'<')
+
 
 
 .to('.dialogue-box',{x:"70vw",y:"-85vh", duration: 25 },"<")
@@ -410,18 +419,18 @@ export function startDesktopGSAP(s, q, f) {
 .to('.Seven',{x:'680%',duration: 70},"<")
 
 
-.to('.Quinn-lantern',{x:'5%',duration: 2},"<+=6")
+.to('.Quinn-lantern',{x:'9%',duration: 2},"<+=6")
 .to('#S4-FG',{x:'8%',duration: 3},"<")
 
 .set('.Quinn',{className: 'Quinn a'},'<') 
 .set('.Quinn-lantern',{className: 'Quinn-lantern c'},'<')
 
-.to('.Quinn-lantern',{x:'9%',duration: 5},"<+=3")
+.to('.Quinn-lantern',{x:'11%',duration: 5},"<+=3")
 .set('.Quinn',{className: 'Quinn b'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern d'},'<')
 
 
-.to('.Quinn-lantern',{x:'14%',duration: 2},"<+=6")
+.to('.Quinn-lantern',{x:'15%',duration: 2},"<+=6")
 .set('.Quinn',{className: 'Quinn c'},'<') 
 .set('.Quinn-lantern',{className: 'Quinn-lantern a'},'<')
 
@@ -432,27 +441,27 @@ export function startDesktopGSAP(s, q, f) {
 .to('.Quinn-lantern',{x:'24%',duration: 2},"<+=6")
 .set('.Quinn',{className: 'Quinn a'},'<') 
 
-.to('.Quinn-lantern',{x:'30%',duration: 5},"<+=3")
+.to('.Quinn-lantern',{x:'29%',duration: 5},"<+=3")
 .set('.Quinn',{className: 'Quinn b'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern d'},'<')
 
 
-.to('.Quinn-lantern',{x:'38%',duration: 2},"<+=6")
+.to('.Quinn-lantern',{x:'34%',duration: 2},"<+=6")
 
 .set('.Quinn',{className: 'Quinn c'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern a'},'<')
 
-.to('.Quinn-lantern',{x:'44%',duration: 5},"<+=3")
+.to('.Quinn-lantern',{x:'39%',duration: 5},"<+=3")
 
 .set('.Quinn',{className: 'Quinn d'},'<') 
 .set('.Quinn-lantern',{className: 'Quinn-lantern b'},'<')
 
-.to('.Quinn-lantern',{x:'49%',duration: 2},"<+=6")
+.to('.Quinn-lantern',{x:'45%',duration: 2},"<+=6")
 
 .set('.Quinn',{className: 'Quinn a'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern c'},'<')
 
-.to('.Quinn-lantern',{x:'53%',duration: 5},"<+=3")
+.to('.Quinn-lantern',{x:'49%',duration: 5},"<+=3")
 .set('.Quinn',{className: 'Quinn b'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern d'},'<')
 
@@ -463,12 +472,12 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-text',{text:"Umm... Yeah.",duration:5},"<")
 
 
-.to('.Quinn-lantern',{x:'58%',duration: 2},"<+=6")
+.to('.Quinn-lantern',{x:'56%',duration: 2},"<+=6")
 
 .set('.Quinn',{className: 'Quinn c'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern a'},'<')
 
-.to('.Quinn-lantern',{x:'64%',duration: 5},"<+=3")
+.to('.Quinn-lantern',{x:'63%',duration: 5},"<+=3")
 
 .set('.Quinn',{className: 'Quinn d'},'<') 
 .set('.Quinn-lantern',{className: 'Quinn-lantern b'},'<')
@@ -478,6 +487,7 @@ export function startDesktopGSAP(s, q, f) {
 .set('.Quinn',{className: 'Quinn a'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern c'},'<')
 
+.to('#S4-FG',{filter:"brightness(30%) saturate(15%)",duration: 15},"<")
 .to('.Quinn-lantern',{opacity:0.0,x:'75%',duration: 5},"<+=3")
 .set('.Quinn',{className: 'Quinn b'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern d'},'<')
