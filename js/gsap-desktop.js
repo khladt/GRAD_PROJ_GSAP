@@ -21,7 +21,7 @@ export function startDesktopGSAP(s, q, f) {
         scrollTrigger: {
             trigger: "#story-parallax",
             start: "top top",
-            end: () => "+=" + 85 * window.innerHeight,            
+            end: () => "+=" + 135 * window.innerHeight,            
             scrub: 1, 
             pin: true,
             anticipatePin: 1,
@@ -38,7 +38,7 @@ export function startDesktopGSAP(s, q, f) {
     .to('.character-name', {text: s, duration: 5 },"<")
     .to('#chara-quinn',{opacity:0,duration:1},"<")
     .to('#chara-seven',{opacity:1,duration:1},"<")
-    .to('.dialogue-text',{text: "Quinnny-Que. Kweeeeen!", duration: 9 },"<")
+    .to('.dialogue-text',{text: "Quinnnnnnnnnnnn!", duration: 9 },"<")
 
     .fromTo('.site-header', { opacity: 1}, {opacity: 0, duration: 1 },0)
     
@@ -72,21 +72,20 @@ export function startDesktopGSAP(s, q, f) {
     .fromTo('#S1-QUINN-0', { opacity: 0}, {opacity: 1, duration: 3 },"<")   
 
     .to('.Seven',{className:'Seven is-front-wave'}, "<")
-    .to('.dialogue-text',{text: "Found an underground entrance, "+q+"!", duration: 9 },"<")
+    .to('.dialogue-text',{text: "Entrance. Underground. You’re welcome.", duration: 9 },"<")
 
 
     .to('.dialogue-box',{x:"25vw",y:"-30vh" ,scale: 1, duration: 2 },">+=5")
     .to('#chara-quinn',{opacity:1,duration:1},"<")
     .to('#chara-seven',{opacity:0,duration:1},"<")
     .to('.character-name', {text: q, duration: 7 },"<")
-    .to('.dialogue-text',{text: "It should lead us straight to the Tower...", duration: 15 },"<")
-    .to('.dialogue-text',{text: "*Sigh* Good Job "+s+".", duration: 15 },">+=5")
+    .to('.dialogue-text',{text: "Hope it gets Falco off our tail.", duration: 15 },"<")
 
     .to('.dialogue-box',{x:"55vw",y:"-40vh" ,scale: 1, duration: 2 },">+=10")
     .to('#chara-quinn',{opacity:0,duration:1},"<")
     .to('#chara-seven',{opacity:1,duration:1},"<")
     .to('.character-name', {text: s, duration: 7 },"<")
-    .to('.dialogue-text',{text: "HeHe. You are welcome.", duration: 10 },"<")
+    .to('.dialogue-text',{text: "Come on, let's go! Underground!", duration: 10 },"<")
     .to('.Seven',{className:'Seven is-front-wave'},'<')
     .to('.Seven',{className:'Seven is-front'},'<+=2')
     .to('.Seven',{className:'Seven is-side'},'<+=2')
@@ -101,7 +100,7 @@ export function startDesktopGSAP(s, q, f) {
     .to('#chara-quinn',{opacity:1,duration:1},"<")
     .to('#chara-seven',{opacity:0,duration:1},"<")
     .to('.character-name', {text: q, duration: 7 },"<")
-    .to('.dialogue-text',{text: "Let's get out of here. *QUITELY*", duration: 15 },"<")
+    .to('.dialogue-text',{text: "QUIET! It’s probably the sewers, not a theme park.", duration: 15 },"<")
     .fromTo('#S1-QUINN-0', { opacity: 1}, {opacity: 0, duration: 3 },"<")
     .fromTo('#S1-QUINN-1', { opacity: 0}, {opacity: 1, duration: 3 },"<")
 
@@ -166,7 +165,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
-.fromTo('.dialogue-text',{text:""} ,{text: "🎶 Take oOoOn me, TAKE ON ME. Take mEEeEe on, TAKE ON ME. 🎶", duration: 22 },"<")
+.fromTo('.dialogue-text',{text:""} ,{text: "🎶 Take Oooon m—", duration: 15 },"<")
 
 .fromTo('#S3-LE', {scale: 0.5,y:"-200%",x:"30%"}, {y:"-35%", duration: 40 },"<")
 
@@ -178,26 +177,27 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text: 'Shh! Lower your damn voice!', duration: 10 },"<")
+.to('.dialogue-text',{text: 'VIVI!', duration: 10 },"<")
 
 
 .to('.dialogue-box',{x:"0vw",y:"-70vh", duration: 10 },"<+20")
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "🎶 I'LL BEeE GOoONE, IN A DAY OR TWOoOOooO 🎶", duration: 15 },"<")
+.to('.dialogue-text',{text: "...fine.", duration: 5 },"<")
+.to('.dialogue-text',{text: "I'll sing with my internal voice.", duration: 10 },">+=10")
 
 
 .to('.dialogue-box',{x:"0vw",y:"-80vh", duration: 15 },"<+=25")
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text: 'DAMMIT, V. SHUT UP!', duration: 16 },"<")
+.to('.dialogue-text',{text: "*SIGH*" , duration: 16 },"<")
 
 
 .to('#S2-LW', {opacity:0.3,y:"17%",duration: 5},"+=10")
 
-.to('.dialogue-box', {x:"-55vw",y:"-40vh", duration: 2 },"<")
+.to('.dialogue-box', {x:"-15vw",y:"-40vh", duration: 2 },"<")
 .to('.dialogue-text', {text: "", duration: 10 },"<")
 
 .to('#S3-LE', {y:"-175%",duration: 20 },"<")
@@ -215,20 +215,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('#S3-BG', {y:"-300%", duration: 20 },"<")
 
 
-.fromTo('#S2-FG', {filter: "brightness(0%) saturate(0%)", y:"250%"}, {filter: "brightness(100%) saturate(80%)",y:"-40%", duration: 21 },"<+=10")
-.fromTo('#S2-L0', {filter: "brightness(0%) saturate(0%)", y:"200%"}, {filter: "brightness(100%) saturate(60%)",y:"-30%", duration: 23 },"<")
-.fromTo('#S2-L1', {filter: "brightness(0%) saturate(0%)", y:"150%"}, {filter: "brightness(100%) saturate(40%)",y:"-15%", duration: 21 },"<")
-.fromTo('#S2-L2', {filter: "brightness(0%) saturate(0%)", y:"100%"}, {filter: "brightness(100%) saturate(30%)",y:"-5%", duration: 10 },"<")
-.to('#S2-BG',{opacity:1.0, y:"-30%", duration: 21 },"<")
-
-
-.to('#S2-FG', {filter: "brightness(25%) saturate(7%)" ,y:"-185%", duration: 25 })
-.to('#S2-L0', {filter: "brightness(25%) saturate(7%)",y:"-185%", duration: 23 },"<")
-.to('#S2-L1', {filter: "brightness(25%) saturate(7%)",y:"-185%", duration: 22 },"<")
-.to('#S2-L2', {filter: "brightness(25%) saturate(7%)",y:"-185%", duration: 21 },"<")
-.to('#S2-BG', {y:"-150%", duration: 20 },"<")
-
-.fromTo('#S4-FG',{filter:"brightness(30%) saturate(0%)" ,scale:2.5,y:'250%',x:'75%'},{y:'10%',duration: 15},'<')
+.fromTo('#S4-FG',{filter:"brightness(30%) saturate(0%)" ,scale:2.5,y:'250%',x:'75%'},{y:'10%',duration: 35},'<+=5')
 
 .fromTo('.Quinn-lantern',{scale: 2.3,y:'30%',x:'-80%', opacity:0.0},{x:'-75%',opacity:0.5,duration: 20})
 
@@ -239,7 +226,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "Quite the adventure huh, Quinn?", duration: 15 },"<")
+.to('.dialogue-text',{text: "You never really talk about this Arno fella, the one you are trying to kill!", duration: 15 },"<")
 
 .set('.Quinn',{className: 'Quinn a'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern c'},'<')
@@ -265,7 +252,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text: "Uh-huh.", duration: 5 },"<")
+.to('.dialogue-text',{text: "What's there to talk about?", duration: 5 },"<")
 
 
 .to('.Quinn-lantern',{x:'-55%',duration: 2},"<+=6")
@@ -290,7 +277,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text:"Will there be bad guys?! I want to try my special attack.",duration:15},"<")
+.to('.dialogue-text',{text:"I don't know... maybe why you hate him this much?",duration:15},"<")
 
 
 .to('.Quinn-lantern',{x:'-35%',duration: 2},"<+=6")
@@ -340,7 +327,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text:"Why not try it on "+f+"?",duration:5},"<")
+.to('.dialogue-text',{text:"He is someone that doomed us all.",duration:15},"<")
 
 
 .to('.Quinn-lantern',{x:'-19%',duration: 2},"<+=6")
@@ -382,7 +369,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text:"Apparently, he's my son...",duration:5},"<")
+.to('.dialogue-text',{text:"Yeah I know, it just feels more personal to you.",duration:10},"<")
 
 
 .to('.Quinn-lantern',{x:'-8%',duration: 2},"<+=6")
@@ -417,10 +404,7 @@ export function startDesktopGSAP(s, q, f) {
 
 
 .to('.dialogue-box',{x:"70vw",y:"-85vh", duration: 25 },"<")
-.to('.character-name', {text: s, duration: 3 },"<")
-.to('#chara-quinn', {opacity:0,duration:1},"<")
-.to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text:"I don't like being called... daddy while I beat the shit out of him.",duration:25},"<")
+.to('.dialogue-text',{text:"Did you know him, like before he doomed us all?",duration:25},"<")
 .to('.Seven',{x:'680%',duration: 70},"<")
 
 
@@ -474,7 +458,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text:"Umm... Yeah.",duration:5},"<")
+.to('.dialogue-text',{text:"That's enough V!",duration:5},"<")
 
 
 .to('.Quinn-lantern',{x:'56%',duration: 2},"<+=6")
@@ -506,68 +490,106 @@ export function startDesktopGSAP(s, q, f) {
 
 .fromTo(path,{strokeDasharray:pathLength,strokeDashoffset: pathLength} , {strokeDashoffset: 0,duration: 150,ease: "none"})
 .to("#traveler-heads", { motionPath: { path: "#travelPath", align: "#travelPath", alignOrigin: [0.5, 0.5]},duration: 150,ease: "none"}, "<")
-.fromTo("#S5-SVG",{y:"-10%"} , {y:"-160%",duration: 200},"<")
+.fromTo("#S5-SVG",{y:"-10%"} , {y:"-160%",duration: 180},"<")
 
 .to('.dialogue-box',{x:"2vw",y:"-60vh", duration: 15 },"<")
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "Whoever this 'Arno' fella is that you want to kill so bad... he doesn't deserve to hold the name of our glorious Emperor Arno Von Vivian!", duration: 35 },"<")
+.to('.dialogue-text',{text: "We didn't really meet any survivors...", duration: 15 },"<")
 
 .to('.dialogue-box',{x:"2vw",y:"-30vh", duration: 15 },">+=15")
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text: "Yeah... you're right about that.", duration: 5 },"<")
+.to('.dialogue-text',{text: "We're all gonna bite the dust soon anyway.", duration: 25 },"<")
+.to('.dialogue-text',{text: "Doesn't really matter who survives.", duration: 25 },">+=15")
 
 
-.to('.dialogue-box',{x:"2vw",y:"-60vh", duration: 15 },">+=8")
+.to('.dialogue-box',{x:"2vw",y:"-60vh", duration: 15 },">+=15")
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "Then let's go show that fraud a bad time, huh "+q+"? FOR ALLARSSYN!!", duration: 25 },"<")
+.to('.dialogue-text',{text: "Well. I hope someone finds a cure... I don't want to be alone.", duration: 15 },"<")
 
-.to('.dialogue-box',{x:"70vw",y:"-30vh", duration: 15 },">+=15")
-.to('.character-name', {text: q, duration: 3 },"<")
-.to('#chara-quinn', {opacity:1,duration:1},"<")
-.to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text: "For... Allarssyn.", duration: 15 },"<")
-
-
-.to('.dialogue-box',{x:"170vw",y:"-60vh", duration: 15 },">+=25")
 
 .to('.dialogue-box',{x:"70vw",y:"-60vh", duration: 15 })
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "Hehe! Quinn, stop! It tickles... Wait... SINCE WHEN I CAN FEEL TICKLES?!", duration: 25 },"<")
+.to('.dialogue-text',{text: "Anyway. Pretty sure my audio drivers just broke down. I can hear your footstep twice.", duration: 35 },"<")
 
 
 .to('.dialogue-box',{x:"70vw",y:"-30vh", duration: 15 },">+=15")
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text: "Dude... I'm not even touching you...", duration: 15 },"<")
-
-.to('.dialogue-box',{x:"70vw",y:"-30vh", duration: 15 },">+=15")
-.to('.character-name', {text: q, duration: 3 },"<")
-.to('#chara-quinn', {opacity:1,duration:1},"<")
-.to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text: "...", duration: 15 },"<")
+.to('.dialogue-text',{text: "Wait...What?!", duration: 15 },"<")
 
 
 .to('.fhead',{opacity:1.0,duration: 1 },">+=15")
 .to("#S5-SVG",{y:"-230%",duration: 30})
 
-.to('.dialogue-box',{x:"15vw",y:"-70vh", duration: 15 },">+=15")
+.to('.dialogue-box',{x:"35vw",y:"-70vh", duration: 15 },">+=15")
 .to('.character-name', {text: f, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
 .to('#chara-falco', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "Good evening, everyone. I’m taking OUR father home, if you don't mind... SISTER!", duration: 35 },"<")
+.to('.dialogue-text',{text: "Good evening. May I take father home, SIST—", duration: 35 },"<")
+
+.to('.dialogue-box',{x:"55vw",y:"-80vh", duration: 15 },">+=5")
+.to('.dialogue-text',{text: "HOLY $&!%", duration: 10 },"<")
+.to('.dialogue-text',{text: "STRAIGHT TO THE HEAD REALLY?! MY GUN ISN'T EVEN L0ADED!", duration: 35 },">+=15")
 
 
-.to('.site-header',{opacity: 1, duration: 4 })
+.to('.dialogue-box',{x:"20vw",y:"-80vh", duration: 15 },">+=15")
+.to('.character-name', {text: q, duration: 3 },"<")
+.to('#chara-quinn', {opacity:1,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.to('.dialogue-text',{text: "NOW'S A GREAT TIME FOR THE SPECIAL ATTACK V!", duration: 25 },"<")
+
+
+.to('.dialogue-box',{x:"30vw",y:"-60vh", duration: 15 },">+=15")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "SUPER NOVA!", duration: 25 },"<")
+
+
+.to('.character-name', {text: f, duration: 3 },"<+=30")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:1,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.to('.dialogue-text',{text: "OH COME OOOOOOON!!!", duration: 5 },"<")
+
+
+.fromTo('.EXPO',{scale:"0"},{scale:"1",duration:15},">")
+
+
+
+
+
+.to("#S5-SVG",{y:"-300%",duration:15},"<")
+
+
+.to('.dialogue-box',{x:"-30vw",y:"-70vh", duration: 15 },">")
+
+
+.to('.EXPO',{opacity:"0",duration:25},"<")
+
+
+.fromTo("#S6-FG",{y:"200%",scale:"1.1"},{y:"-90%",duration:27}, ">+=5")
+.fromTo("#S6-L0",{y:"200%",x:"5%"},{y:"60%",duration:28}, "<")
+.fromTo("#S6-L2",{y:"150%"},{y:"0%",duration:28}, "<")
+.fromTo("#S6-L1",{y:"150%"},{y:"-5%",duration:28}, "<")
+
+
+.to('.site-header',{opacity: 1, duration: 4 },">+=15")
+.to('.dialogue-box',{x:"-30vw",y:"-70vh", duration: 15 },"<")
+
+
 
     return smootherInstance;
 }
