@@ -90,7 +90,7 @@ const masterBus = audioCtx.createGain();
 masterBus.connect(audioCtx.destination);
 
 // Set initial volume (from session storage or default to 0.5)
-const savedVolume = sessionStorage.getItem('userVolume') || 0.5;
+const savedVolume = sessionStorage.getItem('userVolume') || 0.0;
 masterBus.gain.value = savedVolume;
 document.querySelector('#volume-slider').value = savedVolume;
 
@@ -112,7 +112,7 @@ startBtn.addEventListener('click', async () => {
     }
 
     // Play your specific background tracks
-    const toPlay = ["s0-bg", "s1-bg", "s2-bg", "ash-0", "trem","ele"];
+    const toPlay = ["s0-bg", "s1-bg", "s2-bg", "trem", "ele"];
     toPlay.forEach(id => {
         const el = document.getElementById(id);
         el.play().catch(e => console.log("Playback blocked for:", id));

@@ -69,9 +69,6 @@ export function startDesktopGSAP(s, q, f) {
     .fromTo('#s1-bg', { volume: 0.0}, {volume:1.0, duration: 24.5 }, "<")
 
 
-    .fromTo('#ash-0', { volume: 1.0}, {volume:0.0, duration: 15.5 }, "<+=5")
-    .fromTo('#ash-1', { volume: 0.0}, {volume:0.0, duration: 15.5 }, "<+=5")
-
     .to('.dialogue-box',{x:"55vw",y:"-40vh" ,scale: 1, duration: 2 },"<+=10")
     .to('.character-name', {text: s, duration: 5 })
     .to('#chara-quinn',{opacity:0,duration:1},"<")
@@ -85,7 +82,7 @@ export function startDesktopGSAP(s, q, f) {
 
 
 
-    .to('.dialogue-box',{x:"25vw",y:"-30vh" ,scale: 1, duration: 2 },">+=5")
+    .to('.dialogue-box',{x:"25vw",y:"-30vh" ,scale: 1, duration: 2 },">+=15")
     .to('#chara-quinn',{opacity:1,duration:1},"<")
     .to('#chara-seven',{opacity:0,duration:1},"<")
     .to('.character-name', {text: q, duration: 7 },"<")
@@ -253,7 +250,7 @@ export function startDesktopGSAP(s, q, f) {
 .to({}, {
     onStart: () => document.getElementById("lw-hit").play(),
     onReverseComplete: () => document.getElementById("lw-hit-rev").play(),
-}, "<+=8")
+}, "<+=2")
 
 .to('#S3-FG-0', {y:"-100%", duration: 35 })
 .to('#S3-FG-1', {y:"-100%", duration: 15 },"<")
@@ -279,19 +276,9 @@ export function startDesktopGSAP(s, q, f) {
     onReverseComplete: () => playRandomStep()
 }, "<+=5")
 
-.to({}, {
-    onStart: () => playRandomStep(),
-    onReverseComplete: () => playRandomStep()
-}, "<+=15")
-
-
-.to({}, {
-    onStart: () => playRandomStep(),
-    onReverseComplete: () => playRandomStep()
-}, "<+=20")
 
 .set('.Seven', {x: "400%", y: "1000%", backgroundImage: 'url("img/Seven/sss-s4.png")',scaleX:-1,className: 'Seven is-side',filter: "brightness(100%)",}, "<")
-.fromTo('.Seven',{x: "-100%",y:'45%'},{x:'100%',y: "50%", duration: 34}, "<")  
+.fromTo('.Seven',{x: "-100%",y:'45%'},{x:'100%',y: "50%", duration: 14}, "<")  
 
 .to('.dialogue-box',{x:"50vw",y:"-85vh", duration: 15 },"<")
 .to('.character-name', {text: s, duration: 3 },"<")
@@ -308,21 +295,21 @@ export function startDesktopGSAP(s, q, f) {
 .to({}, {
     onStart: () => playRandomStep(),
     onReverseComplete: () => playRandomStep()
-}, "<5")
+}, "<+=5")
 
 .set('.Quinn',{className: 'Quinn a'},'<')
 
 .set('.Quinn-lantern',{className: 'Quinn-lantern c'},'<')
 
 .to('.Quinn-lantern',{opacity: 0.7,x:'-70%',duration: 10})
-.to('#S4-FG',{filter:"brightness(100%)",duration: 30},"<")
+.to('#S4-FG',{filter:"brightness(100%)",duration: 15},"<")
 
 .to('.Seven',{className:'Seven is-front',scaleX:1,duration:0},"<")
 
 .to({}, {
     onStart: () => playRandomStep(),
     onReverseComplete: () => playRandomStep()
-}, "<")
+}, "<+=5")
 
 .to({}, {
     onStart: () => playRandomStep(),
@@ -334,11 +321,6 @@ export function startDesktopGSAP(s, q, f) {
     onReverseComplete: () => playRandomStep()
 }, "<+=15")
 
-
-.to({}, {
-    onStart: () => playRandomStep(),
-    onReverseComplete: () => playRandomStep()
-}, "<+=20")
 
 .set('.Quinn',{className: 'Quinn b'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern d'},'<')
@@ -394,7 +376,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text:"I don't know... maybe why you hate him this much?",duration:15},"<")
+.to('.dialogue-text',{text:"Traveling half the continent just to kill some guy?!",duration:25},"<")
 
 
 .to('.Quinn-lantern',{x:'-35%',duration: 2},"<+=6")
@@ -561,7 +543,8 @@ export function startDesktopGSAP(s, q, f) {
 
 
 .to('.dialogue-box',{x:"70vw",y:"-85vh", duration: 25 },"<")
-.to('.dialogue-text',{text:"Did you know him, like before he doomed us all?",duration:25},"<")
+.to('.dialogue-text',{text:"",duration:0},"<")
+.to('.dialogue-text',{text:"Did you know him, like before he doomed us all?",duration:25},">")
 .to('.Seven',{x:'680%',duration: 70},"<")
 
 
@@ -635,7 +618,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text:"That's enough V!",duration:5},"<")
+.to('.dialogue-text',{text:"V! Drop it.",duration:5},"<")
 
 
 .to('.Quinn-lantern',{x:'56%',duration: 2},"<+=6")
@@ -694,8 +677,8 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "Tsk Tsk.", duration: 15 },"<")
-.to('.dialogue-text',{text: "I’m serious, Quinn. That kind of thinking has a bad habit of turning into reality if you let it.", duration: 35 },"<+=30")
+.to('.dialogue-text',{text: "Tsk Tsk.", duration: 10 },"<")
+.to('.dialogue-text',{text: "I’m serious, Quinn. You've go to change your mindset.", duration: 35 },"<+=30")
 
 .to("#S5-SVG",{y:"-160%",duration: 100},"<+=40")
 
@@ -708,7 +691,6 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-text',{text: "Anyway.", duration: 5 },">")
 .to('.dialogue-text',{text: "Pretty sure my audio drivers broke again. I can hear your footstep twice.", duration: 35 },">+=15")
 
-.to("#ash-1",{volume:0.0, duration: 40},"<")
 .to("#trem",{volume:0.0, duration: 40},"<")
 
 .to('.dialogue-box',{x:"70vw",y:"-30vh", duration: 15 },">+=15")
@@ -742,8 +724,19 @@ export function startDesktopGSAP(s, q, f) {
     "<"
 )
 
-.fromTo('#S5-F-S',{scale:"0.7",y:"-15%",x:"100%"},{x:"45%" ,duration:10},">+=35")
+.to('.dialogue-box',{x:"70vw",y:"-60vh", duration: 15 },"<=+5")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 1 },"<")
+.to('.dialogue-text',{text: "Nevermind...", duration: 5 },"<")
+
+.fromTo('#S5-F-S',{scale:"0.7",y:"-15%",x:"100%"},{x:"45%" ,duration:10},">+=30")
 .fromTo('#S5-Falco-0',{opacity:"1.0",scale:"0.4",y:"-20%",x:"100%"},{x:"30%",duration:5},"<")
+.fromTo('#S5-Falco-1',{filter: "blur(10px) brightness(1.5",opacity:"0.0",scale:"0.4",y:"-20%",x:"28%"},{},"<")
+.fromTo('#S5-Falco-2',{filter: "blur(10px) brightness(1.5",opacity:"0.0",scale:"0.4",y:"-20%",x:"28%"},{},"<")
+.fromTo('#S5-Falco-3',{filter: "blur(10px) brightness(1.5",opacity:"0.0",scale:"0.4",y:"-20%",x:"28%"},{},"<")
+.fromTo('#S5-Falco-4',{filter: "blur(10px) brightness(1.5",opacity:"0.0",scale:"0.4",y:"-20%",x:"28%"},{},"<")
 
 .to('.dialogue-box',{x:"45vw",y:"-70vh", duration: 15 },"<")
 .to('.character-name', {text: f, duration: 3 },"<")
@@ -753,22 +746,87 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-text',{text: "IT IS I!!", duration: 15 },"<")
 .to('.dialogue-text',{text: "THE GRRRRRREAT FALCO!",duration: 20},">+=10")
 
-.to('.dialogue-text',{text: "Savior of humanity.",duration: 25},">+=1")
-.to('.dialogue-text',{text: "<i>Or what remains of it anywway.</i>. ",duration: 25},">+=1")
-
-.to('.dialogue-text',{text: "",duration: 0},">+=10")
-.to('.dialogue-text',{text: "Which is, admittedly, not much. But still... ",duration: 25},">")
+.to('.dialogue-text',{text: "Savior of humanity.",duration: 25},">+=15")
+.to('.dialogue-text',{text: "",duration: 0},">+=15")
+.to('.dialogue-text',{text: "<i>In the process of it anyway.</i>. ",duration: 25},"<")
 
 .to('.dialogue-text',{text: "",duration: 0},">+=10")
 .to('.dialogue-text',{text: "I did not come here to shed blood <br> <i>[Or for mine to be shed...]</i>.",duration: 35},">")
 
-.to('.dialogue-text',{text: "",duration: 0},">+=10")
-.to('.dialogue-text',{text: "I came for thy father, SIST—",duration: 18},">")
+.to('.dialogue-box',{x:"10vw",y:"-60vh", duration: 15 },">=+15")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },"<")
+.set('.shead',{className:"shead shead-talk"},"<")
+.to('.shead',{x:"-100%",scale:2.5,duration:15},"<")
+.to('.dialogue-text',{text: "Hey! Is that my hat?!", duration: 10 },">")
+
+.to("#S5-Falco-0",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},">+=5")
+.to('#S5-Falco-3',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
+
+.to('.dialogue-box',{x:"45vw",y:"-70vh", duration: 15 },">+=15")
+.to('.character-name', {text: f, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:1,duration:1},"<")
+
+.set('.shead',{className:"shead"},"<")
+.to('.dialogue-text',{text: "You can remember this hat but not ME?! Your own son?!", duration: 15 },"<")
 
 
+.to('.dialogue-box',{x:"10vw",y:"-60vh", duration: 15 },">=+15")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },"<")
 
-.to("#S5-Falco-0",{opacity:"0.0",duration:2})
-.fromTo('#S5-Falco-1',{opacity:"0.0",scale:"0.4",y:"-20%",x:"28%"},{opacity:"1.0",duration:2},"<")
+.set('.shead',{className:"shead shead-talk"},"<")
+.to('.dialogue-text',{text: "Who gave you permission to enter my house, huh you creep?!", duration: 25 },">")
+
+
+.to('.dialogue-box',{x:"50vw",y:"-80vh", duration: 15 },">=+15")
+.set('.shead',{className:"shead"},"<")
+
+.to('.character-name', {text: f, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:1,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+
+.to("#S5-Falco-3",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},">+=5")
+.to('#S5-Falco-4',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
+
+.to('.dialogue-text',{text: "", duration: 0 },"<")
+.to('.dialogue-text',{text: "WE.", duration: 25 },">")
+.to('.dialogue-text',{text: "", duration: 0 },">+5")
+.to('.dialogue-text',{text: "LIVE.", duration: 5 },"<")
+.to('.dialogue-text',{text: "", duration: 0 },">+5")
+.to('.dialogue-text',{text: "UNDER.", duration: 5 },"<")
+.to('.dialogue-text',{text: "", duration: 0 },">+5")
+.to('.dialogue-text',{text: "THE SAME ROOF!", duration: 5 },"<")
+
+
+.to('.dialogue-box',{x:"10vw",y:"-60vh", duration: 15 },">=+15")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },"<")
+
+.set('.shead',{className:"shead shead-talk"},"<")
+.to('.dialogue-text',{text: "If you were that important, I would've remembered you. <i>Like my hat.</i>.", duration: 25 },">")
+
+.to("#S5-Falco-4",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},">+=15")
+.to('#S5-Falco-3',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
+
+.to('.dialogue-text',{text: "Anyway. Anyone seen my RA spray? my propeller is getting rusty.", duration: 25 },">")
+
+
+.to("#S5-Falco-3",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},">+=15")
+.to('#S5-Falco-1',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
+.set('.shead',{className:"shead"},"<")
 
 
 .fromTo('#gyard', 
@@ -803,11 +861,23 @@ export function startDesktopGSAP(s, q, f) {
 
 
 .to('.dialogue-box',{x:"55vw",y:"-80vh", duration: 15 },"<")
+.to('.character-name', {text: f, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:1,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
 .to('.dialogue-text',{text: "HOLY $&!%", duration: 10 },"<")
-.to('.dialogue-text',{text: "STRAIGHT TO THE HEAD REALLY?! MY GUN ISN'T EVEN L0ADED!", duration: 35 },">+=15")
+
+.to('.dialogue-box',{x:"40vw",y:"-80vh", duration: 15 },">=+15")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },"<")
+.to('.dialogue-text',{text: "My hat >':", duration: 15 },">")
+.to('.shead',{x:"0%",scale:1.0,duration:15},"<")
 
 
-.to("#r0",{volume:0.0,duration:10.0},"<")
+.to("#r0",{volume:0.0,duration:10.0},">")
 
 .fromTo('#r1', 
     { volume: 0.0 }, 
@@ -833,28 +903,21 @@ export function startDesktopGSAP(s, q, f) {
 .fromTo('#S5-Q-S',{scale:"0.7",y:"-15%", x:"-100%"},{x:"-45%",duration:25},"<")
 .fromTo('#S5-Quinn',{scale:"0.4",x:"-100%"},{x:"-30%",duration:15},"<")
 
-.to('.dialogue-box',{x:"0vw",y:"-80vh", duration: 15 },">+=35")
+.to('.dialogue-box',{x:"0vw",y:"-80vh", duration: 15 },">+=15")
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-falco', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
 .to('.dialogue-text',{text: "", duration: 1 },"<")
-.to('.dialogue-text',{text: "NOW'S A GREAT TIME FOR THE SPECIAL ATTACK V!", duration: 25 },">")
+.to('.dialogue-text',{text: "NOW'S A GREAT TIME TO TEST YOUR NEW AUGMENT V!", duration: 25 },">")
 
-
-.to('.dialogue-box',{x:"40vw",y:"-80vh", duration: 15 },">+=15")
-.to('.character-name', {text: s, duration: 3 },"<")
-.to('#chara-quinn', {opacity:0,duration:1},"<")
-.to('#chara-falco', {opacity:0,duration:1},"<")
-.to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "FINALLY!", duration: 25 },"<")
-
-.to('.character-name', {text: f, duration: 3 },">+=15")
-.to('.dialogue-box',{x:"55vw",y:"-80vh", duration: 15 },"<")
+.to('.dialogue-box',{x:"55vw",y:"-80vh", duration: 15 },">+=15")
+.to('.character-name', {text: f, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-falco', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text: "Father no. Bad father, no stop, STOOOP!!", duration: 15 },"<")
+.to('.dialogue-text',{text: "Come on sis, no need for that. <br><i>My gun is actually unloaded.</i>", duration: 25 },"<")
+
 
 .to('.dialogue-box',{x:"40vw",y:"-80vh", duration: 15 },">+=15")
 .to('.character-name', {text: s, duration: 3 },"<")
@@ -862,8 +925,103 @@ export function startDesktopGSAP(s, q, f) {
 .to('#chara-falco', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
 .to('.dialogue-text',{text: "", duration: 0 },"<")
-.to('.dialogue-text',{text: "EXPLOSION! <br> <i>[I'm still working on a name...]</i>", duration: 8 },">")
+.to('.dialogue-text',{text: "Sorry my <i>alleged</i> son. <br> <i>Who stole my hat</i>", duration: 25 },">")
+.to("#S5-SVG",{y:"-350%",duration:15},"<")
 
+
+.to('#S5-F-S',{x:"55%" ,duration:25},"<")
+.to('#S5-Falco-1',{scale:"0.35",y:"-20%",x:"38%",duration:15},"<")
+
+
+.to('#S5-Q-S',{x:"-55%",duration:25},"<")
+.to('#S5-Quinn',{scale:"0.35",x:"-40%",duration:15},"<")
+
+.set('.Seven', {x: "265%",y:'450%',backgroundImage: 'url("img/Seven/sss.png")',scaleX:1,className: 'Seven is-front',filter: "brightness(100%)",}, "<")
+.to('.Seven',{y: "100%", duration: 14}, "<")  
+
+.to('.character-name', {text: f, duration: 3 },">+=25")
+.to('.dialogue-box',{x:"55vw",y:"-80vh", duration: 15 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:1,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.to('.dialogue-text',{text: "Father, Quinn is crazy. You need to remember!", duration: 15 },"<")
+
+
+.to('#S5-F-S',{x:"45%" ,duration:25},"<")
+.to('#S5-Falco-1',{scale:"0.4",x:"28%",duration:15},"<")
+
+
+.to('.dialogue-box',{x:"0vw",y:"-80vh", duration: 15 },">+=20")
+
+.to('#S5-Q-S',{x:"-45%",duration:15},"<")
+.to('#S5-Quinn',{scale:"0.4",x:"-35%",duration:15},"<")
+
+.to('.character-name', {text: q, duration: 3 },"<")
+.to('#chara-quinn', {opacity:1,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },"<")
+.to('.dialogue-text',{text: "Don't buy his weak act. He can take us out any second now.", duration: 25 },">")
+.to('.dialogue-text',{text: "", duration: 0 },">+=10")
+.to('.dialogue-text',{text: "DO IT NOW!", duration: 5 },">")
+
+.to('.dialogue-box',{x:"40vw",y:"-80vh", duration: 15 },">+=15")
+
+.to('#S5-Q-S',{x:"-55%",duration:15},"<")
+.to('#S5-Quinn',{scale:"0.35",x:"-35%",duration:15},"<")
+
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },"<")
+.to('.dialogue-text',{text: "EXPLOSION!", duration: 15 },"<")
+
+.set(".Seven",{className: 'Seven is-expo'},"<")
+
+.to('#S5-F-S',{x:"55%" ,duration:25},"<")
+.to('#S5-Falco-1',{scale:"0.35",y:"-20%",x:"38%",duration:15},"<")
+
+.to('.dialogue-text',{text: "", duration: 0 },">+=10")
+
+.set(".Seven",{className: 'Seven is-reading'},"<")
+.to('.dialogue-text',{text: "No, no.", duration: 15 },">")
+
+.to('.dialogue-text',{text: "", duration: 0 },">+=10")
+.to('.dialogue-text',{text: "How about...........................................................\n................................................................", duration: 45 },">")
+.to('.dialogue-text',{text: "", duration: 0 },">+=10")
+
+.set(".Seven",{className: 'Seven is-expo'},"<")
+.to('.dialogue-text',{text: "SUPER NOVA!", duration: 15 },">")
+
+.to('.dialogue-text',{text: "", duration: 0 },">+=10")
+
+.set(".Seven",{className: 'Seven is-reading'},"<")
+.to('.dialogue-text',{text: "Nah too cliché. Just a sec...", duration: 15 },">")
+
+
+.to('.character-name', {text: q, duration: 3 },">+=15")
+.to('.dialogue-box',{x:"5vw",y:"-80vh", duration: 15 },"<")
+.to('#chara-quinn', {opacity:1,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.to('.dialogue-text',{text: "VI.VI.", duration: 15 },"<")
+
+.to('#S5-Q-S',{x:"-45%",duration:15},"<")
+.to('#S5-Quinn',{scale:"0.4",x:"-35%",duration:15},"<")
+
+
+.to('.dialogue-box',{x:"40vw",y:"-80vh", duration: 15 },">+=15")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },">")
+.to('.dialogue-text',{text: "...Ugh, whatever.", duration: 15 },">")
+
+.set(".Seven",{className: 'Seven is-expo'},"<")
+.to('#S5-Q-S',{x:"-55%",duration:25},"<")
+.to('#S5-Quinn',{scale:"0.35",x:"-40%",duration:15},"<")
 
 .to('.character-name', {text: f, duration: 3 },">+=25")
 .to('.dialogue-box',{x:"55vw",y:"-80vh", duration: 15 },"<")
@@ -914,7 +1072,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('#S5-Falco-0',{y:"-55%",x:"100%" ,duration:25},"<")
 .to('#S5-Falco-1',{y:"-55%",x:"100%" ,duration:25},"<")
 
-.to("#S5-SVG",{y:"-350%",duration:15},"<")
+.to(".Seven",{scale:2,opacity:0.0,duration:15},"<")
 
 
 

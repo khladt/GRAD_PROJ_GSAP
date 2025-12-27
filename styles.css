@@ -276,12 +276,14 @@ img{
 }
 
 .Quinn.a{
+    filter: blur(0.02vw);
     top: 19.7%;
     background-position: -3%;}
 .Quinn.b{
     top: 20%;
     background-position: 30%;}
 .Quinn.c{
+    filter: blur(0.02vw);
     top: 19.7%;
     background-position: 65%;}
 .Quinn.d{
@@ -325,30 +327,44 @@ img{
 .Seven.is-front {animation: propeller-front 0.3s steps(2) infinite;}
 .Seven.is-front-wave {animation: propeller-front-wave 0.3s steps(2) infinite;}
 .Seven.is-side {animation: propeller-side 0.3s steps(2) infinite;}
+.Seven.is-expo {animation: propeller-expo 0.3s steps(2) infinite;}
+.Seven.is-reading {animation: propeller-reading 0.3s steps(2) infinite;}
 
 @keyframes propeller-back {
     from { background-position: 0% 0; }
     to {
         top: 0.2%;
-        background-position: 28.5% 0; }
+        background-position: 18.3% 0; }
 }
 @keyframes propeller-front {
-    from { background-position: 28.5% 0; }
+    from { background-position: 27% 0; }
     to {
         top: 0.2%;
-        background-position: 57.5% 0; }
+        background-position: 9% 0; }
+}
+@keyframes propeller-expo {
+    from { background-position: 90.4% 0; }
+    to {
+        top: 0.2%;
+        background-position:108.6% 0; }
+}
+@keyframes propeller-reading {
+    from { background-position: 72.8% 0; }
+    to {
+        top: 0.2%;
+        background-position: 91% 0; }
 }
 @keyframes propeller-front-wave {
-    from { background-position: 57% 0; }
+    from { background-position: 36.4% 0; }
     to {
         top: 0.2%;
-        background-position: 85.7% 0; }
+        background-position: 54.5% 0; }
 }
 @keyframes propeller-side {
-    from { background-position:  100% 0; }
+    from { background-position:  54.5% 0; }
     to { 
         top: 0.2%;
-        background-position: 71% 0;}
+        background-position: 72.7% 0;}
 }
 
 /* ==========================================
@@ -407,7 +423,8 @@ img{
     justify-self: center;
     background-color: #ffffff;
     border-radius: 100%;
-    top: -75%;
+    top: -84%;
+    right: -23%;
     width: 150vw;
     height: 250vh;
     box-shadow: 
@@ -434,6 +451,9 @@ img{
     right: 35%;
     transform: rotate(-8deg);
 }
+.shead-talk{
+    animation: sheadanim2 0.3s steps(2) infinite;
+}
 
 .fhead{
     position: absolute;
@@ -451,10 +471,12 @@ img{
 
 
 @keyframes sheadanim {
-    from{
-        background-position:28.5%;top:-105%}
-    to{
-        background-position:57%; top:-115%}
+    from{background-position:18.2%;top:-105%}
+    to{background-position:36.3%; top:-115%}
+}
+@keyframes sheadanim2 {
+    from{background-position:36.4%;top:-105%}
+    to{background-position:55%; top:-115%}
 }
 
 
