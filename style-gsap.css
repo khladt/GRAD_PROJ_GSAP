@@ -1,0 +1,534 @@
+
+@import url('https://fonts.cdnfonts.com/css/terminal-grotesque-open');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+#story-parallax {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.parallax-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.parallax-layer img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    object-fit:cover;
+}
+
+
+.dialogue-box {
+    position: fixed;
+    bottom: 0;
+    max-width:26vw;
+    min-height: 0vh;
+    z-index: 1000;
+    
+    background-color: #0000008b;
+    border: 3px solid #000000;
+    box-shadow: 32px 28px 32px rgba(0, 0, 0, 1.8);
+    border-radius: 74px;
+    display: flex;
+    align-items: center;
+    padding-right: 0.9vw;
+}
+
+.profile-image {
+    position: absolute;
+    width: 6vW;
+    height: auto;
+    aspect-ratio: 1 / 1;
+
+    flex-shrink: 0;
+    border: 3px solid #000000;
+    overflow: hidden;
+    border-radius: 128px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+    position: absolute; 
+    opacity: 0; 
+}
+
+.dialogue-content {
+    padding-left: 7vw;
+    flex-grow: 1;
+    color: white;
+}
+
+.character-name {
+    font-size: 1.4vw;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 0.5vh;
+    text-transform: uppercase;
+}
+
+.dialogue-text {
+    margin: 0;
+    font-size: 1.2vw;
+    line-height: 2.5vh;
+    margin-bottom: 2vh;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+    LAYERS
+   ==================================================================================== */
+
+
+#S1-FG,
+#S3-FG-0{
+    position: absolute;
+    z-index: 1;
+}
+
+
+#S1-L1{
+    width: 60%;
+    left: 19%;
+}
+
+#S2-LW{width: 5%;}
+
+#S3-LS{
+    width: 15%;}
+
+
+#S1-L2{
+    width: 90%;
+    left: 0%;
+}
+#S1-TOWER{
+    width: 20%;
+    left: 41%;
+
+}
+
+#S3-LS{
+    top: 14.5%;
+    left: 47.5%;
+}
+
+
+#S3-LE{
+    position: absolute;
+    background-image: url('img/Layers/S3-LE.webp');
+    width:96vh;
+    height: 200vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: S3-LE-SPRITE 1.5s steps(2) infinite;
+}
+
+
+.fog{
+    position: absolute;
+    background: url("img/Layers/S1-FOG.webp") repeat-x;
+    background-size: 90% auto;
+    animation-name: fogAnim;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.fog.fone {
+    background-position: 0%;
+    opacity: 0.9;
+    top: 25%;
+    animation-duration: 15s;}
+.fog.ftwo {
+    background-position: 50%;
+    opacity: 0.9;
+    top: 5%;
+    animation-duration: 120s; }
+.fog.fthree {
+    background-position: 100%;
+    top: -60%;
+    opacity: 0.6;
+    animation-duration: 120s;}
+
+
+#S5-SVG{
+    stroke-width: 0.5vw;
+    left: 28%;
+}
+
+
+#S5-EXPO{
+    position: absolute;
+    justify-self: center;
+    background-color: #ffffff;
+    border-radius: 100%;
+    top: -84%;
+    right: -23%;
+    width: 150vw;
+    height: 250vh;
+    box-shadow: 
+    0 0 10vw rgb(255, 255, 255),
+    0 0 260vw rgb(0, 255, 251);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+        Head Layers
+   ==================================================================================================================== */
+
+
+.head {
+    transform-origin: -1vw 1vh;
+    animation: headanim 2.9s ease-in-out infinite;
+}
+
+.shead{
+    position: absolute;
+    background-image: url('img/Seven/sss.png');
+    width: 120%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: sheadanim 0.3s steps(2) infinite;
+    z-index: -1;
+    right: 35%;
+    transform: rotate(-8deg);
+}
+.shead-talk{animation: sheadanim2 0.3s steps(2) infinite;}
+.shead-side{animation: sheadanim3 0.3s steps(2) infinite;}
+
+.fhead{
+    position: absolute;
+    background-image: url('img/heads/falco.webp');
+    width: 120%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    top: -250%;
+    animation: headanim 5.9s ease-in-out infinite;
+}
+
+#anger-head{
+position: relative;
+width: 15vw;
+left: 42%;
+top: 20%;
+animation: anger-head-anim 0.9s infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+        Characters Layers
+   ==================================================================================== */
+
+
+.quinn-character-s1{
+    top: -10.5%;
+    left: 5.9%;
+    width: 19.8%;
+    object-fit: contain;
+    animation: breathing 3s infinite;
+}
+
+.f4anim{
+    position: relative;
+    top: 13%;
+    left: 60%;
+    animation: f4-anim 0.3s infinite;
+}
+
+
+.Quinn{
+    position: relative;
+    background-image: url('img/Quinn/Quinn_Walking-s4.webp');
+    background-repeat: no-repeat;
+    width: 11%;
+    height: 20%;
+    left: 37%;
+    top: 20%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 30%;
+    will-change: opacity,transform;
+
+}
+
+.Quinn.a{
+    filter: blur(0.02vw);
+    top: 19.7%;
+    background-position: -3%;}
+.Quinn.b{
+    top: 20%;
+    background-position: 30%;}
+.Quinn.c{
+    filter: blur(0.02vw);
+    top: 19.7%;
+    background-position: 65%;}
+.Quinn.d{
+    top: 20%;
+    background-position: 100%;}
+
+.Quinn-lantern{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    left: 0%;
+    top: 0%;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-image: url('img/Quinn/quinn-wc-light-2-4.webp');
+    will-change: opacity,transform;
+    animation: breathing 3s infinite;
+}
+.Quinn-lantern.a,.Quinn-lantern.c{background-image: url('img/Quinn/quinn-wc-light-1-3.webp');}
+.Quinn-lantern.b,.Quinn-lantern.d{background-image: url('img/Quinn/quinn-wc-light-2-4.webp');}
+
+@keyframes breathing {
+    0% {filter: brightness(65%);}
+    50% {filter: brightness(100%);}
+    100% {filter: brightness(55%); }
+}
+
+
+.Seven{
+    position: absolute;
+    background-image: url('img/Seven/sss-s1.png');
+    width: 15%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(10%) hue-rotate(340deg) saturate(70%) grayscale(30%);
+}
+.Seven.is-back {animation: propeller-back 0.3s steps(2) infinite;}
+.Seven.is-front {animation: propeller-front 0.3s steps(2) infinite;}
+.Seven.is-front-wave {animation: propeller-front-wave 0.3s steps(2) infinite;}
+.Seven.is-side {animation: propeller-side 0.3s steps(2) infinite;}
+.Seven.is-expo {animation: propeller-expo 0.3s steps(2) infinite;}
+.Seven.is-reading {animation: propeller-reading 0.3s steps(2) infinite;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+        Animations
+   ==================================================================================================================== */
+
+
+   @keyframes fogAnim{
+    from{background-position: 0px top;}
+    to{background-position: 1700px top;}
+}
+
+
+@keyframes S3-LE-SPRITE {
+    from{background-position: 0%;}
+    to{background-position: 199%;}
+}
+
+
+@keyframes headanim {
+    0%, 100% {transform: translateY(1vh) rotate(-8deg) scale(1);}
+    50% {transform: translateY(-1vh) rotate(8deg);}
+}
+
+
+@keyframes anger-head-anim {
+    0%{scale:0.6;}
+    50%{transform: translateY(1vh) rotate(-9deg) scale(0.6);}
+    100%{scale: 0.6;}
+}
+
+
+@keyframes sheadanim {
+    from{background-position:18.2%;top:-105%}
+    to{background-position:36.3%; top:-115%}
+}
+
+
+@keyframes sheadanim2 {
+    from{background-position:36.4%;top:-105%}
+    to{background-position:55%; top:-115%}
+}
+@keyframes sheadanim3 {
+    from{background-position:54.7%;top:-105%}
+    to{background-position:73%; top:-115%}
+}
+
+
+@keyframes f4-anim {
+    0%{transform: rotate(0deg) scale(1.03);}
+    50%{transform:rotate(3deg) scale(1.0);}
+    100%{transform:rotate(0deg) scale(1.03);}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+        Seven Animations
+   ============================================================================================================================== */
+
+
+@keyframes propeller-back {
+    from { background-position: 0% 0; }
+    to {
+        top: 0.2%;
+        background-position: 18.3% 0; }
+}
+@keyframes propeller-front {
+    from { background-position: 27% 0; }
+    to {
+        top: 0.2%;
+        background-position: 9% 0; }
+}
+@keyframes propeller-expo {
+    from { background-position: 90.4% 0; }
+    to {
+        top: 0.2%;
+        background-position:108.6% 0; }
+}
+@keyframes propeller-reading {
+    from { background-position: 72.8% 0; }
+    to {
+        top: 0.2%;
+        background-position: 91% 0; }
+}
+@keyframes propeller-front-wave {
+    from { background-position: 36.4% 0; }
+    to {
+        top: 0.2%;
+        background-position: 54.5% 0; }
+}
+@keyframes propeller-side {
+    from { background-position:  54.5% 0; }
+    to { 
+        top: 0.2%;
+        background-position: 72.7% 0;}
+}

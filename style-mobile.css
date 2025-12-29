@@ -1,0 +1,135 @@
+
+@import url('https://fonts.cdnfonts.com/css/terminal-grotesque-open');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+@media (max-aspect-ratio: 4/3) {
+
+    #story-parallax {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        background-color: #000000;
+        min-height: 100vh;
+        width: 100vw;
+    }
+
+    .volume-tool-container,
+    .volume-container,
+    .Quinn-lantern,
+    [id^="S2-"],
+    [id^="S3-"],
+    [id^="S4-"],
+    [id^="S5-"],
+    [id^="S6-"]
+    {display: none !important;}
+
+    .about-us-section {
+        padding-top: 5vh;
+        font-size: 3vw;
+    }
+    .about-us-section h1 {
+        font-size: 6vw;
+        font-family: 'Anton',Arial, Helvetica, sans-serif;
+
+    }
+    .about-us-section h2 {
+        font-size: 4.5vw;
+        font-family: 'Terminal Grotesque Open', Arial, sans-serif;
+
+    }
+
+    .khladt-links {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 5vh;
+    }
+
+    .cta-link {
+        font-size: 4vw;
+        padding: 2vh 0vw; /* Used the larger padding from the merged style */
+        width: 100%; /* Make buttons full width */
+    }
+
+    .content-box{padding-top: 20vh;}
+    .content-box h3{font-size: 4vw;}
+    .cta-button{
+        font-size: 2.5vw;
+        width: 50vw;}
+    .content-box img{width: 100vw;}
+
+
+.dialogue-box {
+    position: fixed;
+    bottom: 0;
+    max-width:69vw;
+    min-height: 9vh;
+    z-index: 1000;
+    
+
+    box-shadow: 32px 28px 32px rgba(0, 0, 0, 1.8);
+    border-radius: 74px;
+    display: flex;
+    align-items: center;
+    padding-right: 0.9vw;
+}
+
+.profile-image {
+    position: absolute;
+    width: 15vW;
+    height: auto;
+    aspect-ratio: 1 / 1;
+
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 128px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute; 
+    opacity: 0; 
+}
+
+.dialogue-content {
+    padding-left: 18vw;
+    flex-grow: 1;
+    color: white;
+}
+
+.character-name {
+    font-size: 4.6vw;
+    font-weight: bold;
+    color: #ffd700;
+    text-transform: uppercase;
+}
+
+.dialogue-text {
+    font-size: 4.0vw;
+    line-height: 2.5vh;
+}
+
+
+.fog.fone {
+    background-position: 0%;
+    opacity: 1.0;
+    top: -9%;
+    animation-duration: 85s;}
+.fog.ftwo {
+    background-position: 50%;
+    top: -3%;
+    animation-duration: 180s; }
+.fog.fthree {
+    background-position: 100%;
+    top: -5%;
+    opacity: 0.6;
+    animation-duration: 300s;}
+
+.site-footer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1vh;}
+
+}
+
+

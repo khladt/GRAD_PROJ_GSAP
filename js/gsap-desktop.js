@@ -22,7 +22,7 @@ export function startDesktopGSAP(s, q, f) {
         scrollTrigger: {
             trigger: "#story-parallax",
             start: "top top",
-            end: () => "+=" + 135 * window.innerHeight,            
+            end: () => "+=" + 185 * window.innerHeight,            
             scrub: 1, 
             pin: true,
             anticipatePin: 1,
@@ -42,6 +42,10 @@ export function startDesktopGSAP(s, q, f) {
     .to('.dialogue-text',{text: "Quinnnnnnnnnnnn!", duration: 9 },"<")
 
     .fromTo('.site-header', { opacity: 1}, {opacity: 0, duration: 5 },0)
+    .fromTo('.volume-tool-container', { opacity: 0}, {opacity: 1, duration: 5,
+        onComplete:()=>{document.querySelector(".volume-tool-container").style.visibility = "visible";},
+        onReverseComplete:()=>{document.querySelector(".volume-tool-container").style.visibility = "hidden";},
+     },0)
     
 
     .fromTo('#S1-BG', { y: "-550%"}, {y:"0%", duration: 24.5 }, 0)
@@ -284,7 +288,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
-.to('.dialogue-text',{text: "You never really talk about this Arno fella, the one you are trying to kill!", duration: 15 },"<")
+.to('.dialogue-text',{text: "You never really talk about this Louis fella, the one you are trying to kill!", duration: 15 },"<")
 
 .to({}, {
     onStart: () => playRandomStep(),
@@ -737,6 +741,7 @@ export function startDesktopGSAP(s, q, f) {
 .fromTo('#S5-Falco-2',{filter: "blur(10px) brightness(1.5",opacity:"0.0",scale:"0.4",y:"-20%",x:"28%"},{},"<")
 .fromTo('#S5-Falco-3',{filter: "blur(10px) brightness(1.5",opacity:"0.0",scale:"0.4",y:"-20%",x:"28%"},{},"<")
 .fromTo('#S5-Falco-4',{filter: "blur(10px) brightness(1.5",opacity:"0.0",scale:"0.4",y:"-20%",x:"28%"},{},"<")
+.fromTo('#S5-Falco-5',{filter: "blur(10px) brightness(1.5",opacity:"0.0",scale:"0.4",y:"-20%",x:"28%"},{},"<")
 
 .to('.dialogue-box',{x:"45vw",y:"-70vh", duration: 15 },"<")
 .to('.character-name', {text: f, duration: 3 },"<")
@@ -761,6 +766,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-text',{text: "", duration: 0 },"<")
 .set('.shead',{className:"shead shead-talk"},"<")
 .to('.shead',{x:"-100%",scale:2.5,duration:15},"<")
+.fromTo('.shead img',{scale:0.0},{rotation:"-10%",y:"-60%",x:"-30%",scale:0.7,duration:15},"<")
 .to('.dialogue-text',{text: "Hey! Is that my hat?!", duration: 10 },">")
 
 .to("#S5-Falco-0",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},">+=5")
@@ -774,6 +780,7 @@ export function startDesktopGSAP(s, q, f) {
 
 .set('.shead',{className:"shead"},"<")
 .to('.dialogue-text',{text: "You can remember this hat but not ME?! Your own son?!", duration: 15 },"<")
+.to('.shead img',{scale:0.0 ,duration:15},"<")
 
 
 .to('.dialogue-box',{x:"10vw",y:"-60vh", duration: 15 },">=+15")
@@ -784,7 +791,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-text',{text: "", duration: 0 },"<")
 
 .set('.shead',{className:"shead shead-talk"},"<")
-.to('.dialogue-text',{text: "Who gave you permission to enter my house, huh you creep?!", duration: 25 },">")
+.to('.dialogue-text',{text: "How did you break into my house, huh you creep?!", duration: 25 },">")
 
 
 .to('.dialogue-box',{x:"50vw",y:"-80vh", duration: 15 },">=+15")
@@ -797,6 +804,7 @@ export function startDesktopGSAP(s, q, f) {
 
 .to("#S5-Falco-3",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},">+=5")
 .to('#S5-Falco-4',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
+.fromTo('#anger-head',{opacity:0.0},{opacity:"1.0",duration:2},"<")
 
 .to('.dialogue-text',{text: "", duration: 0 },"<")
 .to('.dialogue-text',{text: "WE.", duration: 25 },">")
@@ -816,17 +824,61 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-text',{text: "", duration: 0 },"<")
 
 .set('.shead',{className:"shead shead-talk"},"<")
-.to('.dialogue-text',{text: "If you were that important, I would've remembered you. <i>Like my hat.</i>.", duration: 25 },">")
+.to('.dialogue-text',{text: "", duration: 0},">")
+.to('#anger-head',{opacity:0.0,duration:2},"<")
+
+
+
+.to('.dialogue-text',{text: "If you were that important, I would've remembered you. <br> <i>Like my hat.</i>.", duration: 25 },">")
 
 .to("#S5-Falco-4",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},">+=15")
 .to('#S5-Falco-3',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
 
+.to('.dialogue-text',{text: "", duration: 0 },">+=15")
 .to('.dialogue-text',{text: "Anyway. Anyone seen my RA spray? my propeller is getting rusty.", duration: 25 },">")
+.set('.shead',{className:"shead shead-side"},"<")
+.set('.shead',{className:"shead"},">+=15")
+.set('.shead',{scaleX: -2.5,className:"shead shead-side"},">+=15")
+.set('.shead',{scaleX: 2.5,className:"shead"},">+=15")
+.set('.shead',{scaleX: 2.5,className:"shead shead-side",duration:15},">+=15")
+
+.to('.dialogue-text',{text: "", duration: 0 },">+=15")
+.to('.dialogue-text',{text: "Or did you steal it too! <i>Like you stole my hat</i>.", duration: 25 },">")
+.to('.shead img',{scale:1.0 ,duration:15},"<")
+.to('.shead',{className:"shead shead-talk" ,duration:15},"<")
+
+.to('.character-name', {text: f, duration: 3 },">+=15")
+.to('.shead',{className:"shead" ,duration:15},"<")
+
+.to("#S5-Falco-3",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},"<")
+.to('#S5-Falco-4',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
+.to('.shead img',{scale:0.0 ,duration:15},"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:1,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.set('#S5-Falco-4',{className:"Parallax Layer f4anim"},"<")
+
+.to('.dialogue-text',{text: "I DIDN'T STEAL ANYTHING!!!!", duration: 25 },"<")
+.to('.dialogue-text',{text: "", duration: 0 },">+=25")
+.to('.dialogue-text',{text: "YOU GIFTED TO ME THIS DAMN <i>HAT</i>.", duration: 25 },"<")
+.to('.dialogue-text',{text: "", duration: 0 },">+=15")
+.to('.character-name', {text: "FALCO VON VIVIAN !!!!!", duration: 3 },"<")
+.to('.dialogue-text',{text: "YOUR OWN SON, FALCO VON VIVIAN!!!!", duration: 15 },"<")
 
 
-.to("#S5-Falco-3",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},">+=15")
+.to('.dialogue-text',{text: "", duration: 0 },">+25")
+.to('.character-name', {text: f, duration: 3 },">")
+.to('.dialogue-text',{text: "I'M TRYING TO SAVE YOU HERE!", duration: 15 },">")
+.to('#S5-Falco-4',{className:"parallax-layer"},"<")
+
+
+
+.to("#S5-Falco-4",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},">+=15")
 .to('#S5-Falco-1',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
-.set('.shead',{className:"shead"},"<")
+.set('.shead',{className:"shead" ,scaleX: 2.5},"<")
+.to('.shead img',{scale:1.0 ,duration:5},"<")
+
+
 
 
 .fromTo('#gyard', 
@@ -875,9 +927,8 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-text',{text: "", duration: 0 },"<")
 .to('.dialogue-text',{text: "My hat >':", duration: 15 },">")
 .to('.shead',{x:"0%",scale:1.0,duration:15},"<")
+.to('.shead img',{scale:0.0 ,duration:5},"<")
 
-
-.to("#r0",{volume:0.0,duration:10.0},">")
 
 .fromTo('#r1', 
     { volume: 0.0 }, 
@@ -944,7 +995,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-falco', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text: "Father, Quinn is crazy. You need to remember!", duration: 15 },"<")
+.to('.dialogue-text',{text: "Father, Come on, it's me. You need to wak-", duration: 15 },"<")
 
 
 .to('#S5-F-S',{x:"45%" ,duration:25},"<")
@@ -975,20 +1026,39 @@ export function startDesktopGSAP(s, q, f) {
 .to('#chara-falco', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
 .to('.dialogue-text',{text: "", duration: 0 },"<")
-.to('.dialogue-text',{text: "EXPLOSION!", duration: 15 },"<")
-
+.to('.dialogue-text',{text: "This is for stealing my HAT.", duration: 15 },"<")
+.to('.dialogue-text',{text: "", duration: 0 },">+=15")
+.to('.dialogue-text',{text: "EXPLOSION!", duration: 15 },">")
 .set(".Seven",{className: 'Seven is-expo'},"<")
 
-.to('#S5-F-S',{x:"55%" ,duration:25},"<")
-.to('#S5-Falco-1',{scale:"0.35",y:"-20%",x:"38%",duration:15},"<")
+
+.to('.dialogue-box',{x:"55vw",y:"-80vh", duration: 15 },">+=15")
+.to('.character-name', {text: f, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:1,duration:1},"<")
+.to('#chara-seven', {opacity:0,duration:1},"<")
+.to('.dialogue-text',{text: "Aghaaaa... ", duration: 25 },"<")
+.to('.dialogue-text',{text: "...", duration: 0 },">+=15")
+.to('.dialogue-text',{text: "Ummm...?", duration: 25 },">")
+
+.to("#S5-Falco-1",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},"<")
+.to('#S5-Falco-5',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
 
 .to('.dialogue-text',{text: "", duration: 0 },">+=10")
-
+.to('.dialogue-box',{x:"40vw",y:"-80vh", duration: 15 },">")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
 .set(".Seven",{className: 'Seven is-reading'},"<")
 .to('.dialogue-text',{text: "No, no.", duration: 15 },">")
 
+.to('#S5-F-S',{x:"55%" ,duration:25},"<")
+.to('#S5-Falco-5',{scale:"0.35",y:"-20%",x:"38%",duration:15},"<")
+.to('#S5-Falco-1',{scale:"0.35",y:"-20%",x:"38%",duration:15},"<")
+
 .to('.dialogue-text',{text: "", duration: 0 },">+=10")
-.to('.dialogue-text',{text: "How about...........................................................\n................................................................", duration: 45 },">")
+.to('.dialogue-text',{text: "How about..................................................................................................................................................................................................", duration: 45 },">")
 .to('.dialogue-text',{text: "", duration: 0 },">+=10")
 
 .set(".Seven",{className: 'Seven is-expo'},"<")
@@ -1030,6 +1100,9 @@ export function startDesktopGSAP(s, q, f) {
 .to('#chara-falco', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
 .to('.dialogue-text',{text: "OH COME OOOOOOON!!!", duration: 5 },"<")
+
+.to("#S5-Falco-5",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},"<")
+.to('#S5-Falco-1',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
 
 .to("#r1",{volume:0.0,duration:10.0},"<")
 
@@ -1093,7 +1166,86 @@ export function startDesktopGSAP(s, q, f) {
 //.fromTo("#S6-L1",{y:"150%"},{y:"-5%",duration:28}, "<")
 
 
+//Norina
+.to('.dialogue-box',{x:"20vw",y:"-50vh", duration: 15 },"+=55")
+.to('.character-name', {text: 'Norina', duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },">")
+.to('.dialogue-text',{text: "And then what a hppanend?", duration: 15 },">")
+
+//Vivi
+.to('.dialogue-box',{x:"60vw",y:"-80vh", duration: 15 },">+=15")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },">")
+.to('.dialogue-text',{text: "How should I know?", duration: 15 },">")
+
+//Cyru
+.to('.dialogue-box',{x:"40vw",y:"-50vh", duration: 15 },">+=15")
+.to('.character-name', {text: 'Cyru', duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },">")
+.to('.dialogue-text',{text: "It's your story pal.", duration: 15 },">")
+
+//VIVI
+.to('.dialogue-box',{x:"60vw",y:"-80vh", duration: 15 },">+=15")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },">")
+.to('.dialogue-text',{text: "It's been like a really loooooooooooooooooooong time.", duration: 25 },">")
+
+
+//rahal
+.to('.dialogue-box',{x:"70vw",y:"-10vh", duration: 15 },">+=15")
+.to('.character-name', {text: 'Rahal', duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },">")
+.to('.dialogue-text',{text: "I hope Quinn's alright...", duration: 15 },">")
+
+
+//vivi
+.to('.dialogue-box',{x:"60vw",y:"-80vh", duration: 15 },">+=25")
+.to('.character-name', {text: s, duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },">")
+.to('.dialogue-text',{text: "Oh yeah, here's your backpack, Arphop. Really got me in the roleplay HeHe.", duration: 25 },">")
+.fromTo('.inv-tool-icon',{scale:1.0},{scale:0.0, duration: 15 },"<")
+
+
+//arphip
+.to('.dialogue-box',{x:"10vw",y:"-30vh", duration: 15 },">+=35")
+.to('.character-name', {text: 'Arphop', duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },">")
+.to('.dialogue-text',{text: "Mm-HMM...", duration: 15 },">")
+
+
+//rahal
+.to('.dialogue-box',{x:"70vw",y:"-10vh", duration: 15 },">+=15")
+.to('.character-name', {text: 'Rahal', duration: 3 },"<")
+.to('#chara-quinn', {opacity:0,duration:1},"<")
+.to('#chara-falco', {opacity:0,duration:1},"<")
+.to('#chara-seven', {opacity:1,duration:1},"<")
+.to('.dialogue-text',{text: "", duration: 0 },">")
+.to('.dialogue-text',{text: "Wait I just realized. THIS PIECE OF %#@! HAVE A SON?!", duration: 15 },">")
+
 .to('.site-header',{opacity: 1, duration: 4 },">+=15")
+.to('.dialogue-box',{opacity:0, duration: 15 },"<")
+
 
 
     return smootherInstance;

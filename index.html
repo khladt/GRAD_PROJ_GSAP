@@ -5,7 +5,11 @@
     <!--Adding user-scalable=no prevents accidental zooming-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Project-Vivian</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style-gsap.css">
+    <link rel="stylesheet" href="style-base.css">
+    <link rel="stylesheet" href="style-mobile.css">
+
+
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 </head>
@@ -43,6 +47,9 @@
     <audio id="vslider" preload="auto" loop src="sound/ui/vslider.mp3" type="audio/mpeg"></audio>
     <audio id="press" preload="auto" src="sound/ui/press.mp3" type="audio/mpeg"></audio>
     <audio id="blip" preload="auto" src="sound/ui/blip.mp3" type="audio/mpeg"></audio>
+    <audio id="bopen" preload="auto" src="sound/ui/bopen.mp3" type="audio/mpeg"></audio>
+    <audio id="bclose" preload="auto" src="sound/ui/bclose.mp3" type="audio/mpeg"></audio>
+    <audio id="pturn" preload="auto" src="sound/ui/pturn.mp3" type="audio/mpeg"></audio>
 
 
 
@@ -64,6 +71,36 @@
         </nav>
     </header>
 
+
+    <div class="volume-tool-container">
+            <div class="slider-wrapper">
+                <input type="range" id="corner-volume-slider" min="0" max="1" step="0.01" value="0.5">
+            </div>
+            <button class="vol-tool-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+            </button>
+    </div>
+</div>     
+
+        <button class="inv-tool-icon"></button>
+
+        <div class="inv-wrapper">
+            <div class="b-bg"> <div id="inv-list-container"></div></div>
+
+            <div class="inv-menu">
+                <div id="content-viewer">
+                    <h2 id="view-title">NO_DATA_SELECTED</h2>
+                    <div id="view-body">Select an entry from the logs.</div>
+                </div>
+                <div class="view-controls">
+                    <button id="prev-btn" class="ctrl-btn"></button>
+                    <span id="page-num">1 / 1</span>
+                    <button id="next-btn" class="ctrl-btn"></button></div>
+                </div>
+        </div>
+    
     <div id="smooth-wrapper">
 
         <div class="dialogue-box">
@@ -78,6 +115,7 @@
             </div>
         </div>
 
+
         <div id="smooth-content">
     
             <!-- SECTION 1: DASHBOARD -->
@@ -90,9 +128,9 @@
                         <span>0% <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.0"> 100%</span>
                         
                     </div>
+                    <div class="fullscreen-info">
                     <span>For a better experience, please go fullscreen.  <button class="cta-button" id="fullscreenToggle">Go Fullscreen (F11)</button></span>
-                
-                    <span>Scroll Down &darr;</span>
+                    <span>Scroll Down &darr;</span></div>
                 </div>
             </div>
 
@@ -100,12 +138,6 @@
             <!-- SECTION 2: PARALLAX ANIMATION -->
              
             <section id="story-parallax">
-
-                <!-- Scene 6 Layers 
-                <div class="parallax-layer" id="S6-L2"> <img src="img/Layers/S6-L2.webp" alt="" loading="eager"> </div>
-                <div class="parallax-layer" id="S6-L1"> <img src="img/Layers/S6-L1.webp" alt="" loading="eager"> </div>
-                <div class="parallax-layer" id="S6-L0"> <img src="img/Layers/S6-L0.webp" alt="" loading="eager"> </div>
-                <div class="parallax-layer" id="S6-FG"> <img src="img/Layers/S6-FG.webp" alt="" loading="eager"> </div>-->
 
 
                 <!-- Scene 5 Layers -->
@@ -119,7 +151,9 @@
                     <div id="traveler-heads" style="position: absolute; width: 5vw; height: 5vh; z-index: 10;">
                     <img class="head" src="img/heads/quinn.webp">
                     <div class="head fhead"></div>
-                    <div class="shead"></div>
+                    <div class="shead">
+                        <img src="img/heads/mark.png" alt="">
+                    </div>
                     </div>
                 </div>
 
@@ -129,7 +163,13 @@
                 <div class="parallax-layer" id="S5-Falco-1"> <img src="img/Layers/S5-FALCO-1.webp" alt="" loading="eager"> </div>
                 <div class="parallax-layer" id="S5-Falco-2"> <img src="img/Layers/S5-FALCO-2.webp" alt="" loading="eager"> </div>
                 <div class="parallax-layer" id="S5-Falco-3"> <img src="img/Layers/S5-FALCO-3.webp" alt="" loading="eager"> </div>
-                <div class="parallax-layer" id="S5-Falco-4"> <img src="img/Layers/S5-FALCO-4.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer" id="S5-Falco-4"> 
+                    <img src="img/Layers/S5-FALCO-4.webp" alt="" loading="eager">
+                    <img id="anger-head" src="img/heads/anger.webp" alt="" loading="eager"> 
+                </div>
+                <div class="parallax-layer" id="S5-Falco-5"> <img src="img/Layers/S5-FALCO-5.webp" alt="" loading="eager"> </div>
+
+
                 <div class="parallax-layer" id="S5-Quinn"> <img src="img/Layers/S5-QUINN.webp" alt="" loading="eager"> </div>
                 <div id="S5-EXPO"></div>
 
@@ -199,7 +239,7 @@
             <footer class="site-footer"><p>&copy; 2025–<span class="copyright-year"></span> K.T STUDIO. All Rights Reserved.</p></footer>
 
         </div>
-    </div> 
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>

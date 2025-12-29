@@ -1,0 +1,841 @@
+
+@import url('https://fonts.cdnfonts.com/css/terminal-grotesque-open');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.cdnfonts.com/css/amatic-sc-2');
+
+
+/* ==========================================
+   GLOBAL STYLING
+   ============================================================================================================================== */
+
+:fullscreen, 
+:-webkit-full-screen, 
+:-moz-full-screen,
+:-ms-fullscreen {
+    width: 100vw !important; 
+    height: 100vh !important;
+    
+    margin: 0 !important;
+    padding: 0 !important;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+
+.no-scroll {
+  overflow: hidden !important;
+  height: 100%;
+}
+
+html, body, #smooth-wrapper, #smooth-content {
+    margin: 0;
+    padding: 0;
+    background-color: #000000; 
+    overflow: hidden;
+    user-select: none;
+    overflow-wrap: break-word; 
+    word-break: break-word;
+}
+
+body {
+    margin: 0;
+    font-family: 'Terminal Grotesque Open', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+img{
+    max-width: 100vw;
+    height: auto;
+    pointer-events: none;
+}
+
+::-webkit-scrollbar {width: 1.5vh;}
+::-webkit-scrollbar-track {background: #010102;}
+::-webkit-scrollbar-thumb {background: #28E1DC;}
+::-webkit-scrollbar-thumb:hover {background: #B34229;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   Headers & Footers STYLING
+   ========================================== */
+
+
+.site-header {
+    position: fixed;
+    width: 100vw;
+    font-family: 'Anton', Arial, sans-serif;
+    background-color: #000000;
+    display: block;
+    z-index: 1000; 
+    color: white;
+    font-size: 1.0em;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 2vh 20vw;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 1.5vw;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navigation ul li {
+    margin-left: 20vw;
+}
+
+.navigation ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95em;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.navigation ul a:hover {
+    color: #fca311; 
+}
+
+.navigation ul a.active-link {
+    color: #fca311; 
+    font-weight: bold;
+}
+
+
+.site-footer {
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.7vw;
+    padding-top: 35vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   Sections STYLING
+   ============================================================================================================================== */
+
+
+.dashboard{
+    margin-top: 5vh;
+    background-repeat: no-repeat;
+    background-size:fill ;
+    background-position: center;
+    font-size: large;
+    background-position: 180% 40%;
+}
+
+.content-box,.fullscreen-info{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    padding-top: 25vh;
+    color: white;
+
+}
+
+.fullscreen-info{padding-top: 0;}
+
+.content-box img{
+    width: 50vw;
+    animation: neon-flicker 3s infinite alternate;
+}
+
+/* Neon Flicker Animation */
+@keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+        filter: 
+            drop-shadow(0 0 calc(var(--intensity, 1)* 0.2vw) #00ffff) 
+            drop-shadow(0 0 calc(var(--intensity, 1) * 0.9vw) #00ffff) 
+            drop-shadow(0 0 calc(var(--intensity, 1)* 13vw) #00ffff);
+            opacity: calc(var(--intensity, 1) + 0.01)
+    }
+    20%, 24%, 55% {
+        opacity: 0.2;
+        filter: none;
+    }
+}
+
+
+.wishlist-section{
+    display: flex;
+    width: 80%;
+    justify-self: center;
+    height: auto;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3vh;
+    font-size: xx-large;
+}
+
+
+
+
+/* ==========================================
+   ABOUT US SECTION STYLING (Desktop)
+   ========================================== */
+
+.about-us-section {
+    color: white;
+    margin-top: 10vh;
+    padding-bottom: 10vh;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+}
+
+.about-us-section {
+    max-width: 50vw;
+    font-size: 0.8vw;
+}
+
+.about-us-section h1 {
+    font-size: 2.7vw;
+    color: #fca311;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0.5em;
+    text-align: center;
+
+}
+
+.about-us-section h2 {
+    font-size: 1.7vw;
+    color: #28E1DC;
+    border-bottom: 2px solid #565555;
+    padding-bottom: 5px;
+    font-family: 'Terminal Grotesque Open', Arial, sans-serif;
+
+}
+
+    .about-us-section p, 
+    .about-us-section ul li,
+    .usage-note {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   TOOLS STYLING
+   ============================================================================================================================== */
+
+/* ==========================================
+   Volume Tool STYLING
+   ========================================== */
+
+.volume-tool-container {
+    visibility: hidden;
+    position: fixed;
+    bottom: 3vh;
+    right: 1vw;
+    display: flex;
+    flex-direction: row; /* Align side-by-side */
+    align-items: center;
+    z-index: 9999;
+}
+
+.slider-wrapper {
+    width: 0; /* Hidden initially */
+    overflow: hidden;
+    transition: width 0.1s ease, padding 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5vw 0 0 5vw;
+    height: 4vh;
+}
+
+/* Hovering the container expands the slider to the left */
+.volume-tool-container:hover .slider-wrapper {
+    width: 10vw;
+    padding: 0 1vw;
+    opacity: 1;
+    border: 0.1vw solid #00ffff;
+    border-right: none; /* Keep it "attached" to the icon */
+}
+
+
+#corner-volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 0.6vh;
+    background: #000000;
+    border: 0.1vw solid #00ffff;
+    outline: none;
+    cursor: pointer;
+}
+
+#corner-volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1.5vh; /* Rectangular like the dashboard */
+    height: 2.5vh;
+    background: #00ffff;
+    border-radius: 10%;
+    cursor: pointer;
+    box-shadow: 0 0 10px #28E1DC;
+}
+
+#corner-volume-slider::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 15px #B34229;
+    background: #B34229;}
+
+.vol-tool-icon {
+    background: rgba(0, 0, 0, 0.8);
+    border: 0.1vw solid #000000;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.1s;
+    /* If wrapper is open, round only right side of button */
+}
+
+.volume-tool-container:hover .vol-tool-icon {
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 0 10px #00ffff;
+    border: 0.1vw solid #00ffff;
+}
+
+
+/* The Neon Slider Styling */
+.volume-container {
+    margin-top: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+#volume-slider {
+    -webkit-appearance: none;
+    width: 30vw;
+    height: 0.6vh;
+    background: #000000;
+    border: 0.1vw solid #00ffff;
+    outline: none;
+    border-radius: 30%;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 2vw;
+    height: 1.5vh;
+    background: #00ffff;
+    border-radius: 10%;
+    cursor: pointer;
+    box-shadow: 0 0 10px #28E1DC;
+}
+
+#volume-slider::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 15px #B34229;
+    background: #B34229;}
+
+
+
+
+/* ==========================================
+   Inventory Tool STYLING
+   ========================================== */
+
+
+.inv-tool-icon{
+    z-index: 9999;
+    position: fixed;
+    cursor: pointer;
+    border: 0px ;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 6.5vw;
+    height: 15vh;
+    background-image: url('img/UI/backpack/b-main.webp');
+    left: 3vw;
+    bottom: 1vh;
+    transition: all 0.3s;
+}
+
+
+.inv-tool-icon:hover {background-image: url('img/UI/backpack/b-opening.webp');}
+
+.inv-tool-icon.is-active {background-image: url('img/UI/backpack/b-opening.webp')}
+
+
+
+/* Helper class to disable the icon */
+.unclickable {
+    pointer-events: none !important;
+    cursor: default;
+}
+
+
+
+/* Background overlay to close when clicking outside */
+#inv-overlay {
+    pointer-events: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 9998;
+}
+
+
+/* 1. Make the wrapper the master anchor */
+.inv-wrapper {
+    visibility: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    pointer-events: none;
+    z-index: 10001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. Unified Base for all children */
+.inv-wrapper > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-repeat: no-repeat;
+    pointer-events: auto;
+}
+
+.b-bg{
+    width: 30vw;
+    height: 80vh;
+    transform: translate(-160%, -20%) scale(1.2); /* Left of center */
+    background-image: url('img/UI/backpack/paper-stack.webp');
+    background-size: contain;
+}
+
+
+.inv-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 42vw;
+    height: 100vh;
+    transform: translate(20%, -40%);
+    background-image: url('img/UI/backpack/paper.webp');
+    background-size: cover;
+}
+
+
+
+#inv-list-container {
+    position: absolute;
+    pointer-events: auto;
+    width: 50%;
+    height: 29vh;
+    margin: 30% 25%;
+    overflow-y: auto;
+}
+
+/* 1. The main bar area */
+#inv-list-container::-webkit-scrollbar {width: 0.5vw;}
+
+#inv-list-container::-webkit-scrollbar-track {
+    border-radius: 50%;
+    background: #190E00;}
+
+#inv-list-container::-webkit-scrollbar-thumb {background-color: #382a1a;}
+
+#inv-list-container::-webkit-scrollbar-thumb:hover {background-color: #1a1a1a;}
+
+
+
+.inv-list-item {
+    padding: 0.5vmax;
+    border-bottom: 0.5vh solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-family: 'Amatic SC', monospace;
+    font-size: 1.3vmax;
+    font-weight: bolder;
+    color: #2e2e2e;
+}
+
+.inv-list-item:hover {
+    border-radius: 0%;
+    background: #382a1a41}
+
+/* The Big Paper content style */
+#content-viewer {
+    overflow: hidden;
+    width: 80%;
+    height: 70%;
+    margin-top: -6vmax;
+    color: #1a1a1a;
+    font-family: 'Terminal Grotesque Open', monospace;
+    font-size: 1.03vmax;
+}
+
+.view-controls {
+    position: relative;
+    width: 100%;
+    left: 5%;
+    bottom: -5%;
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    align-items: center;
+    font-size: 2.5vmax;
+
+}
+
+.ctrl-btn {
+    position: fixed;
+    width: 5vw;
+    height: 8vh;
+    transform: translate(-160%, -20%) scale(1.2); /* Left of center */
+    background-size: contain;    
+    background-repeat: no-repeat;
+    background-image: url('img/UI/backpack/next_indicator.png');
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    left:83%;
+    transition: scale 1s;
+}
+
+#prev-btn{
+    transform: translate(-160%, -20%) scale(1.2) scaleX(-1); /* Left of center */
+    left:53%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   Buttons & Links STYLING
+   ============================================================================================================================== */
+
+
+.cta-button{
+    position: relative;
+    background-color: transparent;
+    text-align: center;
+    border: 0;
+    height: 16vh;
+    width:15vw;
+    cursor: pointer;
+    font-size: 1vw;
+    background-image: url('img/UI/Button_UI_NORMAL.webp');
+    font-family: 'Anton', Arial, sans-serif;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.cta-button:hover{
+    background-color: transparent;
+    border: 0;
+    
+    text-align: center;
+    height: 16vh;
+    width:28vh;
+
+    cursor: pointer;
+    
+    background-image: url('img/UI/Button_UI_SELECTED.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.aboutus-links {
+    text-align: center;
+    padding: 3vh 0;
+    border-top: 1px dashed #565555;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.aboutus-links-links p {
+    font-size: 1.2vw;
+    color: #ccc;
+    margin-bottom: 2vh;
+}
+
+.cta-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    font-size: 1.2vw;
+    white-space: nowrap;
+    padding: 1vh 2vw;
+    background-color: #28E1DC;
+    color: #010102;
+    border: 2px solid #28E1DC;
+}
+
+.cta-link:hover {
+    transform: translateY(-2px);
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+
+.itch-io-style,
+.youtube-style {
+    background-color: #FCA311;
+    color: #010102;
+    border: 2px solid #FA5B5B;
+}
+
+.itch-io-style:hover,
+.youtube-style:hover {
+    background-color: #df4a4a;
+    color: white;
+}
+
+.list-title{color: #FCA311;}
+.list-title:hover{color: #FA5B5B}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   LOADING SCREEN STYLING
+   ============================================================================================================================== */
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+
+#loader-wrapper.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; 
+}
+
+.loader-content {
+    text-align: center;
+    color: white;
+}
+
+.loader-content h1 {
+    font-size: 4vw;
+    color: #28E1DC;
+    margin-bottom: 2vh;
+}
+
+#loading-bar {
+    width: 20vw;
+    height: 3px;
+    background-color: #565555;
+    margin: 0 auto;
+}
+
+
+
+
+
