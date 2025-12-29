@@ -1,8 +1,14 @@
 import { setSmootherInstance } from "./utils.js";
 import { playRandomStep } from "./utils.js";
+import { fullscreen } from "./utils.js";
+
+let randomname = "Joseph"; // Fallback
 
 
-export function startDesktopGSAP(s, q, f) {
+export function startDesktopGSAP(s, q, f,rname) {
+    randomname = rname
+
+    initSecretVivi();
 
     const path = document.querySelector('#travelPath');
     const pathLength = path.getTotalLength();
@@ -16,6 +22,27 @@ export function startDesktopGSAP(s, q, f) {
     });
     
     setSmootherInstance(smootherInstance); 
+
+
+
+const aspectRatio = window.innerWidth / window.innerHeight;
+const targetRatio = 1.7;
+console.log(aspectRatio);
+const squareness = Math.max(0, targetRatio - aspectRatio);
+const squarenessFactor = squareness * 100;
+
+const wideness = Math.max(0, aspectRatio - targetRatio);
+const widenessFactor = wideness * 100;
+
+let responsiveValues = {
+    svgp1: -200+squarenessFactor*2,
+    svgp2: -250+squarenessFactor,
+};
+
+if (aspectRatio > 1.81){
+    responsiveValues.svgp1 = -200-widenessFactor
+    responsiveValues.svgp2 = -250-widenessFactor
+}
 
 
     let runAnimation = gsap.timeline({
@@ -657,12 +684,10 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-box',{x:"100vw",y:"-85vh", duration: 15 },"<")
 .to('#S4-FG',{y:'-200%',duration: 25})
 
-.fromTo('#S5-SVG',{},{duration: 25},"<")
-
-
+.set("#S5-SVG", { y: "50vh" }) 
 .fromTo(path,{strokeDasharray:pathLength,strokeDashoffset: pathLength} , {strokeDashoffset: 0,duration: 250,ease: "none"})
 .to("#traveler-heads", { motionPath: { path: "#travelPath", align: "#travelPath", alignOrigin: [0.5, 0.5]},duration: 250,ease: "none"}, "<")
-.fromTo("#S5-SVG",{y:"-10%"} , {y:"-80%",duration: 120},"<")
+.fromTo("#S5-SVG", { yPercent: -60 }, { yPercent: -100, duration: 120, ease: "none" }, "<")
 
 .to('.dialogue-box',{x:"2vw",y:"-60vh", duration: 15 },"<")
 .to('.character-name', {text: s, duration: 3 },"<")
@@ -684,8 +709,8 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-text',{text: "Tsk Tsk.", duration: 10 },"<")
 .to('.dialogue-text',{text: "I’m serious, Quinn. You've go to change your mindset.", duration: 35 },"<+=30")
 
-.to("#S5-SVG",{y:"-160%",duration: 100},"<+=40")
 
+.to("#S5-SVG", { yPercent: responsiveValues.svgp1, duration: 120, ease: "none" }, "<+15")
 
 .to('.dialogue-box',{x:"70vw",y:"-60vh", duration: 15 },"<=+20")
 .to('.character-name', {text: s, duration: 3 },"<")
@@ -704,9 +729,8 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-text',{text: "Huh...?!", duration: 15 },"<")
 
 
-.to('.fhead',{opacity:1.0,duration: 1 },">+=15")
-.to("#S5-SVG",{y:"-230%",duration: 30},">+=10")
-
+.to('.fhead',{opacity:1.0,duration: 0 })
+.to("#S5-SVG", { yPercent: responsiveValues.svgp2, duration: 30, ease: "none" }, "+=15")
 
 
 .fromTo('#gyard', 
@@ -758,7 +782,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-text',{text: "",duration: 0},">+=10")
 .to('.dialogue-text',{text: "I did not come here to shed blood <br> <i>[Or for mine to be shed...]</i>.",duration: 35},">")
 
-.to('.dialogue-box',{x:"10vw",y:"-60vh", duration: 15 },">=+15")
+.to('.dialogue-box',{x:"5vw",y:"-60vh", duration: 15 },">=+15")
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-falco', {opacity:0,duration:1},"<")
@@ -783,7 +807,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.shead img',{scale:0.0 ,duration:15},"<")
 
 
-.to('.dialogue-box',{x:"10vw",y:"-60vh", duration: 15 },">=+15")
+.to('.dialogue-box',{x:"5vw",y:"-60vh", duration: 15 },">=+15")
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-falco', {opacity:0,duration:1},"<")
@@ -816,7 +840,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('.dialogue-text',{text: "THE SAME ROOF!", duration: 5 },"<")
 
 
-.to('.dialogue-box',{x:"10vw",y:"-60vh", duration: 15 },">=+15")
+.to('.dialogue-box',{x:"5vw",y:"-60vh", duration: 15 },">=+15")
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-falco', {opacity:0,duration:1},"<")
@@ -856,14 +880,14 @@ export function startDesktopGSAP(s, q, f) {
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-falco', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.set('#S5-Falco-4',{className:"Parallax Layer f4anim"},"<")
+.set('#S5-Falco-4',{className:"parallax-layer f4anim"},"<")
 
 .to('.dialogue-text',{text: "I DIDN'T STEAL ANYTHING!!!!", duration: 25 },"<")
 .to('.dialogue-text',{text: "", duration: 0 },">+=25")
 .to('.dialogue-text',{text: "YOU GIFTED TO ME THIS DAMN <i>HAT</i>.", duration: 25 },"<")
 .to('.dialogue-text',{text: "", duration: 0 },">+=15")
 .to('.character-name', {text: "FALCO VON VIVIAN !!!!!", duration: 3 },"<")
-.to('.dialogue-text',{text: "YOUR OWN SON, FALCO VON VIVIAN!!!!", duration: 15 },"<")
+.to('.dialogue-text',{text: "YOUR OWN SON FALCO VON VIVIAN!!!!", duration: 15 },"<")
 
 
 .to('.dialogue-text',{text: "", duration: 0 },">+25")
@@ -977,7 +1001,7 @@ export function startDesktopGSAP(s, q, f) {
 .to('#chara-seven', {opacity:1,duration:1},"<")
 .to('.dialogue-text',{text: "", duration: 0 },"<")
 .to('.dialogue-text',{text: "Sorry my <i>alleged</i> son. <br> <i>Who stole my hat</i>", duration: 25 },">")
-.to("#S5-SVG",{y:"-350%",duration:15},"<")
+.to("#S5-SVG",{yPercent:-350,duration:55},"<")
 
 
 .to('#S5-F-S',{x:"55%" ,duration:25},"<")
@@ -1241,12 +1265,140 @@ export function startDesktopGSAP(s, q, f) {
 .to('#chara-falco', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
 .to('.dialogue-text',{text: "", duration: 0 },">")
-.to('.dialogue-text',{text: "Wait I just realized. THIS PIECE OF %#@! HAVE A SON?!", duration: 15 },">")
+.to('.dialogue-text',{text: "Wait I just realized. THIS PIECE OF %#@! HAD A SON?!", duration: 15 },">")
 
 .to('.site-header',{opacity: 1, duration: 4 },">+=15")
+.to('#s0-bg',{volume:1.0, duration: 15.5 }, "<")
 .to('.dialogue-box',{opacity:0, duration: 15 },"<")
 
 
 
     return smootherInstance;
+}
+// Add this inside your main GSAP file or init function
+function initSecretVivi() {
+      const getBrowserName = () => {
+        let browserInfo = navigator.userAgent;
+        let browser = 'Browser';
+        if (browserInfo.includes('Opera') || browserInfo.includes('Opr')) {
+          browser = 'Opera Browser';
+        } else if (browserInfo.includes('Edg')) {
+          browser = 'Edge Browser';
+        } else if (browserInfo.includes('Chrome')) {
+          browser = 'Chrome Browser';
+        } else if (browserInfo.includes('Safari')) {
+          browser = 'Safari Browser';
+        } else if (browserInfo.includes('Firefox')) {
+          browser = 'Firefox Browser'
+        } else {
+          browser = 'Browser'
+        }
+          return browser;
+      };
+
+    const vivi = "#secret-vivi";
+    const viviTl = gsap.timeline({ paused: true });
+
+    viviTl
+        .to('.dialogue-box',{opacity:1,x:"70vw",y:"-30vh", duration: 0.1 },"+=5")
+        .to('.character-name', {text: "VIVI", duration: 0.1 },"<")
+        .to('#chara-quinn', {opacity:0,duration:0},"<")
+        .to('#chara-falco', {opacity:0,duration:0},"<")
+        .to('#chara-seven', {opacity:1,duration:0},"<")
+        .set('.dialogue-text',{text: ""},"<")
+
+        .set(vivi,{className:"Seven is-side",scale:1,scaleX:1})
+        .to('.dialogue-text',{text: "Quinn!", duration: 1 },"<")
+        .fromTo(vivi,{x:"-30vw",opacity:1.0}, { x: "70vw", duration: 3},"<")
+        .set(vivi,{className:"Seven is-front"},">")
+
+
+        .to('.dialogue-text',{text: "Where are you?", duration: 1 },">+=2")
+        .set(vivi,{className:"Seven is-side",scaleX:-1},"<")
+        .to(vivi,{x:"-10vw", duration: 4},"<")
+        .set(vivi,{className:"Seven is-back",scaleX:1},">")
+
+
+        .to('.dialogue-text',{text: "QUIIIIIINNNNNNNNNNNNNNN!", duration: 1 },">+=3")
+        .set(vivi,{className:"Seven is-side",scaleX:1},"<")
+
+        .to(vivi,{x:"50vw",scaleX:1, duration: 3},"<")
+        .set(vivi,{className:"Seven is-back"},">")
+
+
+        .to(vivi,{x:"30vw",scaleX:1, duration: 3},">+=2")
+        .to('.dialogue-text',{text: "I'm lost in some kind of credit scene.", duration: 1 },"<")
+        .to('.dialogue-text',{text: "...", duration: 1 },"+=1")
+
+
+        .to(vivi,{x:"35vw", duration: 1},">+=2")
+        .set(vivi,{className:"Seven is-side"},"<")
+        .set(vivi,{className:"Seven is-front"},"+=1")
+        .to('.dialogue-text',{text: "Soooooo.", duration: 1 },"<")
+        .to('.dialogue-text',{text: "How's the weather over there?", duration: 1 },">+=2")
+        .set(vivi,{className:"Seven is-reading"},"+=3")
+        .to('.dialogue-text',{text: "...", duration: 1 },"<")
+        .set(vivi,{className:"Seven is-front"},"+=3")
+
+
+        .to('.dialogue-text',{text: "Quinn! WHERE ARE YOU?", duration: 2 },"+=5")
+        .set(vivi,{className:"Seven is-side",scaleX:-1},"<")
+        .to(vivi,{x:"0vw",scaleX:-1, duration: 3},"<")
+        .set(vivi,{className:"Seven is-front",scaleX:1},">")
+
+        .set(vivi,{className:"Seven is-side",scaleX:1},"+=3")
+        .to(vivi,{x:"30vw", duration: 3},"<")
+        .set(vivi,{className:"Seven is-front",scaleX:1},">")
+        .to('.dialogue-text',{text: "THIS CREEP IS JUST STARING AT ME.", duration: 2 },"<")
+
+    
+        .to('.dialogue-text',{text: "Ama just go. beep bob", duration: 2 },">+=3")
+        .set(vivi,{className:"Seven is-side"},"<")
+        .to(vivi,{x:"110vw", duration: 3},"<")
+
+        .to('.dialogue-box',{opacity:0,x:"70vw",y:"-30vh", duration: 0.5 },"+=0.5")
+        .to('.dialogue-text',{text: "", duration: 0.5 },"<")
+
+        .set(vivi,{className:"Seven is-side",scaleX:-1})
+        .to('.dialogue-text',{text: "Did you say something?", duration: 1 },">+=5")
+        .to('.dialogue-box',{opacity:1,x:"50vw",y:"-30vh", duration: 0.5 },"<")
+        .to(vivi,{x:"70vw", duration: 1},"<")
+        .set(vivi,{className:"Seven is-front",scaleX:1},">")
+
+        .to('.dialogue-text',{text: "No? alright just checking...", duration: 1 },"+=1")
+        .to('.dialogue-text',{text: "...", duration: 1 },"+=1")
+
+    
+        .to('.dialogue-text',{text: "Hey wanna see something cool?.", duration: 1 },"+=1")
+        .set(vivi,{className:"Seven is-front-wave",scaleX:1},"<")
+        .call(() => {fullscreen(); console.log('EXPLOOOOOOSION!!');}, "+=1")
+    
+        .to('.dialogue-text',{text: "'API can only be initiated by a user gesture.'", duration: 2 },"+=1")
+        .set(vivi,{className:"Seven is-reading",scaleX:1},"<")
+
+        .to('.dialogue-text',{text: "Your "+getBrowserName()+" protected you this time.", duration: 2 },"+=3")
+        .set(vivi,{className:"Seven is-front",scaleX:1},"<")
+        .to('.dialogue-text',{text: "Farewell... "+randomname, duration: 2 },"+=3")
+        .to('.dialogue-text',{text: "I DON'T CARE IF IT'S NOT YOUR REAL NAME!.", duration: 1 },"+=4")
+        .set(vivi,{className:"Seven is-front-wave",scaleX:1},"<")
+        .to('.dialogue-text',{text: "I'll just go....", duration: 2 },"+=2")
+        .set(vivi,{className:"Seven is-side",scaleX:1},"<")
+        .to(vivi,{x:"110vw", duration: 20,ease: "power1.in"},"<")
+        .to('.dialogue-text',{text: "...", duration: 1 },"<+=4")
+        .to('.dialogue-box',{opacity:0,x:"50vw",y:"-30vh", duration: 0.5 },">+=1")
+
+
+
+    ScrollTrigger.create({
+        trigger: ".wishlist-section",
+        start: "top 90%",
+        end: "bottom top",
+        onEnter: () => {viviTl.play();},
+        onToggle: (self) => {
+            if (!self.isActive){
+                viviTl.kill(); 
+                gsap.set([vivi], {opacity: 0,});
+                gsap.set([".dialogue-text"], {text:""});
+                self.kill();}}
+    });
 }

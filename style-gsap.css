@@ -22,7 +22,6 @@
     width: 100%;
     height: auto;
     position: absolute;
-    object-fit:cover;
 }
 
 
@@ -33,9 +32,9 @@
     min-height: 0vh;
     z-index: 1000;
     
-    background-color: #0000008b;
-    border: 3px solid #000000;
-    box-shadow: 32px 28px 32px rgba(0, 0, 0, 1.8);
+    background-color: #0000009a;
+    border: 3px solid #2828287c;
+    box-shadow: 0px 28px 32px rgba(0, 0, 0, 1.8);
     border-radius: 74px;
     display: flex;
     align-items: center;
@@ -71,7 +70,7 @@
 }
 
 .character-name {
-    font-size: 1.4vw;
+    font-size: 1.4vmax;
     font-weight: bold;
     color: #ffd700;
     margin-bottom: 0.5vh;
@@ -80,7 +79,7 @@
 
 .dialogue-text {
     margin: 0;
-    font-size: 1.2vw;
+    font-size: 1.1vmax;
     line-height: 2.5vh;
     margin-bottom: 2vh;
 
@@ -122,6 +121,9 @@
     z-index: 1;
 }
 
+#S5-Q-S{
+    position: absolute;
+}
 
 #S1-L1{
     width: 60%;
@@ -186,10 +188,15 @@
     animation-duration: 120s;}
 
 
-#S5-SVG{
-    stroke-width: 0.5vw;
-    left: 28%;
+#S5-SVG {
+    position: absolute;
+    stroke-width: 2px;
+    width: 40vw; /* Keep width relative to screen width */
+    left: 30%;   /* Horizontal stay same */
+    height: auto; 
+    display: block;
 }
+
 
 
 #S5-EXPO{
@@ -205,7 +212,6 @@
     0 0 10vw rgb(255, 255, 255),
     0 0 260vw rgb(0, 255, 251);
 }
-
 
 
 
@@ -310,17 +316,17 @@ animation: anger-head-anim 0.9s infinite;
 
 
 .quinn-character-s1{
-    top: -10.5%;
+    top: -0.5%;
     left: 5.9%;
     width: 19.8%;
+    scale: 1.5;
     object-fit: contain;
     animation: breathing 3s infinite;
 }
 
 .f4anim{
-    position: relative;
-    top: 13%;
-    left: 60%;
+    top: -22%;
+    left: 29%;
     animation: f4-anim 0.3s infinite;
 }
 
@@ -467,9 +473,9 @@ animation: anger-head-anim 0.9s infinite;
 
 
 @keyframes f4-anim {
-    0%{transform: rotate(0deg) scale(1.03);}
-    50%{transform:rotate(3deg) scale(1.0);}
-    100%{transform:rotate(0deg) scale(1.03);}
+    0%{transform: rotate(0deg) scale(0.45);}
+    50%{transform:rotate(3deg) scale(0.40);}
+    100%{transform:rotate(0deg) scale(0.45);}
 }
 
 

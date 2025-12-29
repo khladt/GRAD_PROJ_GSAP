@@ -7,15 +7,15 @@ import {
     hideLoader, 
     killGSAP, 
     setSmootherInstance,
-    updateButtonText 
 } from './utils.js';
 
 const s = 'VIVI';
 const q = 'Quinn';
 const f = 'Falco';
-let splashGateShown = false; 
-
-
+const r = 'Rahal';
+const n = 'Norina';
+const c = 'Cyru';
+ 
 
 function handleResizeOrRotate() {
     clearTimeout(window.resizeTimer); 
@@ -27,6 +27,23 @@ function handleResizeOrRotate() {
     }, 300);
 }
 
+
+export let randomname = "Joseph"; // Default fallback
+
+async function fetchName() {
+    try {
+        // We use a 2-second timeout so the site doesn't hang if the API is down
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 2000);
+
+        const response = await fetch('https://randomuser.me/api/?inc=name', { signal: controller.signal });
+        const data = await response.json();
+        randomname = data.results[0].name.first;
+        console.log("Found name:");
+    } catch (e) {
+        console.log("Name fetch");
+    }
+}
 
 function initGSAP() {
     lockScroll(); 
@@ -68,7 +85,8 @@ function startGSAP() {
     if (window.matchMedia(desktopRatioQuery).matches) {
         // Desktop/Wide Version
         showStartButton(); 
-        setSmootherInstance(startDesktopGSAP(s, q, f)); 
+        fetchName();
+        setSmootherInstance(startDesktopGSAP(s, q, f,randomname)); 
     } else {
         // Mobile/Portrait/Tall Monitor Version
         hideLoader();
@@ -76,19 +94,6 @@ function startGSAP() {
     }
 }
 
-// --- FULLSCREEN LOGIC ---
-const fullscreenToggle = document.getElementById('fullscreenToggle');
-if (fullscreenToggle) {
-    fullscreenToggle.addEventListener('click', () => {
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen();
-        } else {
-            document.exitFullscreen();
-        }
-        updateButtonText(fullscreenToggle);
-    });
-}
-window.addEventListener('fullscreenchange', () => updateButtonText(fullscreenToggle));
 
 
 // --- INITIALIZATION ---

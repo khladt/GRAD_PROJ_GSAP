@@ -58,15 +58,33 @@ export function showStartButton() {
 export function killGSAP() {
     ScrollTrigger.killAll();
 
+    // FIXES THE STRETCH THAT HAPPEN WHEN SWITCHING FROM MOBILE TO DESKTOP MODE
+    gsap.set(".parallax-layer, .Quinn, .Seven, #S5-SVG, img", { clearProps: "all" });
     if (smootherInstance) {
         smootherInstance.kill();
         smootherInstance = null;
         console.log("ScrollSmoother killed.");
     }
+    ScrollTrigger.refresh();
     console.log("Old GSAP instance destroyed.");
 }
 
-export function updateButtonText(fullscreenToggle) {
+
+// --- FULLSCREEN LOGIC ---
+const fullscreenToggle = document.getElementById('fullscreenToggle');
+if (fullscreenToggle) {fullscreenToggle.addEventListener('click', () => fullscreen());}
+window.addEventListener('fullscreenchange', () => updateButtonText(fullscreenToggle));
+
+export function fullscreen(){
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+    updateButtonText(fullscreenToggle);
+}
+
+function updateButtonText(fullscreenToggle) {
     if (document.fullscreenElement) {
         fullscreenToggle.textContent = "Exit Fullscreen (F11)";
     } else {
@@ -89,7 +107,8 @@ export function playRandomStep() {
     }
 }
 
-const neonImg = document.querySelector('.content-box img');
+const neonImg = document.querySelector('.project-vivian');
+const neonImg2 = document.querySelector('.project-vivian2');
 const volumeSlider = document.getElementById('volume-slider');
 const cornerSlider = document.querySelector('#corner-volume-slider');
 
@@ -104,6 +123,7 @@ masterBus.gain.value = savedVolume;
 volumeSlider.value = savedVolume;
 cornerSlider.value = savedVolume;
 neonImg.style.setProperty('--intensity', savedVolume);
+neonImg2.style.setProperty('--intensity', savedVolume);
 
 
 // 2. Connect all audio tags (Only do this once!)
@@ -142,8 +162,8 @@ function updateVolume(value) {
     cornerSlider.value = value;
     
     // 3. Optional: Update your Neon Intensity variable from earlier
-    const neonImg = document.querySelector('.content-box img');
     if(neonImg) neonImg.style.setProperty('--intensity', value);
+    if(neonImg2) neonImg2.style.setProperty('--intensity', value);
 
     // 4. Save to session
     sessionStorage.setItem('userVolume', value);
@@ -382,3 +402,10 @@ slider.addEventListener('mousemove', (e) => {
     const walk = (y - startY) * 1.5; // The '2' is scroll speed multiplier
     slider.scrollTop = scrollTop - walk;
 });
+
+
+
+
+
+const VIVICHARA = document.getElementById('VIVI');
+VIVICHARA.addEventListener('click', () => {alert("Hey! You can look, but no touching!");});
