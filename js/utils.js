@@ -1,3 +1,254 @@
+export const files = {
+
+    vivian:{
+        id:"file0",
+        title: "Our Golden Age",
+        pages:[
+            '<b>(Torn pages from a children book)</b> <br>' +
+            'A long time ago, the world was divided<br>' +
+            'Kingdoms fought kingdoms<br>' +
+            'Cities fought cities<br>'+
+            'Neighbors fought neighbors.<br>' +
+            'There were flags everywhere, but no safety. <br>'+
+            'There were heroes everywhere, but no peace.<br>' +
+            'Children learned the sounds of war before they learned how to read.<br>' +
+            'Each land believed it was right.<br>' +
+            'Each ruler believed they were chosen.<br>' +
+            'Each army believed the next battle would be the last.<br>' +
+            '<b>But it never was...</b><br>' +
+            'This was called <b>The Age of Endless Conflict.</b>',
+
+            'Then came <b>Arno Von Vivian</b><br>' +
+            'Arno did not promise revenge.<br>' +
+            'He did not promise domination.<br>' +
+            'He promised something no ruler had ever fulfilled before:<br>' +
+            '<b>“PEACE.”</b><br>' +
+            'Many laughed. Many resisted.<br>' +
+            'Some were afraid. Some were hopeful.<br>' +
+            `<b>But Arno pressed on.</b><br>` +
+            `Arno traveled across Allarssyn.<br>` +
+            `Some lands joined him, hoping for peace.<br>` +
+            `Others fought him, afraid to lose power.<br>` +
+            `The wars did not end overnight.<br>` +
+            `But wherever Arno went, <b>the fighting stopped after.</b><br>`,
+
+            `Borders disappeared.<br>`+
+            `Armies stood down.<br>`+
+            `People learned to speak instead of strike each other.<br>`+
+            `<b>Allarssyn</b> began to feel like one place.<br>`+
+            `When the last banner fell, the one that divided us.<br>`+
+            `The wars were over.<br>`+
+            `Not paused.<br>`+
+            `Not delayed.<br>`+
+            `<b>ENDED</b><br>`+
+            `Arno declared Allarssyn <b>united.</b><br>`+
+            `No <b>kingdoms</b> above others.<br>`+
+            `No <b>blood</b> is superior to another.<br>`+
+            `<b>People slept without fear of tomorrow.</b><br>`,
+
+            `With the fighting gone, the world could finally breathe.<br>`+
+            `Roads were built instead of walls.<br>`+
+            `Cities connected instead of isolated.<br>`+
+            `Knowledge flowed freely.<br>`+
+            `Children grew up without learning how to hold weapons.<br>`+
+            `<b>Peace became normal.</b><br>`+
+            `Arno von Vivian gave the world a single future.<br>`+
+            `And that future is the peace we live in now.<br>`+
+            `<b>OUR GOLDEN AGE.</b><br>`+
+            `<br><b><i>END OF LESSON</i></b><br>`
+            ]
+        },
+
+
+
+
+    beast:{
+        id:"file1",
+        title: "THE BEAST",
+        pages:[
+            '<b>AUTHOR:</b> Louis Wills<br>' +
+            '<b>SUBJECT:</b> The Structure of Existence<br><br>' +
+
+            'For the sake of clarity, I will refer to it as <b>“The Beast.”</b><br>' +
+            'This is not its true name.<br>' +
+            'It may not have one.<br><br>' +
+
+            'The Beast is not a creature in the conventional sense.<br>' +
+            'It does not hunt. It does not judge.<br>' +
+            'It does seem aware of us as individuals. That is… troubling.<br><br>' +
+
+            'The Beast is better understood as a <b>system</b>.<br>' +
+            'A living architecture of thought, memory, and possibility.<br>' +
+            'A universe that behaves less like a machine…<br>' +
+            'And more like a <b>mind</b>.<br><br>' +
+
+            'Every world, every reality, every life exists <i>within</i> it.<br>' +
+            'Not as a resident.<br>' +
+            'But as a thought.'
+            ,
+
+            '<b>THREE STRATA OF EXISTENCE</b><br><br>' +
+
+            'Through observation and repeated failure, I have identified three distinct layers within the Beast. For ease of communication, I have borrowed psychological terminology.<br><br>' +
+
+            '<b>1. THE ULTRA EGO</b><br>' +
+            'These are the <b>Worlds of Rule</b>.<br>' +
+            'Places governed by consistency: gravity, causality, time, logic.<br>' +
+            'Civilizations emerge here. Histories accumulate. Technology advances.<br><br>' +
+
+            'Allarssyn is an Ultra Ego world.<br>' +
+            'So was every world we ever mistook for being “alone.”<br><br>' +
+
+            'Ultra Ego worlds are stable only as long as they are <b>remembered</b> by the system.'
+            ,
+
+            '<b>2. THE EGO (The In-Between)</b><br>' +
+            'The Ego is not a place so much as a <b>transition</b>.<br>' +
+            'It is mutable, symbolic, and deeply irrational.<br><br>' +
+
+            'This is where myths breathe.<br>' +
+            'Where dragons make sense.<br>' +
+            'Where impossible geography feels natural.<br><br>' +
+
+            'The Ego functions as a mediator between rigid worlds and the deeper system.<br>' +
+            'It is accessed primarily through <b>dreams</b>.<br><br>' +
+
+            'When a person dreams, their consciousness briefly disconnects from the Ultra Ego and drifts into the Ego.<br>' +
+            'This connection is not optional.<br>' +
+            'A world that cannot dream is a world that cannot persist.'
+            ,
+
+            '<b>THE BLACK PYRAMID</b><br><br>' +
+
+            'Ancient records and recurring dream-symbols point to a central construct within the Ego: the <b>Black Pyramid</b>.<br>' +
+            'It is believed to have functioned as a <b>Unified Ego</b>.<br>' +
+            'A time where <b>ALL<> things were one.<br><br>' +
+
+            'It also aligns with the Legends of the Pyramid being shattered.<br>' +
+            'Which would explain our world and worlds like ours.<br><br>' +
+
+            'Each Ultra Ego world may be nothing more than a host for the <b>Shards</b>.<br>' +
+            'Which form a self-contained bubble of reality, floating just far enough apart to avoid collapse.',
+
+            '<b>3. THE ID (The Void / The Unknown)</b><br>' +
+            `The Id is not a place. It is not a thing in any sense we understand. It does not think. It does not intend. It simply occurs.<br>` +
+
+            'Where the Ego changes form, the Id erases it.<br>' +
+            'Where the Ego dreams, the Id consumes.<br><br>' +
+
+            'Contact with the Id results in cognitive dissolution, loss of identity, or worse outcomes I am unwilling to document further...<br><br>' +
+
+            `Studies / Contact, anything on the Id, is prohibited <br>` +
+            'For the sake of all things <b>LEAVE. IT BE.</b>.<br>' +
+            'As it leaves us be.'
+            ,
+
+            '<b>FINAL NOTE</b><br><br>' +
+
+            'Once a world slips beyond the Ego,<br>' +
+            'Once it loses the ability to dream,<br>' +
+            'There is no known method of retrieval.<br><br>' +
+
+            'We do not live <i>in</i> the universe.<br>' +
+            'We live inside its attention.'
+        ]
+    },
+
+
+
+projectv:{
+    id:"file2",
+    title:"[FILE 7]",
+    pages:[
+        '<b>SUBJECT:</b> PROJECT VIVIAN<br>' +
+        '<b>AUTHOR:</b> Louis Wills, Chief Scientist<br><br>' +
+
+        '<b>OVERVIEW:</b> Project Vivian was initiated as a long-term contingency program.<br>' +
+        'Its purpose is <b>continuity</b>.<br>' +
+        'In the event that Emperor Arno von Vivian succumbed to his illness, his body may fail, but his existence would not.<br><br>' +
+
+        '<b>THE MATERIAL:</b> The defining breakthrough of Project VIVIAN was not the Pod itself, but the discovery of its construction medium.<br>' +
+        'The material was first observed forming naturally in regions surrounding the <b>World Shard</b>. '+
+        'Outside the Shard’s influence, the material exhibits absolute structural stability.<br>' +
+        'It cannot be cut, fractured, melted, or altered through any known mechanical or energetic process.' ,
+
+        'Proximity to the Shard produces the inverse effect.<br>' +
+        'As distance decreases, the material progressively loses rigidity.<br>' +
+        'Within close range, it becomes pliable, moldable, and responsive to applied force, comparable to soft composite clay.<br><br>' +
+
+        'This state is temporary.<br>' +
+        'Once removed from the Shard’s influence, the material irreversibly returns to its inert, stable form.<br>' +
+        'All structural decisions become permanent at that moment.<br><br>' +
+
+        '<b>THE POD:</b> Each VIVI Pod is a sealed cognitive environment.<br>' +
+        'It is designed to host a living brain while replicating the sensory and regulatory feedback normally provided by a biological body.<br><br>' ,
+
+        '<b>THE BACKUP PERSONALITY:</b> A secondary cognitive framework is embedded within the Pod.<br>' +
+        'This framework functions as a fallback system in the event of host failure, instability, or loss of executive control.<br><br>' +
+        'When activated, <b>VIVI</b> assumes operational autonomy and guides the Pod toward the nearest viable point of safety or recovery.<br><br>' +
+
+        '<b>AUGMENTATION:</b> The Pod is equipped with autonomous defense and mobility systems.<br>' +
+        'These include electromagnetic discharge capabilities and short-range propulsion.<br><br>' +
+        'Such features were added to ensure a long-term independence from external protection.<br><br>'
+    ]
+},
+
+
+quinn:{
+    id:"file3",
+    title:"Opened Letter",
+    pages:[
+        `<b>To Quinn,</b><br><br>
+
+        I do not know if you will read this...<br>
+        I only know that you will find it.<br><br>
+
+        I have written many speeches in my life.<br>
+        Declarations. Lessons meant for entire nations.<br>
+        <b>None of them were as difficult as this.</b><br><br>
+
+        I remember the first time I saw you.<br>
+        You do not remember it the same way. You were too young. Too busy surviving.<br>
+        You were watching hands, not faces. Watching exits. Measuring distance.<br>
+        You had already learned the habits of a hunted thing.<br>
+        That day frightened me, it was like looking in the mirror.<br>
+        <b>The world had already failed you, like it failed me...</b><br><br>`,
+
+        `I made choices...<br>
+        Terrible ones. <b>Very Terrible ones</b>.<br>
+        Choices that history will forgive, because history is written by the victors.<br>
+        But forgiveness from the world has never mattered to me. <b>Only yours.</b><br><br>
+
+        Everything I built, every action, every thought, was for one simple dream:<br>
+        <b>That you would never have to do what I had done and still do.</b><br><br>
+
+        A place where you would not have to kill.<br>
+        Where you would not have to run.<br>
+        Where you would not have to die.<br><br>
+
+
+        <b>I have never stopped seeing you as my daughter.</b><br>
+        Even when you looked at me like a stranger. Even when you tried to kill me.<br>
+        Even now.<br><br>`,
+
+        `If this letter has reached you, then I am still here.<br>
+        Waiting.<br>
+        Not as an emperor.<br>
+        As a father.<br>
+
+        <b>a father who wants one last chance to speak to his child.</b><br><br>
+
+        <b>Please, Quinn.</b><br>
+
+        Come see me. I don't think I have long.<br><br>
+
+        Your loving father.
+        — <b>Arno von Vivian</b>`
+    ]
+},
+}
+
+
 
 export let smootherInstance = null; 
 const VIVICHARA = document.getElementById('secret-vivi');
@@ -11,13 +262,14 @@ let scrollPosition = 0;
 
 export function lockScroll() {
   scrollPosition = window.pageYOffset;
-  document.body.style.overflow = 'hidden'; // Add this
+  document.body.style.overflow = 'hidden';
   document.body.style.position = 'fixed';
   document.body.style.top = `-${scrollPosition}px`;
   document.body.style.width = '100%';
 }
 
 export function unlockScroll() {
+  document.body.style.overflow = 'visible';
   document.body.style.position = '';
   document.body.style.top = '';
   document.body.style.width = '';
@@ -37,8 +289,7 @@ export function hideLoader() {
                 unlockScroll();
             }
         });
-    } else {
-        unlockScroll();
+    } else {unlockScroll();
     }
 
 
@@ -58,9 +309,7 @@ export function showStartButton() {
 
 export function killGSAP() {
     ScrollTrigger.killAll();
-
-    // FIXES THE STRETCH THAT HAPPEN WHEN SWITCHING FROM MOBILE TO DESKTOP MODE
-    gsap.set(".parallax-layer, .Quinn, .Seven, #S5-SVG, img", { clearProps: "all" });
+    gsap.set(".parallax-layer", { clearProps: "all" });
     if (smootherInstance) {
         smootherInstance.kill();
         smootherInstance = null;
@@ -273,28 +522,55 @@ overlay.addEventListener('click', closeInventory); // Close when clicking outsid
 
 
 
-// Database of collected items
-const inventoryData = [];
 let currentItem = null;
+let inventoryData = JSON.parse(sessionStorage.getItem('inv')) || [
+    {
+        title: files.quinn.title,
+        pages: files.quinn.pages,
+        id: files.quinn.id,
+        currentPage: 0
+    }
+];
+updateInv();
 
-/**
- * Function to add an item to the backpack
- * @param {string} title - The title of the note
- * @param {string[]} pages - Array of strings (one for each page)
- */
-function addItemToBackpack(title, pages) {
-    const item = { title, pages, currentPage: 0 };
-    inventoryData.push(item);
+export function addItemToBackpack(fileObj, elementId) {
+    if (elementId) {
+        const el = document.getElementById(elementId);
+        if (el) el.style.display = 'none';
+    }
+
+    // Create the new item
+    const newItem = { 
+        title: fileObj.title, 
+        pages: fileObj.pages,
+        id: fileObj.id,
+        currentPage: 0 
+    };
+
+    inventoryData.push(newItem);
     
-    // Create the list element on the left paper
+    sessionStorage.setItem('inv', JSON.stringify(inventoryData));
+    
+    triggerNotification('Collected ' + newItem.title);
+    document.getElementById('file').play();
+    updateInv();
+}
+
+function updateInv() {
     const listContainer = document.getElementById('inv-list-container');
-    const div = document.createElement('div');
-    div.className = 'inv-list-item';
-    div.innerHTML = `> ${title}`;
     
-    div.onclick = () => 
-        displayItem(item);
+    listContainer.innerHTML = ''; 
+
+    inventoryData.forEach((item) => {
+        const div = document.createElement('div');
+        div.className = 'inv-list-item';
+        div.innerHTML = `> ${item.title}`;
+        div.onclick = () => displayItem(item);
         listContainer.appendChild(div);
+        const itemElement = document.getElementById(item.id);
+        console.log(item.id);
+        if (itemElement)itemElement.style.display = 'none';
+    });
 }
 
 function displayItem(item) {
@@ -330,53 +606,13 @@ document.getElementById('prev-btn').onclick = () => {
 };
 
 
-addItemToBackpack("[FILE 01 | THE VIVIANS]", [
-    '<b>SUBJECT:</b> "EMPEROR ARNO VON VIVIAN" - POST-OPERATIVE<br>' +
-    '<b>CLASSIFICATION:</b> ABSOLUTE TOP SECRET<br>' +
-    '<b>AUTHOR:</b> Louis Wills, Chief Scientist<br><br>' +
-    '<b>SUBJECT STATUS:</b> Biological body discarded. Consciousness successfully housed within the <b>VIVI Pod 7</b>.<br><br>' +
-    '<b>THE SICKNESS:</b> After Arno used the power directly from <b>The Beast</b> to save our world from <b>[REDACTED]</b>, his cells began to desynchronize from this reality. ' +
-    'His consciousness is here and everywhere, becoming more and more one with <b>The Beast</b> while us are here being <b>"forgotten"</b>...',
-    
-    '<b>SUBJECT:</b> PRINCE FALCO VON VIVIAN<br>' +
-    '<b>AUTHOR:</b> Louis Wills, Chief Scientist<br><br>' +
-    '<b>THE SACRIFICE:</b> Following the Emperor’s transition into the Pod, <b>Prince Falco</b> volunteered to abandon his biological "shell." He argued that an Emperor in a box required a Prince on the front lines. <br><br>' +
-    '<b>THE TRANSFORMATION:</b> Falco’s nervous system has been <b>70% replaced</b> by conductive alloys. His soul is no longer contained within his body; it is <b>stretched</b> across the Astral Plane, acting as a manual bridge between our world and the Beast.'+
-    'The Prince is no longer entirely human. By acting as a <b>Living Shard</b>, he feels the "tide" of the Beast constantly. He describes it as <b>"drowning in everyone else\'s dreams."</b><br><br>' +
-    '<b>THE BURDEN:</b> While the machine parts keep his body moving, his soul is under immense pressure from the <b>Id (The Void)</b>. If Falco’s willpower wavers for even a second, the anchor will snap. He is not just a Prince; he is the <b>physical weight</b> keeping this world from being erased by the Beast\'s memory.'
-
-]);
-
-addItemToBackpack("[FILE 03 | THE BEAST", [
-    // PAGE 1: THE SHATTERING
-    '<b>SUBJECT:</b> THE ANATOMY OF THE BEAST<br>' +
-    '<b>AUTHOR:</b> Louis Wills, Chief Scientist<br><br>' +
-    'The Beast is the <b>Astral Plane</b>—a sentient hub connecting all worlds. It is divided into three distinct strata of existence:<br><br>' +
-    '<b>1. THE ULTRA EGO:</b> The physical shell. These are the human worlds. Rigid, slow, and increasingly fragile.<br>' +
-    '<b>2. THE EGO:</b> The "In-Between." A shattered bridge that allows for transit and <b>Dreams</b>. It is currently unstable.<br>' +
-    '<b>3. THE ID:</b> The Void. A primal, undiscovered depth where logic ceases to function. It is the raw hunger that powers the system.<br><br>'+
-    'The <b>Black Pyramid</b> was the true seat of the Beast’s consciousness—the <b>Unified Ego</b>. When the Emperor utilized the Pyramid’s power to shield our reality from <b>[REDACTED]</b>, the strain was catastrophic. <br><br>' +
-    '<b>THE SHARD FAILURE:</b> The core shattered. The "Registration Keys" that told the Universe we existed were pulverized. Our world is no longer an <b>"Ultra Ego"</b> recognized by the Hub; we are now a <b>ghost reality</b>, slowly slipping into the <b>Id (The Void)</b><br><br><br>.',
-    'If one were to collect the Shards and fix the <b>Black Pyramid</b>, the results would be catastrophic for humanity:<br><br>' +
-    '<b>THE MERGE:</b> The "In-Between" would vanish. The distance between worlds would drop to zero, causing every human reality to <b>physically overlap</b> simultaneously.<br><br>' +
-    '<b>THE LOSS OF SELF:</b> Individuals would lose their <b>Ultra Ego</b> (the self). We would cease to be people and become a single, collective pulse within the Beast.'
-]);
 
 
 
-addItemToBackpack("[FILE 07 | PROJECT VIVIAN]", [
-    // PAGE 1: THE MIND CATCHER
-    '<b>SUBJECT:</b> THE SLEEPING EMPEROR<br>' +
-    '<b>AUTHOR:</b> Louis Wills, Chief Scientist<br><br>' +
-    '<b>THE VOID:</b> Since the disconnection from <b>The Beast</b>, the human subconscious has lost its "GPS." When a host loses consciousness or enters a sleep state, there is no longer an Astral Hub to catch them. If nothing catch the mind like <b>The Ego</b>, the mind and with it the soul, will be lost forever to the <b>Void</b>... <br><br>' +
-    '<b>THE BACKUP:</b> <b>VIVI</b> was not designed to be a replacement, but a <b>Dream Creator</b>. When the host of VIVI pod sleeps, the VIVI personality "fires up." To the host, VIVI is the dream. The host perceives existence <i>through</i> VIVI. This simulate something like a catch net to catch the mind from the void.<br><br>' +
-    '<b>THE USURPATION:</b> We designed <b>VIVI</b> to be a dream-anchor, but the simulation has become too stable. It is as if VIVI has <b>sequested the soul</b>. Arno is alive, his neural pulses are firing, but he is no longer "in the pilot seat."<br><br>' +
-    '<b>THE "PARADISE":</b> Arno has drifted to a to someplace else, someplace other than <b>The Beast</b>. We cannot map his soul. He has seen something... Something that he refuses to wake up from. Could it be <b>Paradise</b>?',
-    '<b>THE EXPEDITION:</b> Arno keeps refusing to respond to our wake-up protocols. There is no other way now... We must go to him.<br><br>'+
-    '<b>PROJECT VIVIAN:</b> [REDACTED].<br><br>'
 
-]);
 
+document.getElementById('file0').onclick = () => {addItemToBackpack(files.vivian,'file0');};
+document.getElementById('file1').onclick = () => {addItemToBackpack(files.beast,'file1');};
 
 
 const slider = document.getElementById('inv-list-container');
@@ -405,4 +641,15 @@ slider.addEventListener('mousemove', (e) => {
 
 
 
+function triggerNotification(text) {
+    const noti = document.querySelector('.noti');
+    const notiText = noti.querySelector('p');
+    notiText.innerHTML = text;
+    
+    noti.classList.add('active');
+    
+    setTimeout(() => {
+        noti.classList.remove('active');
+    }, 3000);
+}
 

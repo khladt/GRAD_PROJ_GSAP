@@ -39,6 +39,7 @@
     <!-- MUSIC -->
     <audio id="trem" preload="auto" loop src="sound/music/trem.wav" type="audio/wav"></audio>
     <audio id="gyard" loop src="sound/music/Falco.mp3" type="audio/mpeg"></audio>
+    <audio id="rahal" loop src="sound/music/RahalMelody.mp3" type="audio/mpeg"></audio>
 
     <audio id="r1" loop src="sound/music/r1.mp3" type="audio/mpeg"></audio>
     <audio id="r2" src="sound/music/r2.mp3" type="audio/mpeg"></audio>
@@ -51,6 +52,7 @@
     <audio id="bopen" preload="auto" src="sound/ui/bopen.mp3" type="audio/mpeg"></audio>
     <audio id="bclose" preload="auto" src="sound/ui/bclose.mp3" type="audio/mpeg"></audio>
     <audio id="pturn" preload="auto" src="sound/ui/pturn.mp3" type="audio/mpeg"></audio>
+    <audio id="file" preload="auto" src="sound/ui/file.mp3" type="audio/mpeg"></audio>
 
 
 
@@ -73,6 +75,11 @@
     </header>
 
 
+    <div class="noti">
+        <img src="img/file.webp" alt="">
+        <p>hello over there!</p></div>
+
+
     <div class="volume-tool-container">
             <div class="slider-wrapper">
                 <input type="range" id="corner-volume-slider" min="0" max="1" step="0.01" value="0.5">
@@ -92,8 +99,8 @@
 
             <div class="inv-menu">
                 <div id="content-viewer">
-                    <h2 id="view-title">NO_DATA_SELECTED</h2>
-                    <div id="view-body">Select an entry from the logs.</div>
+                    <h2 id="view-title">NO_FILE_SELECTED</h2>
+                    <div id="view-body">Select an entry from the backpack. <br> <i>If you have / collected one.</i></div>
                 </div>
                 <div class="view-controls">
                     <button id="prev-btn" class="ctrl-btn"></button>
@@ -112,9 +119,9 @@
                 <img id="chara-rahal" src="img/UI/PROFILES/RAHAL-PROFILE.webp" alt="Character Profile">
                 <img id="chara-rahal-sur" src="img/UI/PROFILES/RAHAL-SURPRISED-PROFILE.webp" alt="Character Profile">
                 <img id="chara-rahal-laugh" src="img/UI/PROFILES/RAHAL-LAUGH-PROFILE.webp" alt="Character Profile">
-                <img id="chara-norina" src="img/UI/PROFILES/NORINA-PROFILE.webp" alt="Character Profile">
-                <img id="chara-cyru" src="img/UI/PROFILES/NORINA-PROFILE.webp" alt="Character Profile">
-                <img id="chara-arphop" src="img/UI/PROFILES/ARPHOP-PROFILE.webp" alt="Character Profile">
+                <img id="chara-rahal-smile" src="img/UI/PROFILES/RAHAL-PROFILE-SMILE.webp" alt="Character Profile">
+                <img id="chara-rahal-normal" src="img/UI/PROFILES/RAHAL-PROFILE-NORMAL.webp" alt="Character Profile">
+                <img id="chara-arfop" src="img/UI/PROFILES/ARPHOP-PROFILE.webp" alt="Character Profile">
             </div>
             <div class="dialogue-content">
                 <div class="character-name"></div>
@@ -142,13 +149,43 @@
             </div>
 
 
+
             <!-- SECTION 2: PARALLAX ANIMATION -->
              
             <section id="story-parallax">
 
+                <!-- Scene 6 Layers -->
+                <div class="parallax-layer" id="S6-BG"> <img src="img/Layers/Scene6/S6-BG.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer S6"> <img id="S6-FLOAT0" src="img/Layers/Scene6/S6-FLOATS-0.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer S6" > <img id="S6-LHOUSE" src="img/Layers/Scene6/S6-ISLAND-LIGHTHOUSE.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer S6"> <img id="S6-IUPDOWN" src="img/Layers/Scene6/S6-ISLAND-UPSIDE_DOWN.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer S6" > <img id="S6-FLOAT1" src="img/Layers/Scene6/S6-FLOATS-1.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer S6"> <img id="S6-ITREE" src="img/Layers/Scene6/S6-ISLAND-TREE.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer S6"> <img id="S6-FLOATS-ITREE" src="img/Layers/Scene6/S6-FLOATS-ISLAND-TREE.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer S6">
+                    <div class="parallax-layer" id="S6-FG">
+                        <img src="img/Layers/Scene6/S6-FG.webp" alt="" loading="eager"> 
+                        <img id="arfop0" src="img/Layers/Scene6/S6-Arfop-0.webp" alt="" loading="eager"> 
+                        <img id="arfop1" src="img/Layers/Scene6/S6-Arfop-1.webp" alt="" loading="eager"> 
+                        <img id="S6-R0" src="img/Layers/Scene6/S6-RAHAL-0.webp" alt="" loading="eager"> 
+                        <img id="S6-R1" src="img/Layers/Scene6/S6-RAHAL-1.webp" alt="" loading="eager"> 
+                        <img id="S6-R2" src="img/Layers/Scene6/S6-RAHAL-2.webp" alt="" loading="eager"> 
+                        <img id="S6-R3" src="img/Layers/Scene6/S6-RAHAL-3.webp" alt="" loading="eager"> 
+                        <img id="S6-R4" src="img/Layers/Scene6/S6-RAHAL-4.webp" alt="" loading="eager"> 
+                        <img id="S6-R5" src="img/Layers/Scene6/S6-RAHAL-5.webp" alt="" loading="eager"> 
+                        <img id="S6-R6" src="img/Layers/Scene6/S6-RAHAL-6.webp" alt="" loading="eager"> 
+                        <img id="S6-R7" src="img/Layers/Scene6/S6-RAHAL-7.webp" alt="" loading="eager"> 
+                     </div>
+                </div>
+                <div class="parallax-layer S6" id="S6-RAHAL"> <img src="img/Layers/Scene6/S6-RAHAL.webp" alt="" loading="eager"> </div>
+
+
+
+
 
                 <!-- Scene 5 Layers -->
                 <div class="parallax-layer" id="S5-SVG"> 
+                    <img id="file1" src="img/file.webp" alt="" loading="eager"> 
                     <svg viewBox="0 0 800 3840" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path id="travelPath" 
                     d="M420.433 0.136513C471.787 181.082 673.353 178.6 537.933 309.137C464.672 379.755 144.624 312.798 120.433 411.637C90.7323 532.984 51.7242 784.715 175.433 802.137C298.498 819.467 334.933 482.637 479.433 495.137C623.933 507.637 847.433 724.637 709.933 814.637C572.433 904.637 448.703 695.087 420.433 923.137C397.933 1104.64 159.433 921.637 79.4326 962.137C21.0558 991.69 210.401 1087.54 296.433 1105.14C369.334 1120.05 534.144 1030.55 590.933 1078.64C676.358 1150.97 96.6323 1519.22 103.933 1346.64C120.433 956.577 312.37 1553.6 433.433 1457.14C508.873 1397.03 585.461 1324.48 672.933 1365.14C834.839 1440.39 788.22 1554.59 617.433 1606.64C331.932 1693.64 687.433 1819.64 506.933 1883.14C326.433 1946.64 334.433 1734.14 263.433 1680.14C192.432 1626.14 91.1346 1729.43 25.9326 1782.64C-90.7047 1877.82 238.433 1853.64 120.433 2032.14C2.4326 2210.64 386.316 2168.85 479.433 2220.64C737.433 2364.14 477.933 2369.64 533.433 2482.14C588.933 2594.64 144.433 2360.14 81.4326 2502.64C18.4326 2645.14 294.933 2618.14 361.933 2781.14C428.933 2944.14 400.433 3022.64 400.433 3022.64"
@@ -203,7 +240,10 @@
                 <div class="parallax-layer" id="S2-BG"> <img src="img/Layers/S2-BG.webp" alt="" loading="eager"> </div>
                 <div class="parallax-layer" id="S2-L2"> <img src="img/Layers/S2-L2.webp" alt="" loading="eager"> </div>
                 <div class="parallax-layer" id="S2-L1"> <img src="img/Layers/S2-L1.webp" alt="" loading="eager"> </div>
-                <div class="parallax-layer" id="S2-L0"> <img src="img/Layers/S2-L0.webp" alt="" loading="eager"> </div>
+                <div class="parallax-layer" id="S2-L0"> 
+                    <img src="img/Layers/S2-L0.webp" alt="" loading="eager"> 
+                    <img id="file0" src="img/file.webp" alt="" loading="eager"> 
+                </div>
                 <div class="parallax-layer" id="S2-LW"> <img src="img/Layers/S2-LW.webp" alt="" loading="eager"> </div>
                 <div class="parallax-layer" id="S2-FG"> <img src="img/Layers/S2-FG.webp" alt="" loading="eager"> </div>
 

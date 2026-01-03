@@ -213,7 +213,6 @@ img{
     justify-self: center;
     padding-top: 25vh;
     color: white;
-
 }
 
 .fullscreen-info{padding-top: 0;}
@@ -458,7 +457,60 @@ img{
 
 
 
+
+
+
+
+
+
+
+
 /* ==========================================
+   Noti Tool STYLING
+   ========================================== */
+   
+
+
+
+
+
+
+
+.noti {
+    display: flex;
+    margin-top: 5vh;
+    padding: 0.5vmax;
+    padding-right: 2vmax;
+    justify-self: center;
+    z-index: 9995;
+    position: fixed;
+    border: 1px solid rgb(78, 116, 133);
+    max-width: 50vw;
+    background-color: #111111;
+    color: white;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%); 
+    font-size: 1vmax;
+}
+.noti img{
+    width: 5vw;
+    height: 6vh;
+
+    rotate: 90deg;
+    transform-origin: 50%;
+}
+
+.noti.active {top: 0%;}
+
+
+
+
+
+   
+   /* ==========================================
    Inventory Tool STYLING
    ========================================== */
 
@@ -480,7 +532,9 @@ img{
 }
 
 
-.inv-tool-icon:hover {background-image: url('img/UI/backpack/b-opening.webp');}
+.inv-tool-icon:hover {
+    -webkit-filter: brightness(0.3) saturate(1) hue-rotate(350deg) drop-shadow(5px 5px 0 rgb(0, 208, 255));
+    background-image: url('img/UI/backpack/b-opening.webp');}
 
 .inv-tool-icon.is-active {background-image: url('img/UI/backpack/b-opening.webp')}
 
@@ -562,7 +616,8 @@ img{
     pointer-events: auto;
     width: 50%;
     height: 29vh;
-    margin: 30% 25%;
+    justify-self: center;
+    top:22%;
     overflow-y: auto;
 }
 
@@ -601,7 +656,7 @@ img{
     margin-top: -6vmax;
     color: #1a1a1a;
     font-family: 'Terminal Grotesque Open', monospace;
-    font-size: 1.03vmax;
+    font-size: 1.1vmax;
 }
 
 .view-controls {
@@ -645,7 +700,14 @@ img{
 
 
 
-
+    .blink {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        pointer-events: none;
+        z-index: 9999;
+        background: black;
+    }
 
 
 

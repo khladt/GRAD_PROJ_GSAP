@@ -18,6 +18,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .parallax-layer {
@@ -43,7 +44,7 @@
     min-height: 0vh;
     z-index: 1000;
     
-    background-color: #0000009a;
+    background-color: #000000db;
     border: 3px solid #2828287c;
     box-shadow: 0px 28px 32px rgba(0, 0, 0, 1.8);
     border-radius: 74px;
@@ -132,9 +133,6 @@
     z-index: 1;
 }
 
-#S5-Q-S{
-    position: absolute;
-}
 
 #S1-L1{
     width: 60%;
@@ -225,13 +223,79 @@
 }
 
 
+#S6-BG{
+    scale: 1.3;
+}
+
+#S6-FG{
+    scale: 1.8;
+    top: 110%;
+    left: -35%;
+}
+
+
+#S6-RAHAL{
+    scale: 1.1;
+    height: 100vh;
+    width: auto;
+    left: -5%;
+    opacity: 1;
+    filter: blur(0px) brightness(1.0);
+    border: 50px solid #000000;
+}
+
+
+#S6-R0,#S6-R1,#S6-R2,#S6-R3,#S6-R4,#S6-R5,#S6-R6,#S6-R7{
+    height: 100vh;
+    width: auto;
+    position: absolute;
+    bottom: 55%;
+    left: 49%;
+    scale: 0.5;
+    transform-origin: center;
+}
+
+#S6-R1{
+    left: 39%;
+    bottom: 58%;
+}
+#S6-R4{left: 34%;}
+
+#S6-R6{
+    bottom: 56%;
+    left: 72%;}
+
+#S6-R7{bottom: 58%; left: 60%;}
+
+
+#arfop0,#arfop1{
+    width: 15vw;
+    left: 22%;
+    top: 5%;
+    transform-origin: bottom;
+}
 
 
 
+#S6-LHOUSE{
+    scale: 0.4;
+    top: -30%;
+    height: 100vw;
+    width: auto;
+    left: 19%;
+}
 
+#S6-IUPDOWN{
+    scale: 0.2;
+    top: -75%;
+    left: -43%;
+}
 
-
-
+#S6-ITREE,#S6-FLOATS-ITREE{
+    scale: 0.3;
+    left: 34%;
+    top: -50%;
+}
 
 
 
@@ -322,14 +386,66 @@ animation: anger-head-anim 0.9s infinite;
 
 
 /* ==========================================
+        File Layers
+   ==================================================================================== */
+
+#file0 {
+    pointer-events: all;
+    position: absolute;
+    width: 15vw;
+    left: 30%;
+    bottom: 76%;
+    
+    transform: translate(-50%, 50%); 
+    
+    filter: brightness(0.2) saturate(2) hue-rotate(350deg);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+
+#file1 {
+    pointer-events: all;
+    position: absolute;
+    width: 5vw;
+    right: -50%;
+    bottom: -50%;
+    transform: translate(-50%, 50%); 
+    filter: brightness(0.2) saturate(2) hue-rotate(350deg);
+    cursor: pointer;
+    rotate: 70deg;
+    transition: transform 0.2s ease;
+}
+
+
+#file0:hover,#file1:hover {
+    transform: translate(-50%, 50%) scale(1.1);
+    -webkit-filter: brightness(0.3) saturate(5) hue-rotate(350deg) drop-shadow(5px 5px 0 rgb(255, 0, 0));
+}
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   /* ==========================================
         Characters Layers
    ==================================================================================== */
 
 
 #secret-vivi {
-    /* Default to 1 (normal brightness) if the variable isn't set yet */
     filter: brightness(var(--intensity, 1));
-    transition: filter 0.1s ease; /* Smooths out the flickering */
+    transition: filter 0.1s ease; 
 }
 
 .quinn-character-s1{
