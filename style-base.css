@@ -219,6 +219,7 @@ img{
 
 .project-vivian{
     width: 50vw;
+    height: auto;
     animation: neon-flicker 3s infinite alternate;
 }
 
@@ -254,6 +255,7 @@ img{
 }
 .wishlist-section .project-vivian2{
     width: 80vw;
+    height: auto;
     animation: neon-flicker 3s infinite alternate;
 
 }
@@ -602,16 +604,42 @@ img{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 42vw;
-    height: 100vh;
-    transform: translate(20%, -40%);
+    width: 40vw;
+    height: 99vh;
+    transform: translate(25%, -50%);
     background-image: url('img/UI/backpack/paper.webp');
     background-size: cover;
+
+}
+
+#content-viewer {
+    overflow-y: auto;
+    width: 30vw;
+    height: 100vh;
+    margin-top: 4vmax;
+    margin-left: 3vmax;
+    color: #1a1a1a;
+    font-family: 'Terminal Grotesque Open', monospace;
+    font-size: 1.1vmax;
+}
+
+.view-controls {
+    bottom: 3%;
+    position: relative;
+    width: 100%;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vmax;
+
 }
 
 
-
 #inv-list-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
     position: absolute;
     pointer-events: auto;
     width: 50%;
@@ -621,16 +649,22 @@ img{
     overflow-y: auto;
 }
 
+#inv-list-container {
+    touch-action: pan-y !important;
+    overflow-y: auto !important;
+}
+
 /* 1. The main bar area */
-#inv-list-container::-webkit-scrollbar {width: 0.5vw;}
+#inv-list-container::-webkit-scrollbar,#content-viewer::-webkit-scrollbar {width: 1vw;}
 
-#inv-list-container::-webkit-scrollbar-track {
-    border-radius: 50%;
-    background: #190E00;}
+#inv-list-container::-webkit-scrollbar-track,#content-viewer::-webkit-scrollbar-track {background: #190E00;}
 
-#inv-list-container::-webkit-scrollbar-thumb {background-color: #382a1a;}
+#inv-list-container::-webkit-scrollbar-thumb,#content-viewer::-webkit-scrollbar-thumb {
+    border-radius: 30%;
+    background-color: #382a1a;}
 
 #inv-list-container::-webkit-scrollbar-thumb:hover {background-color: #1a1a1a;}
+
 
 
 
@@ -642,35 +676,16 @@ img{
     font-size: 1.3vmax;
     font-weight: bolder;
     color: #2e2e2e;
+    border-radius: 50%;
 }
 
 .inv-list-item:hover {
-    border-radius: 0%;
+    border-radius: 15%;
     background: #382a1a41}
 
-/* The Big Paper content style */
-#content-viewer {
-    overflow: hidden;
-    width: 80%;
-    height: 70%;
-    margin-top: -6vmax;
-    color: #1a1a1a;
-    font-family: 'Terminal Grotesque Open', monospace;
-    font-size: 1.1vmax;
-}
 
-.view-controls {
-    position: relative;
-    width: 100%;
-    left: 5%;
-    bottom: -5%;
-    display: flex;
-    justify-content: center;
-    gap: 5vw;
-    align-items: center;
-    font-size: 2.5vmax;
 
-}
+
 
 .ctrl-btn {
     position: fixed;

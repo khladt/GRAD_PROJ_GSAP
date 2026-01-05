@@ -17,12 +17,11 @@ const n = 'Norina';
 const c = 'Cyru';
  
 
-function handleResizeOrRotate() {
+export function handleResizeOrRotate() {
     clearTimeout(window.resizeTimer); 
     window.resizeTimer = setTimeout(() => {
         killGSAP(); 
         initGSAP(); 
-        unlockScroll();
     }, 300);
 }
 
@@ -43,8 +42,7 @@ async function fetchName() {
     }
 }
 
-function initGSAP() {
-    lockScroll();  
+function initGSAP() {  
     gsap.registerPlugin(MotionPathPlugin ,Draggable,DrawSVGPlugin,ScrollTrigger,ScrollSmoother,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase,CustomBounce,CustomWiggle);
 
     const parallaxImages = document.querySelectorAll('#story-parallax img');
@@ -54,6 +52,7 @@ function initGSAP() {
     const imagePromises = Array.from(parallaxImages).map(img => {
         if (img.complete) return Promise.resolve();
         return new Promise(resolve => {
+            lockScroll();
             img.addEventListener('load', resolve);
             img.addEventListener('error', resolve); // Resolve anyway to avoid hanging
         });
@@ -94,6 +93,10 @@ function startGSAP() {
 // --- INITIALIZATION ---
 window.addEventListener("DOMContentLoaded", () => {
     initGSAP();
-    window.addEventListener('resize', handleResizeOrRotate); 
     window.addEventListener('orientationchange', handleResizeOrRotate); 
 });
+
+
+
+
+

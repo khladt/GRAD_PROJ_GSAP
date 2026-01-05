@@ -1,106 +1,168 @@
+import { handleResizeOrRotate } from './main.js';
+
+
 export const files = {
 
     vivian:{
-        id:"file0",
+        musid:'Gold',
         title: "Our Golden Age",
         pages:[
-            '<b>(Torn pages from a children book)</b> <br>' +
-            'A long time ago, the world was divided<br>' +
-            'Kingdoms fought kingdoms<br>' +
-            'Cities fought cities<br>'+
-            'Neighbors fought neighbors.<br>' +
-            'There were flags everywhere, but no safety. <br>'+
-            'There were heroes everywhere, but no peace.<br>' +
-            'Children learned the sounds of war before they learned how to read.<br>' +
-            'Each land believed it was right.<br>' +
-            'Each ruler believed they were chosen.<br>' +
-            'Each army believed the next battle would be the last.<br>' +
-            '<b>But it never was...</b><br>' +
-            'This was called <b>The Age of Endless Conflict.</b>',
+            `<b>(Torn pages from a children's school book)</b> <br><br>` +
+            `Once, the world was a puzzle of broken pieces.<br><br>` +
+            `Kingdom fought kingdom.<br>` +
+            `City fought city.<br>` +
+            `Neighbor fought neighbor.<br><br>` +
+            `Flags flew from every roof, yet no one felt at home.<br>` +
+            `Champions stood on every corner, yet no one came to save us.<br><br>` +
+            `Streets were paved with "victory," yet the people were lost.<br>` +
+            `Children learned the rhythm of drums before the songs of joy.<br><br>` +
+            `Every land claimed they were right.<br>` +
+            `Every ruler claimed they were chosen.<br>` +
+            `Every army promised the next battle would be the last.<br><br>` +
+            `<b>But the sun always rose on a world still at war...</b><br>`,
 
-            'Then came <b>Arno Von Vivian</b><br>' +
-            'Arno did not promise revenge.<br>' +
-            'He did not promise domination.<br>' +
-            'He promised something no ruler had ever fulfilled before:<br>' +
-            '<b>“PEACE.”</b><br>' +
-            'Many laughed. Many resisted.<br>' +
-            'Some were afraid. Some were hopeful.<br>' +
-            `<b>But Arno pressed on.</b><br>` +
-            `Arno traveled across Allarssyn.<br>` +
-            `Some lands joined him, hoping for peace.<br>` +
-            `Others fought him, afraid to lose power.<br>` +
-            `The wars did not end overnight.<br>` +
-            `But wherever Arno went, <b>the fighting stopped after.</b><br>`,
+            `Then came <b>Arno von Vivian.</b><br><br>` +
+            `Arno did not offer the fire of revenge.<br>` +
+            `He did not seek the crown of a conqueror.<br>` +
+            `He brought a gift that the old kings had long forgotten:<br><br>` +
+            `<b>“PEACE.”</b><br><br>` +
+            `The greedy laughed. The cruel resisted.<br>` +
+            `The weary doubted, but the children hoped.<br><br>` +
+            `<b>Arno did not falter.</b><br><br>` +
+            `His left hand was firm upon his sword to protect the weak,<br>` +
+            `but his right hand was <b>open to welcome the world.</b><br><br>` +
+            `Arno marched across the map of Allarssyn.<br>` +
+            `Wherever he walked, <b>the thunder of war fell silent.</b><br>`,
+    
 
-            `Borders disappeared.<br>`+
-            `Armies stood down.<br>`+
-            `People learned to speak instead of strike each other.<br>`+
-            `<b>Allarssyn</b> began to feel like one place.<br>`+
-            `When the last banner fell, the one that divided us.<br>`+
-            `The wars were over.<br>`+
-            `Not paused.<br>`+
-            `Not delayed.<br>`+
-            `<b>ENDED</b><br>`+
-            `Arno declared Allarssyn <b>united.</b><br>`+
-            `No <b>kingdoms</b> above others.<br>`+
-            `No <b>blood</b> is superior to another.<br>`+
-            `<b>People slept without fear of tomorrow.</b><br>`,
+            `Old borders washed away like ink in the rain.<br>` +
+            `Armies lowered their spears and raised their sights.<br>` +
+            `Men learned to speak before they learned to strike.<br><br>` +
+            `<b>Allarssyn</b> finally became one heart, beating together.<br>` +
+            `When the last wall crumbled, the wars were over.<br>` +
+            `Not resting. Not waiting. <br><br>` +
+            `<b>FINISHED.</b><br><br>` +
+            `Arno declared us <b>United.</b><br>` +
 
-            `With the fighting gone, the world could finally breathe.<br>`+
-            `Roads were built instead of walls.<br>`+
-            `Cities connected instead of isolated.<br>`+
-            `Knowledge flowed freely.<br>`+
-            `Children grew up without learning how to hold weapons.<br>`+
-            `<b>Peace became normal.</b><br>`+
-            `Arno von Vivian gave the world a single future.<br>`+
-            `And that future is the peace we live in now.<br>`+
-            `<b>OUR GOLDEN AGE.</b><br>`+
+            `No <b>soul</b> above others.<br>`+
+            `No <b>blood</b> is superior to another.<br><br>`+
+            `<b>For the first time, the world slept without a sword beneath its pillow.</b><br>`,
+
+            `With the fighting gone, the world began to bloom.<br>` +
+            `We built roads to find each other, not walls to hide.<br>` +
+            `Knowledge flowed like water, and every cup was full.<br>` +
+            `Children grew tall without ever learning the weight of a shield.<br><br>` +
+            `<b>Peace became our heartbeat.</b><br>` +
+            `Arno von Vivian gave us more than just peace;<br>` +
+            `He gave us a future. <b>OUR GOLDEN AGE.</b><br>`+
             `<br><b><i>END OF LESSON</i></b><br>`
             ]
         },
 
 
-
-
-    beast:{
-        id:"file1",
-        title: "THE BEAST",
+ beast:{
+        title: "THE BEAST - 1",
+        musid:'WHERE',
         pages:[
-            '<b>AUTHOR:</b> Louis Wills<br>' +
+            `<b>Louis Willis — Classified Personal Record</b><br><br>
+
+            I am… I remain. I collect the shards of my name like broken glass. <br>
+            Louis Willis. Louis Willis. Louis Willis. If I say it, perhaps I'll wake up from this weird dream.<br><br>
+
+            One moment there was ground and sound and weight, <br> and then there was <i>everything at once</i>.<br><br>
+    
+            I felt my world dissolve. Not like salt in water, but like a <i>thought forgotten.</i><br><br>
+    
+            There was pressure without force.<br>
+            Motion without direction.<br>
+            I was stretched across moments I never lived.<br>
+            Remembering memories that were not mine.<br><br>
+    
+            <b>The Black Pyramid</b>. Shattered.<br>
+            Weeping into an infinite sea.<br><br>
+
+            I am afraid. Afraid that if I to stop writing.<br>
+            I am afraid that when I do, whatever is holding me together<br> will realize I should have been dead.`
+    ]
+    },
+
+
+    
+    beast1:{
+        title: "THE BEAST - 2",
+        musid:'WHERE',
+        pages:[
+            `<b>Louis Willis — Classified Personal Record</b><br><br>
+
+
+            I awoke upon stone that was too perfect in its imperfection. Every crack, every pockmark of erosion feels… deliberate.<br><br>
+
+
+            My body look... feels different.<br>
+            I have marks around my right eye. Like burned veins.<br><br>
+
+
+            I turned my gaze to the sky, bracing for the heat to peel my skin or the radiation to blind me.<br>
+            <b>Nothing.</b><br><br>
+            The air entered my lungs. My throat didn't close.<br><br>
+
+
+            I have seen this before. In dreams. Could it be?<br>
+            <b>My paradise.</b><br><br>
+
+
+            I can't feel time passing. There is no difference Between where I was and where I am, it feels like it's all happening at once.<br><br>
+
+
+            This is not my world.<br>
+            <b>Where am I?</b><br>`
+    ]
+    },
+
+
+
+    beast2:{
+        title: "THE BEAST - 3",
+        id:"file97",
+        musid:'',
+        pages:[
+            '<b>AUTHOR:</b> Louis Wills. Chief scientist<br>' +
             '<b>SUBJECT:</b> The Structure of Existence<br><br>' +
 
             'For the sake of clarity, I will refer to it as <b>“The Beast.”</b><br>' +
-            'This is not its true name.<br>' +
-            'It may not have one.<br><br>' +
 
             'The Beast is not a creature in the conventional sense.<br>' +
             'It does not hunt. It does not judge.<br>' +
-            'It does seem aware of us as individuals. That is… troubling.<br><br>' +
+            'But It does seem aware of us as individuals. That is… something.<br><br>' +
 
-            'The Beast is better understood as a <b>system</b>.<br>' +
-            'A living architecture of thought, memory, and possibility.<br>' +
+            'The Beast is better understood as a living architecture of thought, memory, and possibility.<br>' +
             'A universe that behaves less like a machine…<br>' +
             'And more like a <b>mind</b>.<br><br>' +
 
-            'Every world, every reality, every life exists <i>within</i> it.<br>' +
-            'Not as a resident.<br>' +
-            'But as a thought.'
-            ,
+
+            'Every world, every reality, every life exists as just a <b><i>thought.</i></b><br>' +
+            'One that can be forgotten.<br><br>'+
+
+            `I keep returning to the same pattern, no matter how I approach it.<br>
+            Three layers. Not places. Not exactly.`,
+
+
 
             '<b>THREE STRATA OF EXISTENCE</b><br><br>' +
 
-            'Through observation and repeated failure, I have identified three distinct layers within the Beast. For ease of communication, I have borrowed psychological terminology.<br><br>' +
+            'I have identified three distinct layers within the Beast. For ease of communication, I have borrowed psychological terminology.<br><br>' +
 
             '<b>1. THE ULTRA EGO</b><br>' +
             'These are the <b>Worlds of Rule</b>.<br>' +
             'Places governed by consistency: gravity, causality, time, logic.<br>' +
-            'Civilizations emerge here. Histories accumulate. Technology advances.<br><br>' +
 
-            'Allarssyn is an Ultra Ego world.<br>' +
-            'So was every world we ever mistook for being “alone.”<br><br>' +
+            '<b>Allarssyn</b> is an Ultra Ego world.<br>' +
+            'So was my <b>world</b>...<br><br>' +
 
-            'Ultra Ego worlds are stable only as long as they are <b>remembered</b> by the system.'
-            ,
+
+            '<b>Ultra Ego worlds</b> are stable only as long as they are <b>remembered</b> by the Beast.',
+
+
 
             '<b>2. THE EGO (The In-Between)</b><br>' +
             'The Ego is not a place so much as a <b>transition</b>.<br>' +
@@ -110,55 +172,115 @@ export const files = {
             'Where dragons make sense.<br>' +
             'Where impossible geography feels natural.<br><br>' +
 
-            'The Ego functions as a mediator between rigid worlds and the deeper system.<br>' +
+            'The Ego functions as a mediator, or a hub between all kind worlds.<br>' +
             'It is accessed primarily through <b>dreams</b>.<br><br>' +
 
             'When a person dreams, their consciousness briefly disconnects from the Ultra Ego and drifts into the Ego.<br>' +
             'This connection is not optional.<br>' +
-            'A world that cannot dream is a world that cannot persist.'
+            '<b>A world that cannot dream is a world that cannot persist.</b>'
             ,
 
             '<b>THE BLACK PYRAMID</b><br><br>' +
 
-            'Ancient records and recurring dream-symbols point to a central construct within the Ego: the <b>Black Pyramid</b>.<br>' +
-            'It is believed to have functioned as a <b>Unified Ego</b>.<br>' +
-            'A time where <b>ALL<> things were one.<br><br>' +
+            'My current theory of what The Black Pyramid. Is a central construct within the Ego.<br>' +
+            'I believe to have functioned as a <b>Unified Ego</b>.<br>' +
+            'A time where <b>ALL</b> things were one.<br><br>' +
 
-            'It also aligns with the Legends of the Pyramid being shattered.<br>' +
-            'Which would explain our world and worlds like ours.<br><br>' +
+            `Which explained why it's shattered,<br>` +
+            'which would explain our world and worlds like ours.<br><br>' +
 
-            'Each Ultra Ego world may be nothing more than a host for the <b>Shards</b>.<br>' +
-            'Which form a self-contained bubble of reality, floating just far enough apart to avoid collapse.',
+            'Each Ultra Ego world may be nothing more than a host for the <b>Shards</b>,<br>' +
+            'which form a self-contained bubble of reality, floating just far enough apart to avoid collapse.',
 
             '<b>3. THE ID (The Void / The Unknown)</b><br>' +
-            `The Id is not a place. It is not a thing in any sense we understand. It does not think. It does not intend. It simply occurs.<br>` +
-
-            'Where the Ego changes form, the Id erases it.<br>' +
-            'Where the Ego dreams, the Id consumes.<br><br>' +
 
             'Contact with the Id results in cognitive dissolution, loss of identity, or worse outcomes I am unwilling to document further...<br><br>' +
 
-            `Studies / Contact, anything on the Id, is prohibited <br>` +
-            'For the sake of all things <b>LEAVE. IT BE.</b>.<br>' +
-            'As it leaves us be.'
-            ,
+            `Studies of, or contact with, anything regarding the Id is <b>prohibited.</b><br>` +
+            'For the sake of all things, <b>LEAVE IT BE.</b><br>' +
+            'As it leaves us be.'+
 
             '<b>FINAL NOTE</b><br><br>' +
 
-            'Once a world slips beyond the Ego,<br>' +
-            'Once it loses the ability to dream,<br>' +
-            'There is no known method of retrieval.<br><br>' +
+            'Once a world loses the ability to dream,<br>' +
+            'To remind <b>The Ego</b> of their existence.,<br>' +
+            'The world simply dissolve to <b>The void</b>,<br>' +
+            'there is no known method of retrieval.<br><br>' +
 
-            'We do not live <i>in</i> the universe.<br>' +
-            'We live inside its attention.'
+            'We do not live <i>in</i> the beast<br>' +
+            '<b>We live inside its attention.</b>'
         ]
     },
 
+    
+falco:{
+    musid:'falco-theme',
+    title:"AUDIO LOG",
+    pages:[
+        `
+        <b>VIVI AUDIO LOG 47</b><br><br>
+        <b>VIVI:</b> "Let me go, you psycho!"<br><br>
+
+        <b>FALCO:</b> "Father! It’s me. Look at me! I know you are in there. Just talk to me!"<br><br>
+
+        <b>VIVI:</b> "I don't know you! You creep, leave me alone!"<br><br>
+
+        <b>VIVI:</b> "Quinnnnnn? Quinn, I think I’m being kidnapped by a fanboy!"<br><br>
+
+        <b>FALCO:</b> "SHUT UP! ... I—sorry. Sorry, Father. Please, just lower your voice. I can restore you, I'll find a way."<br><br>
+
+        <b>FALCO:</b> "I have Louis's research, I'll start from there. Just please help me out over here!"`,
+
+        `<b>VIVI:</b> "You have serious issues, kid. You can’t just kidnap people and expect them to play 'Father and Son' with you. It’s weird. It’s really awkward."<br><br>
+
+        <b>VIVI:</b> "QUINNNNNNNNNN!"<br><br>
+
+        <b>FALCO:</b> "Please SHUT— ... Father, please..."<br><br>
+
+        <b>FALCO:</b> "Why do you love her this much? Huh? After she left you? After she called you a monster?"<br><br>
+
+        <b>FALCO:</b> "I’m your blood. I’m your son... but it’s always her. It’s always been her."<br><br>
+
+        <b>FALCO:</b> "You don't even look me in the eyes... you were just scanning the room for a ghost to come home."`,
+
+        `<b>VIVI:</b> "Ummmmmm... look, I'm sorry for what you are going through, kid. It's really crappy."<br><br>
+
+        <b>FALCO:</b> "Did you even love me?"<br><br>
+
+        <b>VIVI:</b> "Oh please someone help me... I can't handle this THE AWKWARDNESS."<br><br>
+
+        <b>VIVI:</b> "/QUINNNNNNNNNNNNNN/."<br><br>
+
+        <b>FALCO:</b> [Sobbing] "Don't worry, Father."<br><br>
+
+        <b>FALCO:</b> "I’ll find a way. I’ll save you. I’ll save the world."<br><br>
+
+        <b>FALCO:</b> "I’ll make you proud. I’ll make you look at me the way you looked at her."`,
+
+        `<b>VIVI:</b> "Please... sure, buddy! You do that. Go save the world. Just do it somewhere else."<br><br>
+
+        <b>VIVI:</b> "And LEAVE ME BE!"<br><br>
+
+        <b>VIVI:</b> "QUINNNNNN! THERE YOU ARE!"<br><br>
+
+        <b>FALCO:</b> "...Quinn."<br><br>
+
+        <b>QUINN:</b> "Give him back, Falco."<br><br>
+
+        <b>FALCO:</b> "What are you planning to do? I’ve spent my whole life training to be the son he wanted. I overpower you in every way."<br><br>
+
+        <b>QUINN:</b> "Sorry, Falco."<br><br>
+
+        [EMP GRENADE DETONATION]<br>
+        [AUDIO ENDS IN STATIC]`
+    ]
+},
 
 
 projectv:{
-    id:"file2",
     title:"[FILE 7]",
+    id:"file99",
+    musid:'',
     pages:[
         '<b>SUBJECT:</b> PROJECT VIVIAN<br>' +
         '<b>AUTHOR:</b> Louis Wills, Chief Scientist<br><br>' +
@@ -181,21 +303,21 @@ projectv:{
         'All structural decisions become permanent at that moment.<br><br>' +
 
         '<b>THE POD:</b> Each VIVI Pod is a sealed cognitive environment.<br>' +
-        'It is designed to host a living brain while replicating the sensory and regulatory feedback normally provided by a biological body.<br><br>' ,
+        'It is designed to host a living brain while replicating the sensory and regulatory feedback normally provided by a biological body.<br><br>' +
 
         '<b>THE BACKUP PERSONALITY:</b> A secondary cognitive framework is embedded within the Pod.<br>' +
         'This framework functions as a fallback system in the event of host failure, instability, or loss of executive control.<br><br>' +
-        'When activated, <b>VIVI</b> assumes operational autonomy and guides the Pod toward the nearest viable point of safety or recovery.<br><br>' +
+        'When activated, <b>VIVI</b> assumes operational autonomy and guides the Pod toward the nearest viable point of safety or recovery.<br><br>',
 
-        '<b>AUGMENTATION:</b> The Pod is equipped with autonomous defense and mobility systems.<br>' +
+        '<b>AUGMENTATION:</b> The Pod can be equipped with autonomous defense and mobility systems.<br>' +
         'These include electromagnetic discharge capabilities and short-range propulsion.<br><br>' +
-        'Such features were added to ensure a long-term independence from external protection.<br><br>'
+        'Such features is still in development and will be added to ensure a long-term independence from external protection.<br><br>'
     ]
 },
 
 
 quinn:{
-    id:"file3",
+    musid:'arno',
     title:"Opened Letter",
     pages:[
         `<b>To Quinn,</b><br><br>
@@ -208,7 +330,7 @@ quinn:{
         <b>None of them were as difficult as this.</b><br><br>
 
         I remember the first time I saw you.<br>
-        You do not remember it the same way. You were too young. Too busy surviving.<br>
+        You do not remember it the same way.<br> You were too young. Too busy surviving.<br>
         You were watching hands, not faces. Watching exits. Measuring distance.<br>
         You had already learned the habits of a hunted thing.<br>
         That day frightened me, it was like looking in the mirror.<br>
@@ -217,37 +339,58 @@ quinn:{
         `I made choices...<br>
         Terrible ones. <b>Very Terrible ones</b>.<br>
         Choices that history will forgive, because history is written by the victors.<br>
-        But forgiveness from the world has never mattered to me. <b>Only yours.</b><br><br>
+        But forgiveness from the world has never mattered to me. <br><b>Only yours.</b><br><br>
 
-        Everything I built, every action, every thought, was for one simple dream:<br>
-        <b>That you would never have to do what I had done and still do.</b><br><br>
+        Everything I build, every action I take, every thought I think,<br> was for one simple dream:<br>
+        <b>That dream is you not having to do what I had done and still do.</b><br><br>
 
         A place where you would not have to kill.<br>
         Where you would not have to run.<br>
-        Where you would not have to die.<br><br>
+        Where you would not have to die.<br><br>`,
 
 
-        <b>I have never stopped seeing you as my daughter.</b><br>
-        Even when you looked at me like a stranger. Even when you tried to kill me.<br>
-        Even now.<br><br>`,
+        `<b>I never meant to become anything to you.</b><br>
+        I was supposed to kill you that day.<br>
+        But it's like you had this light, that was about to extinguish.<br>
+        I didn't want it to fade. So I stayed. <br>
+        I watched you learn how to trust. <br>
+        I watched you learn how to survive without running.<br>
+        Somewhere along the way, I stopped seeing a contract.<br> And started seeing someone I couldn’t leave behind.<br><br>
+
+        I never said it. I never claimed it.<br>
+        I told myself I had no right.<br><br>
+        But I want you to know, in my heart, <br><b>I have always felt like father to you.</b><br><br>
+        <b>That never and will never change.</b><br>
+        Even when you look at me like a stranger.<br> 
+        Even when you try to kill me.<br>`,
 
         `If this letter has reached you, then I am still here.<br>
-        Waiting.<br>
+        Waiting for you.<br>
         Not as an emperor.<br>
-        As a father.<br>
 
-        <b>a father who wants one last chance to speak to his child.</b><br><br>
+        <b>Just some old man who wants one last chance to speak to his child.</b><br><br>
 
         <b>Please, Quinn.</b><br>
 
         Come see me. I don't think I have long.<br><br>
 
-        Your loving father.
+        Your old man.
         — <b>Arno von Vivian</b>`
     ]
 },
+
 }
 
+
+document.getElementById('file0').onclick = () => {addItemToBackpack(files.vivian,'file0');};
+document.getElementById('file1').onclick = () => {addItemToBackpack(files.beast,'file1');};
+document.getElementById('file2').onclick = () => {addItemToBackpack(files.falco,'file2');};
+document.getElementById('file3').onclick = () => {addItemToBackpack(files.beast1,'file3');};
+//document.getElementById('file4').onclick = () => {addItemToBackpack(files.beast2,'file4');};
+
+const titleEl = document.getElementById('view-title');
+const bodyEl = document.getElementById('view-body');
+const pageEl = document.getElementById('page-num');
 
 
 export let smootherInstance = null; 
@@ -309,7 +452,7 @@ export function showStartButton() {
 
 export function killGSAP() {
     ScrollTrigger.killAll();
-    gsap.set(".parallax-layer", { clearProps: "all" });
+    gsap.set([".parallax-layer",".seven"], { clearProps: "all" });
     if (smootherInstance) {
         smootherInstance.kill();
         smootherInstance = null;
@@ -325,8 +468,10 @@ window.addEventListener('fullscreenchange', () => updateButtonText(fullscreenTog
 
 export function fullscreen(){
     if (!document.fullscreenElement) {
+        handleResizeOrRotate();
         document.documentElement.requestFullscreen();
     } else {
+        handleResizeOrRotate();
         document.exitFullscreen();
     }
     updateButtonText(fullscreenToggle);
@@ -492,6 +637,11 @@ function openInventory() {
 
 // CLOSE FUNCTION
 function closeInventory() {
+    titleEl.innerHTML = 'NO ENTRY SELECTED';
+    bodyEl.innerHTML = 'Select an entry from the backpack. <br> <i>If you have one</i>';
+    pageEl.innerHTML = 1;
+
+    inventoryData.forEach(item => {if(item.musid != '')fadeOut(document.getElementById(item.musid), 1000);});
     document.getElementById('bclose').play();
     unlockScroll();
     const tl = gsap.timeline();
@@ -528,6 +678,7 @@ let inventoryData = JSON.parse(sessionStorage.getItem('inv')) || [
         title: files.quinn.title,
         pages: files.quinn.pages,
         id: files.quinn.id,
+        musid: files.quinn.musid,
         currentPage: 0
     }
 ];
@@ -543,7 +694,8 @@ export function addItemToBackpack(fileObj, elementId) {
     const newItem = { 
         title: fileObj.title, 
         pages: fileObj.pages,
-        id: fileObj.id,
+        id: elementId,
+        musid: fileObj.musid,
         currentPage: 0 
     };
 
@@ -557,6 +709,10 @@ export function addItemToBackpack(fileObj, elementId) {
 }
 
 function updateInv() {
+    titleEl.innerHTML = 'NO ENTRY SELECTED';
+    bodyEl.innerHTML = 'Select an entry from the backpack. <br> <i>If you have one</i>';
+    pageEl.innerHTML = 1;
+
     const listContainer = document.getElementById('inv-list-container');
     
     listContainer.innerHTML = ''; 
@@ -565,10 +721,17 @@ function updateInv() {
         const div = document.createElement('div');
         div.className = 'inv-list-item';
         div.innerHTML = `> ${item.title}`;
-        div.onclick = () => displayItem(item);
+        div.onclick = () =>{
+            displayItem(item);
+            if (item.musid !='')playMusic(document.getElementById(item.musid), 1200);
+            else inventoryData.forEach((item) => {fadeOut(document.getElementById(item.musid), 1000)})
+
+        }
+
+
+
         listContainer.appendChild(div);
         const itemElement = document.getElementById(item.id);
-        console.log(item.id);
         if (itemElement)itemElement.style.display = 'none';
     });
 }
@@ -577,9 +740,6 @@ function displayItem(item) {
     pturn.currentTime = 0;
     pturn.play();
     currentItem = item;
-    const titleEl = document.getElementById('view-title');
-    const bodyEl = document.getElementById('view-body');
-    const pageEl = document.getElementById('page-num');
 
     titleEl.innerHTML = item.title;
     bodyEl.innerHTML = item.pages[item.currentPage];
@@ -606,13 +766,6 @@ document.getElementById('prev-btn').onclick = () => {
 };
 
 
-
-
-
-
-
-document.getElementById('file0').onclick = () => {addItemToBackpack(files.vivian,'file0');};
-document.getElementById('file1').onclick = () => {addItemToBackpack(files.beast,'file1');};
 
 
 const slider = document.getElementById('inv-list-container');
@@ -653,3 +806,74 @@ function triggerNotification(text) {
     }, 3000);
 }
 
+
+
+
+
+
+
+let currentAudio = null;
+
+function playMusic(audio, fadeDuration = 1000) {
+    if (!audio) return;
+
+    // If same track, do nothing
+    if (currentAudio === audio) return;
+
+    // Fade out old track
+    if (currentAudio) {
+        fadeOut(currentAudio, fadeDuration);
+    }
+
+    // Fade in new track
+    fadeIn(audio, fadeDuration);
+    currentAudio = audio;
+}
+
+
+
+
+function killFade(audio) {
+    if (audio._fadeInterval) {
+        clearInterval(audio._fadeInterval);
+        audio._fadeInterval = null;
+    }
+}
+
+function fadeOut(audio, duration = 1000) {
+    if (!audio) return;
+
+    killFade(audio);
+
+    const step = audio.volume / (duration / 50);
+
+    audio._fadeInterval = setInterval(() => {
+        if (audio.volume > step) {
+            audio.volume -= step;
+        } else {
+            audio.volume = 0;
+            audio.pause();
+            killFade(audio);
+        }
+    }, 50);
+}
+
+function fadeIn(audio, duration = 1000) {
+    if (!audio) return;
+
+    killFade(audio);
+
+    audio.volume = Math.max(audio.volume, 0);
+    audio.play();
+
+    const step = 1 / (duration / 50);
+
+    audio._fadeInterval = setInterval(() => {
+        if (audio.volume < 1 - step) {
+            audio.volume += step;
+        } else {
+            audio.volume = 1;
+            killFade(audio);
+        }
+    }, 50);
+}

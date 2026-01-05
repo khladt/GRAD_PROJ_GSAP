@@ -24,7 +24,6 @@
 .parallax-layer {
     position: absolute;
     inset: 0;
-    width: 100%;
     height: 100%;
 }
 
@@ -129,6 +128,7 @@
 
 #S1-FG,
 #S3-FG-0{
+
     position: absolute;
     z-index: 1;
 }
@@ -197,6 +197,34 @@
     animation-duration: 120s;}
 
 
+#S4-FG{
+    opacity: 1.0;
+    height: 100vw;
+    width: auto;
+}
+#S4-FG-1{
+    left: -30%;
+    height: 100vw;
+    width: auto;
+}
+
+
+
+
+
+#S5-F-S{
+    height: 100vh;
+    width: 80vw;
+    left: 20%;
+}
+
+
+#S5-Q-S{
+    height: 100vh;
+    width: 80vw;
+    right: 15%;
+}
+
 #S5-SVG {
     position: absolute;
     stroke-width: 2px;
@@ -223,22 +251,34 @@
 }
 
 
+
 #S6-BG{
-    scale: 1.3;
-}
+    animation: breathing 10s infinite ease-in-out;
+    transform: scale(1);}
+
+#S6-BG-CLOUDS{
+    animation: breathing 6s infinite;
+    top: -10%;}
+
 
 #S6-FG{
-    scale: 1.8;
-    top: 110%;
+    transform: scale(1.8);
+    top: 118%;
     left: -35%;
 }
 
+#S6-FGFR{
+    left: 10%;
+    bottom: 50%;
+    transform: scaleX(1.4);
+}
 
 #S6-RAHAL{
     scale: 1.1;
     height: 100vh;
     width: auto;
     left: -5%;
+    top: -4%;
     opacity: 1;
     filter: blur(0px) brightness(1.0);
     border: 50px solid #000000;
@@ -249,56 +289,101 @@
     height: 100vh;
     width: auto;
     position: absolute;
-    bottom: 55%;
-    left: 49%;
-    scale: 0.5;
-    transform-origin: center;
-}
-
-#S6-R1{
-    left: 39%;
     bottom: 58%;
+    left: 40%;
+    scale: 0.5;    
+    transform-origin: center;
+
 }
-#S6-R4{left: 34%;}
 
-#S6-R6{
-    bottom: 56%;
-    left: 72%;}
+.DRAMA{animation: drama-rahal 1.5s infinite ease-out;}
 
-#S6-R7{bottom: 58%; left: 60%;}
+@keyframes drama-rahal {
+    0%{
+        left: 40%;
+        rotate: 0deg;}
+    25%{
+        left: 45%;
+        rotate: 5deg;}
+    50%{
+        left: 40%;
+        rotate: 0deg;}
+    75%{
+        left: 35%;
+        rotate: -5deg;}
+    100%{
+        left: 40%;
+        rotate: 0deg;}
+    
+}
+
+
+#S6-R1{left: 35%;}
+#S6-R4{left: 35%;
+animation: R-4drama-rahal 2s infinite;}
+
+@keyframes R-4drama-rahal {
+    0%{
+        left: 35%;
+        top: -50%;
+        rotate: 0deg;}
+    50%{
+        left: 30%;
+        top: -45%;
+        rotate: -10deg;}
+    100%{
+        left: 35%;
+        top: -50%;
+        rotate: 0deg;}
+    
+}
+
+#S6-R5{left: 46%;}
+#S6-R6{bottom: 60%; left: 55%;}
+
+#S6-R7{
+    animation: breathing 6s infinite ease-in-out;
+    bottom: 60%; left: 50%;}
 
 
 #arfop0,#arfop1{
+    animation: breathing 3s infinite ease-in-out;
     width: 15vw;
-    left: 22%;
-    top: 5%;
+    left: 13%;
+    top: 20%;
     transform-origin: bottom;
 }
 
 
+#S6-ISLAND{
+    bottom: -70%;
+    transform: scale(0.1);
+}
+
 
 #S6-LHOUSE{
+    animation: breathing 3s infinite ease-in-out;
     scale: 0.4;
-    top: -30%;
+    top: -45%;
     height: 100vw;
     width: auto;
-    left: 19%;
+    left: 5%;
 }
 
+
+
 #S6-IUPDOWN{
-    scale: 0.2;
-    top: -75%;
-    left: -43%;
+    transform: rotate(30deg) scale(0.15);
+    top: -105%;
+    left: -40%;
 }
+
 
 #S6-ITREE,#S6-FLOATS-ITREE{
     scale: 0.3;
     left: 34%;
     top: -50%;
 }
-
-
-
 
 
 
@@ -398,27 +483,54 @@ animation: anger-head-anim 0.9s infinite;
     
     transform: translate(-50%, 50%); 
     
-    filter: brightness(0.2) saturate(2) hue-rotate(350deg);
+    filter: brightness(0.1) saturate(1) hue-rotate(350deg);
     cursor: pointer;
     transition: transform 0.2s ease;
 }
-
 
 #file1 {
     pointer-events: all;
     position: absolute;
     width: 5vw;
-    right: -50%;
-    bottom: -50%;
+    right: 88%;
+    bottom: 70%;
     transform: translate(-50%, 50%); 
-    filter: brightness(0.2) saturate(2) hue-rotate(350deg);
+    filter: brightness(0.1) saturate(1) hue-rotate(30deg);
     cursor: pointer;
     rotate: 70deg;
     transition: transform 0.2s ease;
 }
 
 
-#file0:hover,#file1:hover {
+#file2 {
+    pointer-events: all;
+    position: relative;
+    width: 2vw;
+    right: -11%;
+    bottom: -27.5%;
+    transform: translate(-50%, 50%); 
+    filter: brightness(0.1) saturate(1) hue-rotate(30deg);
+    cursor: pointer;
+    rotate: 70deg;
+    transition: transform 0.2s ease;
+}
+
+
+#file3 {
+    pointer-events: all;
+    position: absolute;
+    width: 5vw;
+    right: 150%;
+    bottom: -25%;
+    transform: translate(-50%, 50%); 
+    filter: brightness(0.01) saturate(0) hue-rotate(30deg);
+    cursor: pointer;
+    rotate: 70deg;
+    transition: transform 0.2s ease;
+}
+
+
+#file0:hover,#file1:hover,#file2:hover,#file3:hover,#file4:hover {
     transform: translate(-50%, 50%) scale(1.1);
     -webkit-filter: brightness(0.3) saturate(5) hue-rotate(350deg) drop-shadow(5px 5px 0 rgb(255, 0, 0));
 }
@@ -442,11 +554,6 @@ animation: anger-head-anim 0.9s infinite;
         Characters Layers
    ==================================================================================== */
 
-
-#secret-vivi {
-    filter: brightness(var(--intensity, 1));
-    transition: filter 0.1s ease; 
-}
 
 .quinn-character-s1{
     top: -0.5%;
@@ -518,7 +625,7 @@ animation: anger-head-anim 0.9s infinite;
 
 
 .Seven{
-    position: absolute;
+    position: relative;
     background-image: url('img/Seven/sss-s1.png');
     width: 15%;
     height: auto;
@@ -538,9 +645,11 @@ animation: anger-head-anim 0.9s infinite;
 
 
 
-
-
-
+#secret-vivi {
+    position: absolute;
+    filter: brightness(var(--intensity, 1));
+    transition: filter 1.0s ease;
+}
 
 
 

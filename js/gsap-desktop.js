@@ -17,7 +17,7 @@ export function startDesktopGSAP(s, q, f,rname) {
     const smootherInstance = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
         content: "#smooth-content",
-        smooth: 1.5,
+        smooth: 2.5,
         normalizeScroll: true,
         effects: true,
     });
@@ -46,11 +46,11 @@ if (aspectRatio > 1.81){
 }
 
 
-    let runAnimation = gsap.timeline({
+    let tl = gsap.timeline({
         scrollTrigger: {
             trigger: "#story-parallax",
             start: "top top",
-            end: () => "+=" + 250 * window.innerHeight,            
+            end: () => "+=" + 350 * window.innerHeight,            
             scrub: 1, 
             pin: true,
             anticipatePin: 1,
@@ -58,7 +58,7 @@ if (aspectRatio > 1.81){
         }
     });
 
-    runAnimation
+    tl
 
     .set(path, {strokeDashoffset: pathLength })
 
@@ -80,17 +80,17 @@ if (aspectRatio > 1.81){
      },0)
     
 
-    .fromTo('#S1-BG', { y: "-550%"}, {y:"0%", duration: 24.5 }, 0)
-    .fromTo('#S1-TOWER', { y: "-550%"}, {y:"0%", duration: 24.3 }, 0)
-    .fromTo('#S1-FOG-2', { y: "-550%"}, {y:"15%", duration: 23.1 }, 0) 
-    .fromTo('#S1-L2', { y: "-550%"}, {y:"-18%", duration: 23 }, 0) 
+    .fromTo('#S1-BG', { y: "-550%"}, {y:"0%", duration: 44.5 }, 0)
+    .fromTo('#S1-TOWER', { y: "-550%"}, {y:"0%", duration: 44.3 }, 0)
+    .fromTo('#S1-FOG-2', { y: "-550%"}, {y:"15%", duration: 43.1 }, 0) 
+    .fromTo('#S1-L2', { y: "-550%"}, {y:"-18%", duration: 43 }, 0) 
 
-    .fromTo('#S1-L1', { y: "-550%"}, {y:"1%", duration: 22.5 }, 0)
-    .fromTo('#S1-FOG-1', { y: "-550%"}, {y:"25%", duration: 22.3 }, 0) 
-    .fromTo('#S1-L0', { y: "-550%"}, {y:"0%", duration: 21.1 }, 0)
-    .fromTo('#S1-FOG-0', { y: "-550%"}, {y:"25%", duration: 21.5 }, 0) 
+    .fromTo('#S1-L1', { y: "-550%"}, {y:"1%", duration: 42.5 }, 0)
+    .fromTo('#S1-FOG-1', { y: "-550%"}, {y:"25%", duration: 42.3 }, 0) 
+    .fromTo('#S1-L0', { y: "-550%"}, {y:"0%", duration: 41.1 }, 0)
+    .fromTo('#S1-FOG-0', { y: "-550%"}, {y:"25%", duration: 41.5 }, 0) 
 
-    .fromTo('#S1-FG', { y: "-550%"}, {y: "40%", duration: 20 }, 0)
+    .fromTo('#S1-FG', { y: "-550%"}, {y: "40%", duration: 40 }, 0)
 
 
     .fromTo('.Seven', 
@@ -113,7 +113,7 @@ if (aspectRatio > 1.81){
     .fromTo('#S1-QUINN-0', { opacity: 0}, {opacity: 1, duration: 3 },"<")   
 
     .to('.Seven',{className:'Seven is-front-wave'}, "<")
-    .to('.dialogue-text',{text: "Entrance. Underground. You’re welcome.", duration: 9 },"<")
+    .to('.dialogue-text',{text: "Entrance. Underground. You’re welcome.", duration: 25 },"<")
 
 
 
@@ -122,9 +122,10 @@ if (aspectRatio > 1.81){
     .to('#chara-quinn',{opacity:1,duration:1},"<")
     .to('#chara-seven',{opacity:0,duration:1},"<")
     .to('.character-name', {text: q, duration: 7 },"<")
-    .to('.dialogue-text',{text: "Should lead us to that tower, safer than on ground.", duration: 15 },"<")
+    .to('.dialogue-text',{text: "", duration: 0 },"<")
+    .to('.dialogue-text',{text: "Should lead us to that tower, safer than on ground.", duration: 15 },">")
 
-    .to('.dialogue-box',{x:"55vw",y:"-40vh" ,scale: 1, duration: 2 },">+=10")
+    .to('.dialogue-box',{x:"55vw",y:"-40vh" ,scale: 1, duration: 2 },">+=20")
     .to('#chara-quinn',{opacity:0,duration:1},"<")
     .to('#chara-seven',{opacity:1,duration:1},"<")
     .to('.character-name', {text: s, duration: 7 },"<")
@@ -256,18 +257,18 @@ if (aspectRatio > 1.81){
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text: `VIVI! We've talked about this!`, duration: 10 },"<")
+.to('.dialogue-text',{text: `VIVI!`, duration: 25 },"<")
 
 
-.to('.dialogue-box',{x:"0vw",y:"-70vh", duration: 10 },"<+20")
+.to('.dialogue-box',{x:"0vw",y:"-70vh", duration: 10 },"<+35")
 .to('.character-name', {text: s, duration: 3 },"<")
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
 .to('.dialogue-text',{text: "...fine.", duration: 5 },"<")
-.to('.dialogue-text',{text: "I'll sing with my internal voice.", duration: 10 },">+=10")
+.to('.dialogue-text',{text: "I'll sing with my internal voice.", duration: 25 },"<+=35")
 
 
-.to('.dialogue-box',{x:"0vw",y:"-80vh", duration: 15 },"<+=25")
+.to('.dialogue-box',{x:"0vw",y:"-80vh", duration: 15 },"<+=35")
 .to('.character-name', {text: q, duration: 3 },"<")
 .to('#chara-quinn', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
@@ -303,7 +304,7 @@ if (aspectRatio > 1.81){
 .to('#s2-bg', { volume: "0.0", duration: 14.5 }, "<")
 
 
-.fromTo('#S4-FG',{filter:"brightness(30%) saturate(0%)" ,scale:2.5,y:'250%',x:'75%'},{y:'10%',duration: 35},'<+=5')
+.fromTo(['#S4-FG','#S4-FG-1'],{filter:"brightness(30%) saturate(0%)" ,scale:2.5,y:'250%',x:'75%'},{y:'25%',duration: 35},'<+=5')
 
 .fromTo('.Quinn-lantern',{scale: 2.3,y:'30%',x:'-80%', opacity:0.0},{x:'-75%',opacity:0.5,duration: 20})
 
@@ -346,6 +347,7 @@ if (aspectRatio > 1.81){
 
 .to('.Quinn-lantern',{opacity: 0.7,x:'-70%',duration: 10})
 .to('#S4-FG',{filter:"brightness(100%)",duration: 15},"<")
+.to('#S4-FG-1',{filter:"brightness(90%) saturate(50%)",duration: 15},"<")
 
 .to('.Seven',{className:'Seven is-front',scaleX:1,duration:0},"<")
 
@@ -433,11 +435,13 @@ if (aspectRatio > 1.81){
 
 .to('.Quinn-lantern',{x:'-33%',duration: 5},"<+=3")
 .to('#S4-FG',{x:'66%',duration: 3},"<")
+
 .set('.Quinn',{className: 'Quinn b'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern d'},'<')
 
 .to('.Quinn-lantern',{x:'-30%',duration: 2},"<+=6")
 .to('#S4-FG',{x:'63%',duration: 3},"<")
+
 .set('.Quinn',{className: 'Quinn c'},'<')
 .to({}, {
     onStart: () => playRandomStep(),
@@ -447,6 +451,7 @@ if (aspectRatio > 1.81){
 
 .to('.Quinn-lantern',{x:'-28%',duration: 5},"<+=3")
 .to('#S4-FG',{x:'59%',duration: 3},"<")
+
 .set('.Quinn',{className: 'Quinn d'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern b'},'<')
 
@@ -454,6 +459,7 @@ if (aspectRatio > 1.81){
 
 .to('.Quinn-lantern',{x:'-27%',duration: 2},"<+=6")
 .to('#S4-FG',{x:'57%',duration: 3},"<")
+
 .set('.Quinn',{className: 'Quinn a'},'<')
 .to({}, {
     onStart: () => playRandomStep(),
@@ -490,6 +496,7 @@ if (aspectRatio > 1.81){
 
 .to('.Quinn-lantern',{x:'-19%',duration: 2},"<+=6")
 .to('#S4-FG',{x:'45%',duration: 3},"<")
+.to('#S4-FG-1',{x:'73%',duration: 3},"<")
 .set('.Quinn',{className: 'Quinn a'},'<')
 .to({}, {
     onStart: () => playRandomStep(),
@@ -499,6 +506,8 @@ if (aspectRatio > 1.81){
 
 .to('.Quinn-lantern',{x:'-17%',duration: 5},"<+=3")
 .to('#S4-FG',{x:'42%',duration: 3},"<")
+.to('#S4-FG-1',{x:'71%',duration: 3},"<")
+
 .set('.Quinn',{className: 'Quinn b'},'<') 
 .set('.Quinn-lantern',{className: 'Quinn-lantern d'},'<')
 .to('.Seven',{className:'Seven is-side'},"<")
@@ -506,6 +515,8 @@ if (aspectRatio > 1.81){
 
 .to('.Quinn-lantern',{x:'-16%',duration: 2},"<+=6")
 .to('#S4-FG',{x:'38%',duration: 3},"<")
+.to('#S4-FG-1',{x:'70%',duration: 3},"<")
+
 .set('.Quinn',{className: 'Quinn c'},'<')
 .to({}, {
     onStart: () => playRandomStep(),
@@ -517,11 +528,15 @@ if (aspectRatio > 1.81){
 
 .to('.Quinn-lantern',{x:'-13%',duration: 5},"<+=3")
 .to('#S4-FG',{x:'34%',duration: 3},"<")
+.to('#S4-FG-1',{x:'69%',duration: 3},"<")
+
 .set('.Quinn',{className: 'Quinn d'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern b'},'<')
 
 .to('.Quinn-lantern',{x:'-11%',duration: 2},"<+=6")
 .to('#S4-FG',{x:'29%',duration: 3},"<")
+.to('#S4-FG-1',{x:'68%',duration: 3},"<")
+
 .set('.Quinn',{className: 'Quinn a'},'<')
 .to({}, {
     onStart: () => playRandomStep(),
@@ -531,6 +546,8 @@ if (aspectRatio > 1.81){
 
 .to('.Quinn-lantern',{x:'-9%',duration: 5},"<+=3")
 .to('#S4-FG',{x:'25%',duration: 3},"<")
+.to('#S4-FG-1',{x:'67%',duration: 3},"<")
+
 .set('.Quinn',{className: 'Quinn b'},'<')
 .set('.Quinn-lantern',{className: 'Quinn-lantern d'},'<')
 
@@ -694,7 +711,7 @@ if (aspectRatio > 1.81){
 
 
 .to('.dialogue-box',{x:"100vw",y:"-85vh", duration: 15 },"<")
-.to('#S4-FG',{y:'-200%',duration: 25})
+.to(['#S4-FG',"#S4-FG-1"],{y:'-200%',duration: 25})
 
 .set("#S5-SVG", { y: "50vh", yPercent:-60}) 
 .fromTo(path,{strokeDasharray:pathLength,strokeDashoffset: pathLength} , {strokeDashoffset: 0,duration: 250,ease: "none"})
@@ -722,7 +739,7 @@ if (aspectRatio > 1.81){
 .set('.dialogue-text', { text: ""}, "<")
 .to('.dialogue-text',{text: "Tsk Tsk.", duration: 10 },"<")
 .set('.dialogue-text', { text: ""}, "<")
-.to('.dialogue-text',{text: "I’m serious, Quinn. You've go to change your mindset.", duration: 35 },"<+=30")
+.to('.dialogue-text',{text: "I’m serious, Quinn. You've go t-", duration: 35 },"<+=30")
 
 
 .to("#S5-SVG", { yPercent: responsiveValues.svgp1, duration: 120, ease: "none" }, "<+15")
@@ -732,9 +749,9 @@ if (aspectRatio > 1.81){
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-seven', {opacity:1,duration:1},"<")
 .set('.dialogue-text', { text: ""}, "<")
-.to('.dialogue-text',{text: "Anyway.", duration: 5 },">")
-.set('.dialogue-text', { text: ""}, "<")
-.to('.dialogue-text',{text: "Pretty sure my audio drivers broke again. I can hear your footstep twice.", duration: 35 },">+=15")
+.to('.dialogue-text',{text: "Ummm...", duration: 5 },">")
+.set('.dialogue-text', { text: ""}, ">+=15")
+.to('.dialogue-text',{text: "Pretty sure my audio drivers broke again. I can hear your footstep twice.", duration: 35 },">")
 
 .to("#trem",{volume:0.0, duration: 40},"<")
 
@@ -775,7 +792,7 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text',{text: "", duration: 1 },"<")
 .to('.dialogue-text',{text: "Nevermind...", duration: 5 },"<")
 
-.fromTo('#S5-F-S',{scale:"0.7",y:"-15%",x:"100%"},{x:"45%" ,duration:10},">+=30")
+.fromTo('#S5-F-S',{x:"100%"},{x:"45%" ,duration:10},">+=30")
 .fromTo('#S5-Falco-0',{opacity:"1.0",scale:"0.4",y:"-20%",x:"100%"},{x:"30%",duration:5},"<")
 .fromTo('#S5-Falco-1',{filter: "blur(10px) brightness(1.5",opacity:"0.0",scale:"0.4",y:"-20%",x:"28%"},{},"<")
 .fromTo('#S5-Falco-2',{filter: "blur(10px) brightness(1.5",opacity:"0.0",scale:"0.4",y:"-20%",x:"28%"},{},"<")
@@ -809,7 +826,7 @@ if (aspectRatio > 1.81){
 .set('.shead',{className:"shead shead-talk"},"<")
 .to('.shead',{x:"-100%",scale:2.5,duration:15},"<")
 .fromTo('.shead img',{scale:0.0},{rotation:"-10%",y:"-60%",x:"-30%",scale:0.7,duration:15},"<")
-.to('.dialogue-box', { x: "-=15",y:"-=15", yoyo: true, repeat: 15, duration: 2 }, "<")
+.to('.dialogue-box', { x: "-=15",y:"-=15", yoyo: true, repeat: 8, duration: 2 }, "<")
 .to('.dialogue-text',{text: "Hey! Is that my hat?!", duration: 10 },"<")
 
 .to("#S5-Falco-0",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},">+=5")
@@ -891,7 +908,7 @@ if (aspectRatio > 1.81){
 .to('.shead img',{scale:1.0 ,duration:15},"<")
 .to('.shead',{className:"shead shead-talk" ,duration:15},"<")
 
-.to('.character-name', {text: f, duration: 3 },">+=15")
+.to('.character-name', {text: f, duration: 3 },">+=25")
 .to('.shead',{className:"shead" ,duration:15},"<")
 
 .to("#S5-Falco-3",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},"<")
@@ -904,10 +921,10 @@ if (aspectRatio > 1.81){
 .to('#S5-Falco-4', {y:"-=25" ,x: "-=25", yoyo: true, repeat: 55, duration: 2 }, "<")
 .to('.dialogue-text',{text: "I DIDN'T STEAL ANYTHING!!!!", duration: 25 },"<")
 .to('.dialogue-text',{text: "", duration: 0 },">+=25")
-.to('.dialogue-text',{text: "YOU GIFTED TO ME THIS DAMN <i>HAT</i>.", duration: 25 },"<")
+.to('.dialogue-text',{text: "YOU GAVE ME THAT DAMN <i>HAT</i>.", duration: 25 },"<")
 .to('.dialogue-text',{text: "", duration: 0 },">+=15")
 .to('.character-name', {text: "FALCO VON VIVIAN !!!!!", duration: 3 },"<")
-.to('.dialogue-text',{text: "YOUR OWN SON FALCO VON VIVIAN!!!!", duration: 15 },"<")
+.to('.dialogue-text',{text: "YOUR OWN SON. FALCO VON VIVIAN!!!!", duration: 15 },"<")
 
 
 .to('.dialogue-text',{text: "", duration: 0 },">+25")
@@ -998,7 +1015,7 @@ if (aspectRatio > 1.81){
     "<"
 )
 
-.fromTo('#S5-Q-S',{scale:"0.7",y:"-15%", x:"-100%"},{x:"-45%",duration:25},"<")
+.fromTo('#S5-Q-S',{x:"-100%"},{x:"-45%",duration:25},"<")
 .fromTo('#S5-Quinn',{scale:"0.4",x:"-100%"},{x:"-30%",duration:15},"<")
 
 .to('.dialogue-box',{x:"0vw",y:"-80vh", duration: 15 },">+=15")
@@ -1014,7 +1031,7 @@ if (aspectRatio > 1.81){
 .to('#chara-quinn', {opacity:0,duration:1},"<")
 .to('#chara-falco', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
-.to('.dialogue-text',{text: "Come on sis, no need for that. <br><i>My gun is actually unloaded.</i>", duration: 25 },"<")
+.to('.dialogue-text',{text: "Come on Quinn, no need for that. <br><i>I'm actually out of ammo.</i>", duration: 25 },"<")
 
 
 .to('.dialogue-box',{x:"40vw",y:"-80vh", duration: 15 },">+=15")
@@ -1150,7 +1167,7 @@ if (aspectRatio > 1.81){
 .to('#chara-falco', {opacity:1,duration:1},"<")
 .to('#chara-seven', {opacity:0,duration:1},"<")
 .to('.dialogue-box', {scale:1.4,y:"-=25" ,x: "-=25", yoyo: true, repeat: 5, duration: 2 }, "<")
-.to('.dialogue-text',{text: "OH COME OOOOOOON!!!", duration: 5 },"<")
+.to('.dialogue-text',{text: "NOT AGAIN!", duration: 5 },"<")
 
 .to("#S5-Falco-5",{filter: "blur(5vw) brightness(1.5)",opacity:"0.0",duration:10},"<")
 .to('#S5-Falco-1',{filter: "blur(0px) brightness(1)",opacity:"1.0",duration:2},"<")
@@ -1213,12 +1230,10 @@ if (aspectRatio > 1.81){
 },"<")
 
 
-// PART 1: PANIC MODE
 
-.fromTo([".S6","#S6-BG"], { opacity: 0},{})
+.fromTo([".S6"], { opacity: 0},{})
 
-
-.to('.dialogue-box', {scale:1.2, x: "40vw", y: "-25vh", duration: 15 }, "+=80")
+.to('.dialogue-box', {scale:1.2, x: "40vw", y: "-25vh", duration: 15 }, "+=60")
 .to('.dialogue-box', { y: "-=15",x:"-=15", yoyo: true, repeat: 3, duration: 2 }, "<")
 .to('.character-name', { text: 'Rahal', duration: 5 }, "<")
 .to(['#chara-falco', '#chara-quinn', '#chara-seven'], { opacity: 0, duration: 15 }, "<")
@@ -1231,33 +1246,26 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
 .to('.dialogue-box',{scale:0, duration: 15 },"<")
 
-
-
 .to('.dialogue-box', {scale:1,x: "60vw", y: "-80vh", duration: 25, ease: "power2.out" }, "+=35") 
 
-.fromTo('#rahal', 
+.fromTo('#rahal-p0', 
     { volume: 0.0 }, 
     { 
         volume: 0.5, 
         duration: 15.5,
         onStart: () => {
-            const r1 = document.getElementById("rahal");
+            const r1 = document.getElementById("rahal-p0");
             r1.currentTime = 0;
             r1.play();
-
         },
         onReverseComplete: () => {
-            const gyard = document.getElementById("rahal");
+            const gyard = document.getElementById("rahal-p0");
             gyard.pause();
             gyard.currentTime = 0;
-
         }
     }, 
     "<"
 )
-
-
-
 
 .to('.character-name', { text: s, duration: 5 }, "<")
 .to('#chara-rahal', { opacity: 0, duration: 10 }, "<")
@@ -1265,93 +1273,81 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
 .to('.dialogue-text', { text: "Hmmmm........", duration: 30 }, ">")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
+// 50 is not greater than 50, remains 50
 .to('.dialogue-text', { text: "What... happened... why is my arm raised like that?",letterSpacing:"3px", duration: 50 }, ">")
 
+// 50 is not greater than 50, remains 50
+.fromTo("#S6-RAHAL", {filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 50.0, },"<")
 
-.fromTo("#S6-RAHAL", 
-  {filter:"blur(50px)",opacity: 0 }, { 
+// 55.5 -> 35.5
+.to("#S6-RAHAL", {filter:"blur(50px)",opacity: 0, duration: 35.5, stagger: 0.05, ease: "power2.inOut"},"+=15")
+
+// 55.5 -> 35.5
+.fromTo([".S6:not(#S6-RAHAL)"],  {filter:"blur(50px)",opacity: 0 }, { 
     filter:"blur(0px)",
     opacity: 1, 
-    duration: 55.5, 
-    stagger: 0.05,
-    ease: "power2.inOut" 
-  },"<")
-
-
-.to("#S6-RAHAL", {filter:"blur(50px)",opacity: 0, duration: 55.5, stagger: 0.05, ease: "power2.inOut"},"+=15")
-
-
-.fromTo([".S6:not(#S6-RAHAL), #S6-BG","#S6-FG"],  {filter:"blur(50px)",opacity: 0 }, { 
-    filter:"blur(0px)",
-    opacity: 1, 
-    duration: 55.5, 
+    duration: 35.5, 
     stagger: 0.05,
     ease: "power2.inOut" 
   },"+=5")
 
-
 .fromTo("#S6-R0",{filter:"blur(50px)",opacity: 0, opacity:0}, {filter:"blur(0px)",opacity: 0, opacity: 1, duration: 25.5, stagger: 0.05, ease: "power2.inOut"},"<")
 
-.to('.dialogue-box', { x: "5vw", y: "-80vh", duration: 15, ease: "back.out(2)" })
+.to('.dialogue-box', { x: "40vw", y: "-80vh", duration: 15, ease: "back.out(2)" })
 .to('.character-name', { text: 'Rahal', duration: 0.1 }, "<")
 .to('#chara-seven', { opacity: 0, duration: 0.2 }, "<")
 .to('#chara-rahal', { opacity: 1, duration: 0.2 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, ">")
-.to('.dialogue-text', { text: `WHAT THE HELL WAS THAT?!`, duration: 25.2 }, "<")
+.to('.dialogue-text', { text: `WHAT THE HELL, VIVI?!`, duration: 25.2 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
 
 .to("#S6-R0", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
 .fromTo("#S6-R1",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
 
-
 .to('.dialogue-text', { text: `YOU WERE THIS CLOSE TO KILLING US BOTH!`, duration: 25.2 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
-.to('.dialogue-text', { text: `And who the hell is "Quinn"??"`, duration: 25.2 }, "<")
+.to('.dialogue-text', { text: `Also who is this "Quinn"??"`, duration: 25.2 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
 
 .to("#S6-R1", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
-.fromTo("#S6-R2",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
+.fromTo("#S6-R0",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
+.set("#S6-R0",{className:""},"<")
+.set("#S6-R0",{className:"DRAMA"},"<")
 
-.to('.dialogue-text', { text: `"Quinnnnn!" "Where are you, Quiiinnn?.`, duration: 25.2 }, "<")
+.to('.dialogue-text', { text: `"Quinnnnn!" "Where are you, Quiiinnn?."`, duration: 25.2 }, "<")
 
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
-.to("#S6-R2", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
-.fromTo("#S6-R3",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 5.5, stagger: 0.05, ease: "power2.inOut"},"<")
 .to('.dialogue-text', { text: `"Please don't leave me quinnnn".`, duration: 25.2 }, "<")
 
-
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
-.to("#S6-R3", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
+.to("#S6-R0", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
 .fromTo("#S6-R4",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
 .to('.dialogue-text', { text: `"Oh save me Quinn.".`, duration: 25.2 }, "<")
 
-
-
 .to('.dialogue-box', { x: "30vw", y: "-80vh", duration: 25, ease: "power2.out" }, ">+=15") 
-
 
 .to('.character-name', { text: s, duration: 5 }, "<")
 .to('#chara-rahal', { opacity: 0, duration: 10 }, "<")
 .to('#chara-seven', { opacity: 1, duration: 10 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
-.to('.dialogue-box', { y: "-=5",x:"-=15", yoyo: true, repeat: 3, duration: 2 }, "<")
-.to('.dialogue-text', { text: "I had an episode. ALRIGHT! ", duration: 25 }, "<")
+.to('.dialogue-box', { y: "-=5",x:"-=25", yoyo: true, repeat: 4, duration: 2 }, "<")
+.to('.dialogue-text', { text: "I had an episode. ALRIGHT! ", duration: 15 }, "<")
 
-.to("#S6-R4", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"+=10")
+.to("#S6-R4", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},">+=15")
 .fromTo("#S6-R5",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
-
+.to('.dialogue-text', { text: "...", duration: 1 }, "<")
 
 .set("#arfop1",{opacity:0.0},"+=26")
 .set("#arfop0",{opacity:1.0},"<")
 
 .to("#S6-R5", {x:"50%", duration: 10.5, stagger: 0.05, ease: "power2.inOut"},"<")
-.to(["#S6-LHOUSE","#S6-IUPDOWN"],{y:"-28%",x:"10%", duration :55},"<")
-.to(["#S6-ITREE","#S6-FLOATS-ITREE"],{y:"-20%",x:"30%", duration :55},"<")
-.to("#S6-FLOAT0",{y:"-35%",x:"4%", duration :50},"<")
-.to("#S6-FLOAT1",{y:"-30%",x:"8%", duration :45},"<")
-.to("#S6-BG",{x:"1%",y:"-60%", duration: 45},"<")
-.to("#S6-FG",{x:"70%",y:"-45%", duration :40},"<")
-
+.to(["#S6-LHOUSE","#S6-IUPDOWN","#S6-ISLAND"],{y:"-45%",x:"10%", duration :40},"<")
+.to(["#S6-ITREE","#S6-FLOATS-ITREE"],{y:"-50%",x:"30%", duration :40},"<")
+.to("#S6-FLOAT0",{y:"-65%",x:"4%", duration :35},"<")
+.to("#S6-FLOAT1",{y:"-80%",x:"8%", duration :25},"<")
+.to(["#S6-BG","#S6-BG-CLOUDS"],{x:"1%",y:"-60%", duration: 30},"<")
+.to("#S6-FG",{x:"70%",y:"-61%", duration :30},"<")
+.to("#S6-FG",{scale: 2.3,x:"85%", duration :20})
 
 .to('.dialogue-box', {scale:1,x: "10vw", y: "-50vh", duration: 5, ease: "back.out(2)" }, "<")
 .to('.dialogue-text', { text: "...", duration: 0 }, "<")
@@ -1361,15 +1357,12 @@ if (aspectRatio > 1.81){
 
 .set("#S6-R5",{opacity:0.0,x:"10%"},"<")
 
-
-.to('.dialogue-box', {x: "10vw", y: "-50vh", duration: 5, ease: "back.out(2)" }, "+=15")
+.to('.dialogue-box', {x: "45vw", y: "-80vh", duration: 5, ease: "back.out(2)" }, "+=15")
 .to('.character-name', { text: 'Arfop', duration: 5 }, "<")
 .to('#chara-seven', { opacity: 0, duration: 15 }, "<")
 .to('#chara-arfop', { opacity: 1, duration: 15 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
 .to('.dialogue-text', { text: "...", duration: 10 }, ">")
-
-
 
 .to('.dialogue-box', { x: "70vw", y: "-80vh", duration: 15, ease: "back.out(2)" }, ">+=16")
 .to('.character-name', { text: 'Rahal', duration: 0.1 }, "<")
@@ -1378,46 +1371,45 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text', { text: "", duration: 0 }, ">")
 .to('.dialogue-text', { text: `<i>sigh</i>... he wants "His" backpack back.`, duration: 25.2 }, "<")
 
-
-
-.to('.dialogue-box', { x: "40vw", y: "-70vh", duration: 25, ease: "power2.out" }, ">+=15") 
+.to('.dialogue-box', { x: "10vw", y: "-70vh", duration: 25, ease: "power2.out" }, ">+=15") 
 .to('.character-name', { text: s, duration: 5 }, "<")
 .to('#chara-rahal', { opacity: 0, duration: 10 }, "<")
 .to('#chara-seven', { opacity: 1, duration: 10 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
 .to('.dialogue-text', { text: "Oh! Didn't realize I had it on me.", duration: 25 }, ">")
 
-.to('.inv-tool-icon', {y: "+=30", scale: 0, rotation: -25, duration: 15, ease: "back.in(1.5)"}, ">+=15")
-
+.to('.inv-tool-icon', {y: "+=100",x:"100%", scale: 3.5, rotation: -25, duration: 5, ease: "back.in(1.5)"}, ">+=5")
+.to('.inv-tool-icon', {y: "-=100", scale: 0, rotation: 25, duration: 5, ease: "power2.inOut(1.5)"}, ">+=5")
 
 .set("#arfop1",{opacity:1.0},"<")
 .set("#arfop0",{opacity:0.0},"<")
 .call(() => {document.getElementById('bclose').play()}, null, "<")
 
-
-.to('.dialogue-box', {x: "10vw", y: "-60vh", duration: 5, ease: "back.out(2)" }, ">+=15")
+.to('.dialogue-box', {x: "45vw", y: "-80vh", duration: 5, ease: "back.out(2)" }, ">+=15")
 .to('.character-name', { text: 'Arfop', duration: 5 }, "<")
 .to(['#chara-seven', '#chara-norina'], { opacity: 0, duration: 15 }, "<")
 .to('#chara-arfop', { opacity: 1, duration: 15 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
 .to('.dialogue-text', { text: "...", duration: 10 }, ">")
 
+// 50 stays 50
+.to("#S6-FG",{scale: 1.8,x:"70%",y:"0%", duration :50},"+=16")
+// 55 -> 35
+.to(["#S6-LHOUSE","#S6-IUPDOWN","#S6-ITREE","#S6-FLOATS-ITREE,#S6-FLOAT0","#S6-FLOAT1","#S6-BG-CLOUDS","#S6-BG","#S6-ISLAND"],{y:"0%", duration :35},"<")
 
+.to('.dialogue-box', {scale:0,x: "45vw", y: "-80vh", duration: 5, ease: "back.out(2)" }, "<")
+.to('.dialogue-text', { text: "", duration: 1 }, "<")
 
-
-
-.to(["#S6-LHOUSE","#S6-IUPDOWN"],{y:"0%",x:"0%", duration :25},"+=16")
-.to(["#S6-ITREE","#S6-FLOATS-ITREE"],{y:"0%",x:"0%", duration :25},"<")
-.to("#S6-FLOAT0",{y:"0%",x:"0%", duration :20},"<")
-.to("#S6-FLOAT1",{y:"0%",x:"0%", duration :15},"<")
-.to("#S6-BG",{x:"0%",y:"0%", duration :15},"<")
-.to("#S6-FG",{x:"0%",y:"0%", duration :20},"<")
-
+.to(["#S6-LHOUSE","#S6-IUPDOWN"],{y:"0%",x:"0%", duration :35})
+.to(["#S6-ITREE","#S6-FLOATS-ITREE"],{y:"0%",x:"0%", duration :35},"<")
+.to("#S6-FLOAT0",{y:"0%",x:"0%", duration :30},"<")
+.to("#S6-FLOAT1",{y:"0%",x:"0%", duration :25},"<")
+.to(["#S6-BG","#S6-BG-CLOUDS"],{x:"0%",y:"0%", duration :45},"<")
+.to("#S6-FG",{x:"0%", duration :40},"<")
 
 .fromTo("#S6-R6",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 2.5, ease: "power2.inOut"},"<")
 
-
-.to('.dialogue-box', { x: "50vw", y: "-80vh", duration: 15, ease: "back.out(2)" }, "<")
+.to('.dialogue-box', {scale:1, x: "30vw", y: "-20vh", duration: 15, ease: "back.out(2)" }, "<+=60")
 .to('.character-name', { text: 'Rahal', duration: 0.1 }, "<")
 .to('#chara-arfop', { opacity: 0, duration: 0.2 }, "<")
 .to('#chara-rahal', { opacity: 1, duration: 0.2 }, "<")
@@ -1430,25 +1422,25 @@ if (aspectRatio > 1.81){
 .to("#S6-R6", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
 .fromTo("#S6-R7",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 5.5, stagger: 0.05, ease: "power2.inOut"},"<")
 
-
 .to('.dialogue-text', { text: "...", duration: 0 }, "+=20")
+.to('.dialogue-box', {scale:0, x: "70vw", y: "-80vh", duration: 5, ease: "back.out(2)" }, "<")
+
 .to("#S6-R7", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
 .fromTo("#S6-R5",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
 
 .to("#S6-R5", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},">+=20")
 .fromTo("#S6-R2",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
+
+.to('.dialogue-box', {scale:1, x: "50vw", y: "-80vh", duration: 15, ease: "back.out(2)" }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
 .to('.dialogue-text', { text: "OHHHHHHH VIIIIIII VIIIIIIII.", duration: 25.2 }, ">")
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=16")
-.to('.dialogue-text', { text: "I'm sorry I yelled at you back then for almost killing us.", duration: 25.2 }, ">")
-
+.to('.dialogue-text', { text: "Sorry I yelled at you back there for almost killing us.", duration: 25.2 }, ">")
 
 .to("#S6-R2", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},">+=20")
 .fromTo("#S6-R3",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
-.to('.dialogue-text', { text: "Wooouuuld you kindly... Fly us over there.", duration: 25.2 }, ">")
-
-
+.to('.dialogue-text', { text: "Wooouuuld you kindly... Fly us over there, hmmm?", duration: 25.2 }, ">")
 
 .to('.dialogue-box', { x: "40vw", y: "-70vh", duration: 25, ease: "power2.out" }, ">+=15") 
 .to('.character-name', { text: s, duration: 5 }, "<")
@@ -1457,33 +1449,63 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
 .to('.dialogue-text', { text: "Hmmmmmmmm... let me think about it.", duration: 25 }, ">")
 
-
-
 .to('.dialogue-box', { x: "50vw", y: "-80vh", duration: 15, ease: "back.out(2)" }, "+=15")
+// 55 stays 55
 .to('.S6', {filter:"blur(50px)" ,opacity:0, duration: 55 }, "<")
-.to('#S6-BG', {filter:"blur(50px)" ,opacity:0, duration: 55 }, "<")
-.to('#S6-FG', {filter:"blur(50px)" ,opacity:0, duration: 55 }, "<")
 
 .to('.character-name', { text: 'Rahal', duration: 0.1 }, "<")
 .to('#chara-arfop', { opacity: 0, duration: 0.2 }, "<")
 .to('#chara-rahal', { opacity: 1, duration: 0.2 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, ">")
-.to('.dialogue-text', { text: "VIVI. COME ON, I'VE SAID I'M SORRY.", duration: 25 }, ">")
+.to('.dialogue-text', { text: "VIVI. COME OoOooN, I SAID I'M SORRY. <br><i>though you did deserve it back there</i>", duration: 25 }, ">")
 
+//PART 2 : 
 
 .to('.dialogue-box', {scale:0,x: "70vw", y: "-80vh", duration: 15, ease: "back.out(2)" }, "+=26")
 
-//PART 2 : WALKING SCENE
+.to('#rahal-p0',  
+    { 
+        volume: 0.0, 
+        duration: 15.5,
+        onReverseComplete: () => {
+            const r1 = document.getElementById("rahal-p0");
+            r1.currentTime = 0;
+            r1.play();
+        },
+        onComplete: () => {
+            const gyard = document.getElementById("rahal-p0");
+            gyard.pause();
+            gyard.currentTime = 0;
+        }
+    }, 
+    "<"
+)
 
+.fromTo('#rahal-p1', 
+    { volume: 0.0 }, 
+    { 
+        volume: 0.5, 
+        duration: 45.5,
+        onStart: () => {
+            const r1 = document.getElementById("rahal-p1");
+            r1.currentTime = 0;
+            r1.play();
+        },
+        onReverseComplete: () => {
+            const gyard = document.getElementById("rahal-p1");
+            gyard.pause();
+            gyard.currentTime = 0;
+        }
+    }, 
+    "<"
+)
 
 .to('.dialogue-box', {scale:1.3, x: "60vw", y: "-80vh", duration: 15 }, "+=40")
 .to('.character-name', { text: 'Rahal', duration: 5 }, "<")
 .to('#chara-seven', { opacity: 0, duration: 5 },   "<")
 .to('#chara-rahal', {opacity: 1, duration: 5 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
-.to('.dialogue-text', { text: "Damn, I'm starvi—", duration: 25 }, ">")
-
-
+.to('.dialogue-text', { text: "<i>Sigh</b>, I'm starvi—", duration: 25 }, ">")
 
 .to('.dialogue-box', { x: "30vw", y: "-80vh", duration: 25, ease: "power2.out" }, ">+=15") 
 .to('.character-name', { text: s, duration: 5 }, "<")
@@ -1494,7 +1516,6 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
 .to('.dialogue-text', { text: "...A really cool hat.",letterSpacing:"3px", duration: 45 }, ">")
 
-
 .to('.dialogue-box', {scale:1.2, x: "60vw", y: "-80vh", duration: 15 }, ">+=20")
 .to('.character-name', { text: 'Rahal', duration: 5 }, "<")
 .to('#chara-seven', { opacity: 0, duration: 5 },   "<")
@@ -1504,14 +1525,12 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
 .to('.dialogue-text', { text: "I'm not really in the mood for jokes, VIVI.",letterSpacing:"0px", duration: 25 }, ">")
 
-
 .to('.dialogue-box', { x: "30vw", y: "-80vh", duration: 15, ease: "back.out(2)" }, ">+=16")
 .to('.character-name', { text: s, duration: 0.1 }, "<")
 .to('#chara-rahal', { opacity: 0, duration: 10 }, "<")
 .to('#chara-seven', { opacity: 1, duration: 0.2 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
 .to('.dialogue-text', { text: `It got... stolen then... shot at for some reason.`, duration: 25.2 }, "<")
-
 
 .to('.dialogue-box', {scale:1.2, x: "60vw", y: "-80vh", duration: 15 }, ">+=20")
 .to('.character-name', { text: 'Rahal', duration: 5 }, "<")
@@ -1520,14 +1539,10 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
 .to('.dialogue-text', { text: "Wait you are not joking?!",letterSpacing:"2px", duration: 25 }, ">")
 
-
-
-
 .to('.dialogue-box', { y: "-=20", yoyo: true, repeat: 5, duration: 2 }, ">+=20")
 .to('#chara-rahal-sur', {opacity: 0, duration: 5 }, "<")
 .to('#chara-rahal-laugh', {opacity: 1, duration: 5 }, "<")
 .to('.dialogue-text', { text: "PFFFFT HAHAHAHA!", duration: 20}, "<")
-
 
 .to('.dialogue-box', {scale:1 ,x: "30vw", y: "-80vh", duration: 8, ease: "power2.out" }, ">+=15") 
 .to('.character-name', { text: s, duration: 5 }, "<")
@@ -1547,27 +1562,25 @@ if (aspectRatio > 1.81){
 
 .to('.dialogue-text', { text: "", duration: 0}, ">+=15")
 .to('.dialogue-box', { y: "-=20", yoyo: true, repeat: 5, duration: 2 }, "<")
-.to('.dialogue-text', { text: "Dude, from all the thing you could've remembered of your ancient lifespan.",letterSpacing:"5px", duration: 80}, "<")
+// 80 -> 60
+.to('.dialogue-text', { text: "Dude, from all the thing you could've remembered of your ancient lifespan.",letterSpacing:"5px", duration: 60}, "<")
 
 .to('.dialogue-text', { text: "", duration: 0}, ">+15")
 .to('.dialogue-box', { y: "-=15", yoyo: true, repeat: 25, duration: 2 }, "<")
 .to('.dialogue-text', { text: "You remembered A HAT?!",letterSpacing:"4px", duration: 40}, "<")
 
-
 .to('.dialogue-text', { text: "", duration: 0}, ">+15")
 .to('.dialogue-box', { y: "-=15", yoyo: true, repeat: 25, duration: 2 }, "<")
-.to('.dialogue-text', { text: "A HAT!!!",letterSpacing:"4px", duration: 60}, "<")
+// 60 -> 40
+.to('.dialogue-text', { text: "A HAT!!!",letterSpacing:"4px", duration: 40}, "<")
 .to('.dialogue-text', { text: "",letterSpacing:"4px", duration: 0}, ">+=15")
 .to('.dialogue-box', { y: "-=5", yoyo: true, repeat: 25, duration: 2 }, "<")
 .to('.dialogue-text', { text: "I knew you were a loser, but not thaaaaaat loser.",letterSpacing:"4px", duration: 40}, "<")
-
-
 
 .to('.dialogue-text', { text: "", duration: 0}, ">+15")
 .to('.dialogue-box', { x: "-=15", yoyo: true, repeat: 25, duration: 2 }, "<")
 .to('.dialogue-text', { text: "And You were gonna blow us to smithereens... FOR A HAT!!",letterSpacing:"0px", duration: 40}, "<")
 .to('.dialogue-text', { text: "",letterSpacing:"4px", duration: 0}, ">+=15")
-
 
 .to('.dialogue-box', { x: "40vw", y: "-80vh", duration: 8 }, "<") 
 .to('#chara-rahal-laugh', { opacity: 0, duration: 1 }, "<")
@@ -1575,8 +1588,8 @@ if (aspectRatio > 1.81){
 .to('.character-name', { text: s, duration: 5 }, "<")
 .to('#chara-seven', { opacity: 1, duration: 10 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
-.to('.dialogue-text', { text: "...it was a really cool hat though...", duration: 95 }, ">")
-
+// 95 -> 75
+.to('.dialogue-text', { text: "...it was a really cool hat though...", duration: 75 }, ">")
 
 .to('.dialogue-box', { x: "60vw", y: "-80vh", duration: 15 }, ">+=15")
 .to('.character-name', { text: 'Rahal', duration: 5 }, "<")
@@ -1587,8 +1600,6 @@ if (aspectRatio > 1.81){
 .to('#chara-rahal-laugh', { opacity: 0, duration: 5 }, "<")
 .to('#chara-rahal-normal', { opacity: 1, duration: 5 }, "<")
 
-
-
 .to('#chara-rahal-normal', { opacity: 0, duration: 5 }, ">+=35")
 .to('#chara-rahal-smile', { opacity: 1, duration: 5 }, "<")
 .to('.dialogue-text', { text: "You know? There is some kind of bazar, on our way.", duration: 25 }, "<")
@@ -1598,7 +1609,6 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
 .to('.dialogue-text', { text: `AAaaand my treat! <br><i>[please let it be cheap]</i>`, duration: 25 }, ">")
 
-
 .to('.dialogue-box', {x: "10vw", y: "-50vh", duration: 5, ease: "back.out(2)" }, "+=15")
 .to('.character-name', { text: 'Arfop', duration: 5 }, "<")
 .to('#chara-rahal-smile', { opacity: 0, duration: 15 }, "<")
@@ -1606,16 +1616,15 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
 .to('.dialogue-text', { text: "...", duration: 10 }, ">")
 
-
 .to('.dialogue-box', { x: "60vw", y: "-80vh", duration: 15 }, ">+=15")
 .to('.character-name', { text: 'Rahal', duration: 5 }, "<")
 .to('#chara-arfop', { opacity: 0, duration: 5 }, "<")
 .to('#chara-rahal-laugh', { opacity: 1, duration: 5 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
-.to('.dialogue-text', { text: `Of course, of course, you too Arfop!`,letterSpacing:"5px", duration: 55 }, ">")
+// 55 -> 35
+.to('.dialogue-text', { text: `Of course, of course, you too Arfop!`,letterSpacing:"5px", duration: 35 }, ">")
 .to('.dialogue-text', { text: "", duration: 0 }, ">++15")
 .to('.dialogue-text', { text: `[<i>DAMMIT</i>]`,letterSpacing:"5px", duration: 45 }, ">")
-
 
 .to('.dialogue-box', { x: "40vw", y: "-80vh", duration: 8 }, ">+=15") 
 .to('.dialogue-box', { y: "-=5", yoyo: true, repeat: 25, duration: 2 }, "<")
@@ -1628,13 +1637,11 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
 .to('.dialogue-text', { text: "You are the best Quinn!", duration: 25 }, ">")
 
-
 .to('.dialogue-box', { x: "60vw", y: "-80vh", duration: 15 }, ">+=15")
 .to('.character-name', { text: 'Rahal', duration: 5 }, "<")
 .to('#chara-seven', { opacity: 0, duration: 5 }, "<")
 .to('#chara-rahal', { opacity: 1, duration: 5 }, "<")
 .to('.dialogue-text', { text: `"Quinn"?`, duration: 25 }, "<")
-
 
 .to('.site-header',{opacity: 1, duration: 4 },">+=15")
 .to('.dialogue-text', { text: "", duration: 5 }, "<")
@@ -1644,18 +1651,18 @@ if (aspectRatio > 1.81){
 .to(['#chara-rahal-normal','#chara-rahal','#chara-rahal-sur','#chara-seven'], { opacity: 0, duration: 5 }, "<")
 
 
-.to('#rahal',  
+.to('#rahal-p1',  
     { 
         volume: 0.0, 
         duration: 35.5,
         onReverseComplete: () => {
-            const r1 = document.getElementById("rahal");
+            const r1 = document.getElementById("rahal-p1");
             r1.currentTime = 0;
             r1.play();
 
         },
         onComplete: () => {
-            const gyard = document.getElementById("rahal");
+            const gyard = document.getElementById("rahal-p1");
             gyard.pause();
             gyard.currentTime = 0;
 
@@ -1673,6 +1680,7 @@ if (aspectRatio > 1.81){
 }
 // Add this inside your main GSAP file or init function
 function initSecretVivi() {
+    let inventoryData = JSON.parse(sessionStorage.getItem('inv')) || []; 
       const getBrowserName = () => {
         let browserInfo = navigator.userAgent;
         let browser = 'Browser';
@@ -1697,7 +1705,7 @@ function initSecretVivi() {
 
     viviTl
         .call(()=>{document.getElementById("secret-vivi").style.filter = `brightness(${sessionStorage.getItem('userVolume') || 1.0})`;},null,0)
-        .to('.dialogue-box',{scale:1.0,opacity:1,x:"70vw",y:"-30vh", duration: 0.1 },"+=20")
+        .to('.dialogue-box',{scale:1.0,opacity:1,x:"70vw",y:"-30vh", duration: 0.1 },"+=15")
         .fromTo('#pft', { volume: 0.0 }, 
         { 
             volume: 0.2, 
@@ -1767,7 +1775,8 @@ function initSecretVivi() {
         .set(vivi,{className:"Seven is-side",scaleX:-1},"<+=0.2")
         .set(vivi,{className:"Seven is-front",scaleX:1},"<+=0.2")
 
-        .to('.dialogue-text',{text: "Quinn! WHERE ARE YOU?", duration: 2 },"+=5")
+        .to('.dialogue-text',{text: "", duration: 0 },"+=1")
+        .to('.dialogue-text',{text: "Quinn! WHERE ARE YOU?", duration: 2 },">")
         .set(vivi,{className:"Seven is-side",scaleX:-1},"<")
         .to(vivi,{x:"0vw",scaleX:-1, duration: 3},"<")
         .set(vivi,{className:"Seven is-front",scaleX:1},">")
@@ -1775,10 +1784,11 @@ function initSecretVivi() {
         .set(vivi,{className:"Seven is-side",scaleX:1},"+=3")
         .to(vivi,{x:"30vw", duration: 3},"<")
         .set(vivi,{className:"Seven is-front",scaleX:1},">")
+        .to('.dialogue-text',{text: "", duration: 0 },"<")
         .to('.dialogue-text',{text: "THIS CREEP  WON'T STOP STARING AT ME.", duration: 2 },"<")
 
     
-        .to('.dialogue-text',{text: "I'll just go. beep boop.", duration: 2 },">+=3")
+        .to('.dialogue-text',{text: "I'll just go. beep boop.", duration: 2 },">+=2")
         .to('#pft',{ volume: 0.0 ,duration:3},"<") 
         .set(vivi,{className:"Seven is-side"},"<")
         .to(vivi,{x:"110vw", duration: 3},"<")
@@ -1786,18 +1796,35 @@ function initSecretVivi() {
         .to('.dialogue-box',{opacity:0,x:"70vw",y:"-30vh", duration: 0.5 },"+=0.5")
         .to('.dialogue-text',{text: "", duration: 0.5 },"<")
 
+
         .set(vivi,{className:"Seven is-side",scaleX:-1})
         .to('.dialogue-text',{text: "You say something?", duration: 1 },">+=5")
         .to('#pft',{ volume: 0.2 ,duration:1},"<") 
         .to('.dialogue-box',{opacity:1,x:"50vw",y:"-30vh", duration: 0.5 },"<")
         .to(vivi,{x:"70vw", duration: 1},"<")
         .set(vivi,{className:"Seven is-front",scaleX:1},">")
-
         .to('.dialogue-text',{text: "No? alright just checking...", duration: 1 },"+=1")
-        .to('.dialogue-text',{text: "...", duration: 1 },"+=1")
+        .to('.dialogue-text',{text: "", duration: 0 },"+=1.5")
+        .set(vivi,{className:"Seven is-front",scaleX:1},">")
 
-    
-        .to('.dialogue-text',{text: "Hey wanna see something cool?.", duration: 1 },"+=1")
+        if (!inventoryData.some(item => item.id === 'file97')){
+            viviTl.to('.dialogue-text',{text: "By the way. I've found this just now.", duration: 1 })
+            .to('.dialogue-text',{text: "", duration: 0 },"+=1.5")
+            .set(vivi,{className:"Seven is-front-wave",scaleX:1},">")
+            .to('.dialogue-text',{text: "I don't think Quinn wants it.", duration: 2.5 },">")
+            .to('.dialogue-text',{text: "<i>I hope or she'll be real angry</i>", duration: 2.5 },"+=1.5")
+            .to('.dialogue-text',{text: "", duration: 0 },"+=2")
+            .to('.dialogue-text',{text: "Here you have it.", duration: 1 },"+=1")
+            .call(() => {addItemToBackpack(files.beast2, '');}, null, "<")
+            .to('.dialogue-text',{text: "", duration: 0 },"+=2")
+            .to('.dialogue-text',{text: "But before you go and read it!", duration: 1 },">")
+
+        }
+
+
+        viviTl.to('.dialogue-text',{text: "", duration: 0 },"+=1")
+        .set(vivi,{className:"Seven is-front",scaleX:1},">")
+        .to('.dialogue-text',{text: "Wanna see something cool?.", duration: 1 },"+=1")
         .set(vivi,{className:"Seven is-front-wave",scaleX:1},"<")
         .to('.dialogue-text',{text: "EXPLOSION!!!.", duration: 1 },"+=3")
         .set(vivi,{className:"Seven is-expo",scaleX:1},"<")
@@ -1864,10 +1891,7 @@ function initSecretVivi() {
         .set(vivi,{className:"Seven is-expo",scaleX:1},"<")
         .call(() => {
             window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-
-            let inventoryData = JSON.parse(sessionStorage.getItem('inv')) || []; 
-
-            if (inventoryData.some(item => item.id === 'file2')) {
+            if (inventoryData.some(item => item.id === 'file99')) {
                 alert('[After witnessing the reset of the universe, [YOU], through pure DETERMINATION, grabbed a... oh you already have the "classified file from the edge of the old universe". Congrats!!]');
             } 
             else {
@@ -1894,44 +1918,88 @@ function initSecretVivi() {
 
 
 
-const layers = document.querySelectorAll('.S6');
+const layers = document.querySelectorAll('.S6:not(.S6FG,#S6-RAHAL)');
 const totalLayers = layers.length;
 
 layers.forEach((layer, index) => {
   // Speed Up: Higher index = Lower duration (faster)
   // Distance: Higher index = Higher movement (more displacement)
   const speedFactor = (index + 1) / totalLayers; 
-  const rotationAmount = speedFactor * 0.1;
+  const rotationAmount = speedFactor * 0.5;
   
   gsap.fromTo(layer,
     {
         y: -speedFactor * 5,
         x: -speedFactor * 100,
-        rotationZ: -rotationAmount*3}
+        rotationZ: -rotationAmount*2
 
-    ,{
+    },{
 
     y: speedFactor * 150,
     x: speedFactor * 100,
     rotationZ: rotationAmount,
     
-    duration: 3 - (speedFactor * 0.05), // BG takes 3s, FG takes 1.5s (faster!)
+    duration: 10 - (speedFactor * 0.5), // BG takes 3s, FG takes 1.5s (faster!)
     
     ease: "sine.inOut",
     repeat: -1,
     yoyo: true,
     // Adding a random delay so they don't all start perfectly in sync
     delay: Math.random() * 2 
+
+
+
   });
+
+
+    gsap.fromTo([".S6FG","#S6-RAHAL"],
+        {
+            y: -speedFactor * 50,
+            x: -speedFactor * 5,
+            rotationZ: -rotationAmount
+
+        },{
+
+        y: speedFactor * 50,
+        x: speedFactor * 5,
+        rotationZ: rotationAmount,
+        
+        duration: 1.5,
+        
+        ease: "power1.inOut",
+        repeat: -1,
+        yoyo: true,
+        // Adding a random delay so they don't all start perfectly in sync
+        delay: Math.random() * 2 
+    });
+
+
 });
+
+
+
+
+
+
+
+
 
 
 gsap.to(["#S6-FG img[id^='arfop']"], {
   scaleY: 1.05,
-  transformOrigin: "bottom",
   duration: 2.5,
   ease: "sine.inOut",
   repeat: -1,
   yoyo: true,
   stagger: 0.1
+
+
+});
+
+gsap.to(["#S6-FG img[id^='S6-R']"], {
+  scaleY: 0.51,
+  duration: 1,
+  ease: "power1.inOut",
+  repeat: -1,
+  yoyo: true,
 });
