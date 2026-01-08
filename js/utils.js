@@ -60,26 +60,21 @@ export const files = {
         },
 
 
- beast:{
-        title: "THE BEAST - 1",
+ louis0:{
+        title: "Louis's Despair - 1",
         musid:'WHERE',
         pages:[
-            `<b>Louis Willis — Classified Personal Record</b><br><br>
+            `<b>Louis Wills — Classified Personal Record</b><br><br>
 
             I am… I remain. I collect the shards of my name like broken glass. <br>
-            Louis Willis. Louis Willis. Louis Willis. If I say it, perhaps I'll wake up from this weird dream.<br><br>
+            Louis Wills. Louis Wills. Louis Wills. If I say it, perhaps I'll wake up from this weird dream.<br><br>
 
             One moment there was ground and sound and weight, <br> and then there was <i>everything at once</i>.<br><br>
     
-            I felt my world dissolve. Not like salt in water, but like a <i>thought forgotten.</i><br><br>
+            <b>I felt my world fracture.</b><br> Fracture like a glass under a hammer<br><br>
     
-            There was pressure without force.<br>
+            I felt pressure without force.<br>
             Motion without direction.<br>
-            I was stretched across moments I never lived.<br>
-            Remembering memories that were not mine.<br><br>
-    
-            <b>The Black Pyramid</b>. Shattered.<br>
-            Weeping into an infinite sea.<br><br>
 
             I am afraid. Afraid that if I were to stop writing.<br>
             I am afraid that when I do, whatever is holding me together<br> will realize I am dead.`
@@ -88,12 +83,11 @@ export const files = {
 
 
     
-    beast1:{
-        title: "THE BEAST - 2",
+    louis1:{
+        title: "Louis's Despair - 2",
         musid:'WHERE',
         pages:[
-            `<b>Louis Willis — Classified Personal Record</b><br><br>
-
+            `<b>Louis Wills — Classified Personal Record</b><br><br>
 
             I awoke upon stone that was too perfect in its imperfection. Every crack, every pockmark of erosion feels… deliberate.<br><br>
 
@@ -107,11 +101,27 @@ export const files = {
             The air entered my lungs. My throat didn't close.<br><br>
 
 
-            I have seen this before. In dreams. Could it be?<br>
-            <b>My paradise.</b><br><br>
+            This is not my world.<br>
+            <b>Where am I?</b><br>`
+    ]
+    },
+    
+    louis2:{
+        title: "Louis's Despair - 2",
+        musid:'WHERE',
+        pages:[
+            `<b>Louis Wills — Classified Personal Record</b><br><br>
+
+            I awoke upon stone that was too perfect in its imperfection. Every crack, every pockmark of erosion feels… deliberate.<br><br>
 
 
-            I can't feel time passing. There is no difference between where I was and where I am, it feels like it's all happening at once.<br><br>
+            My body looks... feels different.<br>
+            I have marks around my right eye. Like burned veins.<br><br>
+
+
+            I turned my gaze to the sky, bracing for the heat to peel my skin or the radiation to blind me.<br>
+            <b>Nothing.</b><br><br>
+            The air entered my lungs. My throat didn't close.<br><br>
 
 
             This is not my world.<br>
@@ -121,8 +131,8 @@ export const files = {
 
 
 
-    beast2:{
-        title: "THE BEAST - 3",
+    beast:{
+        title: "THE BEAST",
         musid:'',
         pages:[
             '<b>AUTHOR:</b> Louis Wills. Chief scientist<br>' +
@@ -284,18 +294,18 @@ falco:{
 
 
 quinnLogs:{
-    musid:'quinn-theme',
+    musid:'quinn-log-bg',
     id:"file97",
     title:"VIVI AUDIO LOG - 58",
     pages:[
         `
         [FIRE CRACKING FROM A CAMPFIRE] <br><br>
 
-        <b>VIVI:</b> "Hey. I've noticed you lay all your cards when it comes to Falco."<br><br>
+        <b>VIVI:</b> "Hey. I've noticed you lay all your cards on the table, when it comes to Falco."<br><br>
 
         <b>VIVI:</b> "Not giving him any room to breathe."<br><br>
 
-        <b>VIVI:</b> "The boy is a goofball, I don't think he needs all of this."<br><br>
+        <b>VIVI:</b> "The boy is a goofball, I don't think he warrants all of this."<br><br>
 
         <b>QUINN:</b> "He is holding back."<br><br>
 
@@ -303,29 +313,27 @@ quinnLogs:{
 
         <b>VIVI:</b> "..."<br><br>
 
-        <b>VIVI:</b> "So the gun was really for show then... huh."<br><br>
+        <b>VIVI:</b> "So the gun was really for show then... huh."<br><br>`,
 
-        <b>VIVI:</b> "But still... Why didn't he dodge my 'EXPLOSION' attack then?"<br><br>
+        `<b>VIVI:</b> "But still... Why didn't he dodge my 'EXPLOSION' attack then?"<br><br>
 
-        <b>QUINN:</b> "He knows he can't out run the blast."<br><br>
+        <b>QUINN:</b> "He knows he can't outrun the blast."<br><br>
 
         <b>VIVI:</b> "And it doesn't hurt you because...?"<br><br>
 
-        <b>QUINN:</b> "Unlike him, I'm human. I don't know what part of him is not human..."<br><br>
+        <b>QUINN:</b> "Unlike him, I'm fully human..."<br><br>
     
-        <b>QUINN:</b> "All I know is he is not a human through and through <All thanks to "Doctor" Louis>"<br><br>
+        <b>VIVI:</b> "HUH?! SO HE'S LIKE A ROBOT OR SOMETHING?! <i>He is really my son!</i>"<br><br>
 
-        <b>VIVI:</b> "So he won't attack me because I'm his "Father" "<br><br>
+        <b>QUINN:</b> "He is not a robot. It's just that most of his body relies on machines."<br><br>
 
-        <b>QUINN:</b> "If he attacked me, you would do your "EXPLOSION" either way."<br><br>
+        <b>QUINN:</b> "These may make his body strong, but he's emotionally weak."<br><br>
 
-        <b>QUINN:</b> "He may be body strong, but he's emotionally weak."<br><br>
+        <b>VIVI:</b> "I mean... WOW! <i>Really makes you sound like a cold hearted jerk.</i>"<br><br>
 
-        <b>VIVI:</b> "I mean... WOW! <i>Really makes you sound like an cold hearted jerk.</i>"<br><br>
+        <b>QUINN:</b>"It's not like I want to kill the kid!"<br><br>`,
 
-        <b>QUINN:</b>"It's not like I want to kill the kid!"<br><br>
-
-        <b>VIVI:</b>"Hey I'm not the one who tried to shoot his head off <b><i>And ruining my HAT!</b></i>"<br><br>
+        `<b>VIVI:</b>"Hey, I'm not the one who tried to shoot his head off—<b><i>And ruining my HAT!</b></i>"<br><br>
 
         <b>QUINN:</b>"..."<br><br>
 
@@ -335,7 +343,7 @@ quinnLogs:{
 
         <b>QUINN:</b>"Why did you... Uhh... <i>Forget it.</i>"<br><br>
 
-        <b>VIVI:</b>"NOOOOO PLEASE YOU HAVE TO TELL ME!!! WHY WHAT? WHY WHAT? COME OON PLEASE!!"<br><br>
+        <b>VIVI:</b>"NOOOOO PLEASE YOU HAVE TO TELL ME!!! WHY WHAT? WHY WHAT? COME ON PLEASE!!"<br><br>
 
 
         <b>[AUDIO ENDS IN STATIC <i>AND VIVI'S CRIES</i>] </b>`
@@ -359,7 +367,7 @@ projectv:{
         'Beyond the Shard’s influence, the material exhibits absolute structural stability.<br>' +
         'It cannot be cut, fractured, melted, or altered through any known mechanical or energetic process.' ,
 
-        'Proximity to the Shard produces the inverse effect.<br>' +
+        'Proximity to the Shard produces <b>the inverse effect.</b><br>' +
         'As the material gets close to the World Shard, it progressively loses rigidity.<br>' +
         'Within close range, it becomes moldable, and responsive to applied force, comparable to soft composite clay.<br><br>' +
 
@@ -439,10 +447,11 @@ quinn:{
 
 
 document.getElementById('file0').onclick = () => {addItemToBackpack(files.vivian,'file0');};
-document.getElementById('file1').onclick = () => {addItemToBackpack(files.beast,'file1');};
+document.getElementById('file1').onclick = () => {addItemToBackpack(files.louis0,'file1');};
 document.getElementById('file2').onclick = () => {addItemToBackpack(files.falco,'file2');};
-document.getElementById('file3').onclick = () => {addItemToBackpack(files.beast1,'file3');};
-document.getElementById('file4').onclick = () => {addItemToBackpack(files.beast2,'file4');};
+document.getElementById('file3').onclick = () => {addItemToBackpack(files.louis1,'file3');};
+document.getElementById('file4').onclick = () => {addItemToBackpack(files.projectv,'file4');};
+document.getElementById('file5').onclick = () => {addItemToBackpack(files.beast,'file5');};
 
 const titleEl = document.getElementById('view-title');
 const bodyEl = document.getElementById('view-body');
@@ -721,6 +730,7 @@ function closeInventory() {
 
 // Event Listeners
 invIcon.addEventListener('click', openInventory);
+document.getElementById('ARFOP-3D').addEventListener('click', openInventory);
 overlay.addEventListener('click', closeInventory); // Close when clicking outside
 
 

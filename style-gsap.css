@@ -253,7 +253,7 @@
 
 
 #S6-BG{
-    animation: breathing 10s infinite ease-in-out;
+    filter: brightness(1.5);
     transform: scale(1);}
 
 #S6-BG-CLOUDS{
@@ -362,7 +362,7 @@ animation: R-4drama-rahal 2s infinite;}
 
 
 #S6-LHOUSE{
-    animation: breathing 3s infinite ease-in-out;
+    filter: brightness(1.1) hue-rotate(350deg);
     scale: 0.4;
     top: -45%;
     height: 100vw;
@@ -397,7 +397,7 @@ animation: R-4drama-rahal 2s infinite;}
 }
 
 
-#S7-FG-00,#S7-FG-0,#S7-FG-1,#S7-L0,#S7-L1,#S7-L2,#S7-BG,#S7-BG-CLOUDS,#VIVI-3D,#RAHAL-3D,#ARFOP-3D{animation: DayCycle 32s infinite;}
+#S7-FG-00,#S7-FG-0,#S7-FG-1,#S7-L0,#S7-L1,#S7-L2,#S7-BG,#S7-BG-CLOUDS,#VIVI-3D,#RAHAL-3D,#ARFOP-3D{animation: DayCycle 48s infinite;}
 
 @keyframes DayCycle{
     0%{filter: hue-rotate(0deg) brightness(1);}
@@ -407,17 +407,22 @@ animation: R-4drama-rahal 2s infinite;}
     100%{filter: hue-rotate(360deg) brightness(1);}
 }
 
-#S7-FG-00{opacity: 1;}
+#S7-FG-00{
+    position: relative;
+    transform: scale(0.6);
+    opacity: 1;}
+
 
 #S7-FG-0{
+    position: relative;
     background-image: url('img/Layers/S7/S7-FG-0.webp');
     background-repeat: repeat-x;
     background-position: 0% 100%;
-    background-size: 90% 34%;
+    background-size: 100% auto;
     animation: 
-    DayCycle 32s infinite,
-    S7-FG 48s steps(750) infinite;
-    top: -30%;
+    DayCycle 48s infinite,
+    S7-FG 64s steps(1024) infinite;
+    bottom: -99%;
     transform: scale(2)
 }
 
@@ -425,11 +430,16 @@ animation: R-4drama-rahal 2s infinite;}
 #S7-FG-1{
     background-image: url('img/Layers/S7/S7-FG-1.webp');
     background-repeat: repeat-x;
+    width: 200vw;
+    height: 200vh;
+    left: -50%;
+    top: -120%;
     background-position: 0% 100%;
-    background-size: 90% auto;
+    background-size: 100% 100%;
     animation: 
-    DayCycle 32s infinite,
-    S7-FG 64s steps(2024) infinite;
+    DayCycle 48s infinite,
+    S7-FG 128s steps(2024) infinite;
+    transform: scale(2.5);
 }
 
 
@@ -610,7 +620,21 @@ animation: anger-head-anim 0.9s infinite;
 }
 
 
-#file0:hover,#file1:hover,#file2:hover,#file3:hover,#file4:hover {
+#file5 {
+    pointer-events: all;
+    position: absolute;
+    width: 8vw;
+    bottom: -50%;
+    right: 35%;
+    transform: translate(-50%, 50%); 
+    filter: brightness(2) saturate(0) hue-rotate(30deg);
+    cursor: pointer;
+    rotate: 70deg;
+    transition: transform 0.2s ease;
+}
+
+
+#file0:hover,#file1:hover,#file2:hover,#file3:hover,#file4:hover,#file5:hover {
     transform: translate(-50%, 50%) scale(1.1);
     -webkit-filter: brightness(0.3) saturate(5) hue-rotate(350deg) drop-shadow(5px 5px 0 rgb(255, 0, 0));
 }
@@ -733,103 +757,120 @@ animation: anger-head-anim 0.9s infinite;
 
 
 
-.RAHAL-3D{
+#RAHAL-3D{
     position: absolute;
     background-image: url('img/Chara/RAHAL-3D-WALK-SPRITE-SHEET.webp');
     width: 4.3%;
     height: 10%;
     left: 50%;
-    top: 43%;
+    top: 44%;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position:0%;
     animation: 
-    DayCycle 32s infinite,
+    DayCycle 48s infinite,
     rahal-3d-walk 1.5s steps(1) infinite;
     transform: scale(1.5)
 }
 
 @keyframes rahal-3d-walk {
     0%, 100%{background-position: 0%;}
-    10% {background-position: 11%;}
-    20% {background-position: 20.5%;}
-    30% {background-position: 30.5%;}
-    40% {background-position: 42%;}
+    10% {background-position: 10.5%;}
+    20% {background-position: 21.5%;}
+    30% {background-position: 32%;}
+    40% {background-position: 42.5%;}
     50% {background-position: 53.5%;}
-    60% {background-position: 66%;}
-    70% {background-position: 77%;}
+    60% {background-position: 65.5%;}
+    70% {background-position: 76%;}
     80% {background-position: 88%;}
     90% {background-position: 100%;}
 }
 
 
-.VIVI-3D{
+#VIVI-3D{
     position: absolute;
     background-image: url('img/Chara/VIVI-3D-DEFAULT-SPRITE-SHEET.webp');
-    width: 2%;
-    height: 3%;
-    top: 35%;
+    width: 3%;
+    height: 4.4%;
+    top: 40%;
     background-size: cover;
     background-repeat: no-repeat;
-    transform: scale(1.5);
     animation: 
-    DayCycle 32s infinite,
+    DayCycle 48s infinite,
     vivi-default-3d-walk 1.5s steps(1) infinite;
 }
 
-.VIVI-3D-READING{
+#VIVI-3D.VIVI-3D-READING{
     background-image: url('img/Chara/VIVI-3D-READING-SPRITE-SHEET.webp');
+    left: 47%;
     animation: 
-    DayCycle 32s infinite,
+    DayCycle 48s infinite,
     vivi-reading-3d-walk 1.5s steps(1) infinite;
 }
 
 @keyframes vivi-default-3d-walk {
     0%, 100%{
-        left: 48%;
+        left: 45%;
         background-position: 0%;}
     10% {background-position: 22%;}
     30% {background-position: 42%;}
     50% {
-        left: 47.8%;
+        left: 44.8%;
         background-position: 59%;}
     70% {
-        left: 47.7%;
+        left: 44.7%;
         background-position: 80%;}
     90% {
-        left: 47.8%;
+        left: 44.8%;
         background-position: 105%;}
 }
 
+@keyframes vivi-reading-3d-walk {
+    0%, 100%{
+        background-position: -5%;}
+    10% {background-position: 17.5%;}
+    30% {background-position: 38.8%;}
+    50% {background-position: 59.7%;}
+    70% {background-position: 80.8%;}
+    90% {background-position: 103%;}
+}
 
-.ARFOP-3D{
+
+#ARFOP-3D{
+    pointer-events: all;
     position: absolute;
     background-image: url('img/Chara/ARFOP-3D-WALK-SPRITE-SHEET.webp');
     width: 3%;
     height: 6%;
     left: 55%;
-    top: 47.5%;
+    top: 48%;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: -0.5%;
     transform: scale(1.5);
     animation:
-        DayCycle 32s infinite,
-        arfop-3d-walk 1.3s infinite steps(1);
+    DayCycle 48s infinite,arfop-3d-walk 1.3s infinite steps(1);
+
 }
 
-
+#ARFOP-3D:hover{
+    animation: arfop-3d-walk 1.3s infinite steps(1);;
+    -webkit-filter: brightness(0.3) saturate(5) hue-rotate(350deg) drop-shadow(5px 5px 0 rgb(255, 0, 0));
+}
 
 
 @keyframes arfop-3d-walk {
     0%, 100%{background-position: -0.5%;}
-    10% {background-position: 11%;}
-    20% {background-position: 22%;}
-    30% {background-position: 33%;}
-    40% {background-position: 44%;}
-    50% {background-position: 55%;}
-    60% {background-position: 66%;}
-    70% {background-position: 78%;}
-    80% {background-position: 89%;}
-    90% {background-position: 100%;}
+    10% {background-position: 10.5%;}
+    20% {background-position: 21.5%;}
+    30% {background-position: 32.5%;}
+    40% {background-position: 43.5%;}
+    50% {background-position: 54.8%;}
+    60% {background-position: 65.1%;}
+    70% {background-position: 76.8%;}
+    80% {background-position: 88%;}
+    90% {background-position: 99.5%;}
+
 }
 
 
@@ -843,8 +884,8 @@ animation: anger-head-anim 0.9s infinite;
    ==================================================================================================================== */
 
 @keyframes S7-FG{
-    from{background-position: 0% 100%;}
-    to{background-position: 1720px 100%;}
+    from{background-position: 0px 100%;}
+    to{background-position: 3840px 100%;}
 }
 
 

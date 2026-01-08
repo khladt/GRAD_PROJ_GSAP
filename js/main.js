@@ -43,7 +43,6 @@ async function fetchName() {
 }
 
 function initGSAP() {  
-    lockScroll();
     gsap.registerPlugin(MotionPathPlugin ,Draggable,DrawSVGPlugin,ScrollTrigger,ScrollSmoother,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase,CustomBounce,CustomWiggle);
 
     const parallaxImages = document.querySelectorAll('#story-parallax img');
@@ -94,7 +93,8 @@ function startGSAP() {
 // --- INITIALIZATION ---
 window.addEventListener("DOMContentLoaded", () => {
     initGSAP();
-    window.addEventListener('orientationchange', handleResizeOrRotate); 
+    window.addEventListener('orientationchange', handleResizeOrRotate);
+    lockScroll();
 });
 
 
