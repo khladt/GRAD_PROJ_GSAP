@@ -1506,30 +1506,23 @@ if (aspectRatio > 1.81){
 .to('#chara-rahal', { opacity: 1, duration: 0.2 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, ">")
 .to('.dialogue-text', { text: "COME ON, VIVI. SAID I'M SORRY.", duration: 25 }, ">")
-
-
 .to("#S6-R3", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
 .fromTo("#S6-R0",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
 
-.to("#S6-R0", {filter:"blur(50px)",opacity: 0, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},">+=15")
+
+.to(["#S6-FLOATS-ITREE","#S6-FG"],{y:"150%", duration :15},"<+=30")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
 .to('.dialogue-text', { text: "<i>Although you did deserve it</i>", duration: 25 }, "<")
-.fromTo("#S6-R5",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
-
-
+.to(["#S6-ITREE","#S6-LHOUSE","#S6-IUPDOWN","#S6-FLOATS-ITREE,#S6-FLOAT0"],{y:"150%", duration :50},"<")
+.to(["#S6-FLOAT1","#S6-ISLAND"],{y:"150%", duration :75},"<")
+.to(['#S6-BG',"#S6-BG-CLOUDS"],{opacity:0 ,duration: 100 },"<")
+.fromTo('.S7',{opacity:0}, {opacity:1,duration: 100 },"<")
 
 
 //PART 2 : 
 
 .to('.dialogue-box', {scale:0,x: "70vw", y: "-80vh", duration: 15, ease: "back.out(2)" }, "+=16")
 
-
-.to(["#S6-FLOATS-ITREE","#S6-FG"],{y:"150%", duration :15},"<")
-.to(["#S6-ITREE","#S6-LHOUSE","#S6-IUPDOWN","#S6-FLOATS-ITREE,#S6-FLOAT0"],{y:"150%", duration :50},"<")
-.to(["#S6-FLOAT1","#S6-ISLAND"],{y:"150%", duration :75},"<")
-
-.to(['#S6-BG',"#S6-BG-CLOUDS"],{opacity:0 ,duration: 100 },"<")
-.fromTo('.S7',{opacity:0}, {opacity:1,duration: 100 },"<")
 
 
 .to('#rahal-p0',  
@@ -1569,14 +1562,13 @@ if (aspectRatio > 1.81){
     "<"
 )
 
-.to('.dialogue-box', {scale:1.3, x: "60vw", y: "-80vh", duration: 15 }, "<+=50")
+.to('.dialogue-box', {scale:1, x: "60vw", y: "-80vh", duration: 15 }, "<+=50")
 
 
 
-.fromTo("#S7-FG",{y:"100%"},{y:"-15%",duration: 255},"<")
-.fromTo(["#VIVI-3D","#RAHAL-3D","#ARFOP-3D"],{x:"1000%"},{x:"0%",duration: 555},"<")
-.fromTo("#S7-FG-1",{y:"100%"},{y:"0%",duration: 133},"<")
-.fromTo("#S7-FG",{scale:1},{scale:2,duration: 855},"<")
+.fromTo("#S7-FG",{y:"100%",scale:0.5},{scale:2,y:"0%",duration: 355},"<")
+.fromTo(["#VIVI-3D","#RAHAL-3D","#ARFOP-3D"],{x:"150%"},{x:"0%",duration: 555},"<")
+.fromTo("#S7-FG-1",{y:"300%"},{y:"50%",duration: 133},"<")
 
 .fromTo("#S7-L0",{x:"-150%"},{x:"100%",duration: 1250},"<")
 
@@ -1598,7 +1590,7 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
 .to('.dialogue-text', { text: "...A really cool hat.",letterSpacing:"3px", duration: 45 }, ">")
 
-.to('.dialogue-box', {scale:1.2, x: "60vw", y: "-80vh", duration: 15 }, ">+=20")
+.to('.dialogue-box', {scale:1, x: "60vw", y: "-80vh", duration: 15 }, ">+=20")
 .to('.character-name', { text: 'Rahal', duration: 5 }, "<")
 .to('#chara-seven', { opacity: 0, duration: 5 },   "<")
 .to('#chara-rahal', {opacity: 1, duration: 5 }, "<")
@@ -1614,29 +1606,33 @@ if (aspectRatio > 1.81){
 .to('#chara-rahal', { opacity: 0, duration: 10 }, "<")
 .to('#chara-seven', { opacity: 1, duration: 0.2 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
-.to("#S7-FG",{y:"0%",duration: 85},"<")
 
 .to('.dialogue-text', { text: `Stolen... then, somehow... shot at. Crazy stuff.`, duration: 25.2 }, "<")
 
 
-.to('.dialogue-box', {scale:1.2, x: "60vw", y: "-80vh", duration: 15 }, ">+=20")
+.to('.dialogue-box', {scale:1, x: "60vw", y: "-80vh", duration: 15 }, ">+=20")
 .to('.character-name', { text: 'Rahal', duration: 5 }, "<")
 .to('#chara-seven', { opacity: 0, duration: 5 },   "<")
 .to('#chara-rahal-sur', {opacity: 1, duration: 5 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
 .to('.dialogue-text', { text: "Wait you are not...",letterSpacing:"2px", duration: 25 }, ">")
 
-.to('.dialogue-box', { y: "-=35", yoyo: true, repeat: 5, duration: 2 }, ">+=20")
+.to(['.dialogue-box'], { y: "-=35", yoyo: true, repeat: 5, duration: 2 }, ">+=20")
+.to('#RAHAL-3D', { rotate: "-=15deg", yoyo: true, repeat: 5, duration: 2 }, "<")
 .to('#chara-rahal-sur', {opacity: 0, duration: 5 }, "<")
 .to('#chara-rahal-laugh', {opacity: 1, duration: 5 }, "<")
 .to('.dialogue-text', { text: "PFFFFT HAHAHAHA!", duration: 20}, "<")
 
+
+
 .to('.dialogue-box', {scale:1 ,x: "30vw", y: "-80vh", duration: 8, ease: "power2.out" }, "<+=35") 
+.to(['.dialogue-box','#VIVI-3D'], {x:"-=15" ,y: "-=35", yoyo: true, repeat: 10, duration: 2 }, "<")
+
 .to('.character-name', { text: s, duration: 5 }, "<")
 .to('#chara-rahal-laugh', { opacity: 0, duration: 10 }, "<")
 .to('#chara-seven', { opacity: 1, duration: 10 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
-.set("#VIVI-3D",{scaleX:-1, className:""},"<")
+.set("#VIVI-3D",{scaleX:-0.05, className:""},"<")
 
 .to('.dialogue-text', { text: "Ay Ay Ay! What's so funny?!", duration: 15 }, ">")
 .to('.dialogue-text', { text: "", duration: 0}, ">+=15")
@@ -1653,9 +1649,6 @@ if (aspectRatio > 1.81){
 .to('.dialogue-box', { y: "-=20", yoyo: true, repeat: 5, duration: 2 }, "<")
 
 
-.fromTo('#S7-FG-00',{x:"250%",y:"150%"},{x:'-100%',y:"-120%", duration: 455},"<")
-
-
 .to('.dialogue-text', { text: `Dude, from all the thing you could've remembered of your <br><br><b>"Ancient lifespan."</b>`,letterSpacing:"5px", duration: 60}, "<")
 
 
@@ -1669,26 +1662,29 @@ if (aspectRatio > 1.81){
 
 .to('.dialogue-text', { text: "", duration: 0}, ">+15")
 .to(['.dialogue-box','#RAHAL-3D'], { x: "-=15", yoyo: true, repeat: 25, duration: 2 }, "<")
-.to('.dialogue-text', { text: "And You were gonna blow us to smithereens... FOR A HAT!!",letterSpacing:"0px", duration: 40}, "<")
-.to('.dialogue-text', { text: "",letterSpacing:"4px", duration: 0}, ">+=15")
+.to('.dialogue-text', { text: "And You were gonna blow us to smithereens... FOR A HAT!!", duration: 40}, "<")
+.to('.dialogue-text', { text: "",letterSpacing:"0px", duration: 0}, ">+=15")
 
-.to('.dialogue-box', { x: "40vw", y: "-80vh", duration: 8 }, "<") 
+.to('.dialogue-box', {scale:0.6, x: "1vw", y: "-70vh", duration: 28 }, "<") 
 .to('#chara-rahal-laugh', { opacity: 0, duration: 1 }, "<")
 .to('#chara-seven', { opacity: 1, duration: 1 }, "<")
 .to('.character-name', { text: s, duration: 5 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
-.set("#VIVI-3D",{scaleX:1},"<")
-.to("#VIVI-3D",{x:"-300%",duration:55},"<")
-
+.set("#VIVI-3D",{scaleX:0.05},"<")
+.to("#VIVI-3D",{x:"-50%",duration:55},"<")
+.to(["#S7-L1","S7-L2","#S7-L0","#S7-FG"],{scale:1,duration: 35},"<")
+.to(["#S7-FG-1"],{scale:2,duration: 55},"<")
 
 .fromTo("#S7-L2",{x:"-200%"},{x:"200%",duration: 555},"<")
+
+.fromTo('#S7-FG-00',{x:"250%",y:"150%"},{x:'-100%',y:"-120%", duration: 455},"<")
 
 
 .to('.dialogue-text', { text: "...it was a really cool hat though...", duration: 75 }, "<")
 
 
 
-.to('.dialogue-box', { x: "60vw", y: "-80vh", duration: 15 }, ">+=16")
+.to('.dialogue-box', {scale:1, x: "60vw", y: "-80vh", duration: 15 }, ">+=16")
 .to('.character-name', { text: 'Rahal', duration: 5 }, "<")
 .to('#chara-seven', { opacity: 0, duration: 5 }, "<")
 .to('#chara-rahal-laugh', { opacity: 1, duration: 5 }, "<")
@@ -1699,6 +1695,8 @@ if (aspectRatio > 1.81){
 
 .to('#chara-rahal-normal', { opacity: 0, duration: 5 }, ">+=35")
 .to('#chara-rahal-smile', { opacity: 1, duration: 5 }, "<")
+
+
 .to('.dialogue-text', { text: "You know? There is some kind of bazar, on our way.", duration: 25 }, "<")
 
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=25")
@@ -1706,12 +1704,12 @@ if (aspectRatio > 1.81){
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
 
 .to("#VIVI-3D",{x:"0%",duration:55},"<")
-.set("#VIVI-3D",{scaleX:-1},"<")
+.set("#VIVI-3D",{scaleX:-0.05},"<")
 .to('.dialogue-text', { text: `AAaaand my treat! <br><i>[please let it be cheap]</i>`, duration: 25 }, ">")
 
 
 
-.to('.dialogue-box', {x: "10vw", y: "-50vh", duration: 5, ease: "back.out(2)" }, ">+=15")
+.to('.dialogue-box', {x: "70vw", y: "-69vh", duration: 5, ease: "back.out(2)" }, ">+=25")
 .to('.character-name', { text: 'Arfop', duration: 5 }, "<")
 .to('#chara-rahal-smile', { opacity: 0, duration: 15 }, "<")
 .to('#chara-arfop', { opacity: 1, duration: 15 }, "<")
@@ -1741,17 +1739,17 @@ if (aspectRatio > 1.81){
 
 .to('#chara-rahal-laugh', { opacity: 0, duration: 1 }, "<")
 
-.to(["#VIVI-3D","#RAHAL-3D","#ARFOP-3D"],{x:"-1000%",duration: 150},"<")
+.to(["#VIVI-3D","#RAHAL-3D","#ARFOP-3D"],{x:"-50%",duration: 150},"<")
 .to(["#S7-L1","S7-L2","#S7-L0","#S7-FG"],{scale:0.5,duration: 85},"<")
-.to(["#S7-FG-1"],{scale:1.5,y:"10%",duration: 85},"<")
+.to(["#S7-FG-1"],{scale:1.5,y:"20%",duration: 85},"<")
 
 
 .to('#chara-seven', { opacity: 1, duration: 1 }, "<")
 .to('.character-name', { text: s, duration: 5 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
-.set("#VIVI-3D",{scaleX:1},"<")
+.set("#VIVI-3D",{scaleX:0.05},"<")
 
-.to('.dialogue-text', { text: "YAAAAAAAAY.", duration: 35 }, ">")
+.to('.dialogue-text', { text: "YAAAAAAAAY.",letterSpacing:"0px", duration: 35 }, ">")
 .to('.dialogue-text', { text: "", duration: 0 }, ">+=15")
 .to('.dialogue-text', { text: "You are the best Quinn!", duration: 25 }, ">")
 
@@ -1762,14 +1760,9 @@ if (aspectRatio > 1.81){
 .to('#chara-rahal', { opacity: 1, duration: 5 }, "<")
 .to('.dialogue-text', { text: `"Quinn"?`, duration: 25 }, "<")
 
-.to('.dialogue-text', { text: "", duration: 5 }, "<")
-.to('.dialogue-box',{opacity:0, duration: 15 },"<")
-.to('.dialogue-text', { text: "", duration: 0 }, ">")
-.to(['#chara-rahal-normal','#chara-rahal','#chara-rahal-sur','#chara-seven'], { opacity: 0, duration: 5 }, "<")
-
 
 .to("#S7-FG",{y:"100%",duration: 55},"<")
-.to("#S7-FG-1",{y:"100%",duration: 88},"<")
+.to("#S7-FG-1",{y:"200%",duration: 88},"<")
 .to(".S7",{filter:"blur(50px)",opacity:0,duration:35},">")
 
 .to('#rahal-p1',  
@@ -1796,6 +1789,10 @@ if (aspectRatio > 1.81){
 .to('.site-header',{opacity: 1, duration: 4 })
 .to('#s0-bg',{volume:1.0, duration: 15.5 }, "<")
 
+.to('.dialogue-text', { text: "", duration: 5 }, "<")
+.to('.dialogue-box',{opacity:0, duration: 15 },"<")
+.to('.dialogue-text', { text: "", duration: 0 }, ">")
+.to(['#chara-rahal-normal','#chara-rahal','#chara-rahal-sur','#chara-seven'], { opacity: 0, duration: 5 }, "<")
 
 
 //PART 3 Will be about norina saying they must try again (See VIVI Backstory) as someone from VIVI's world had found a way to the Black Pyramid (Falco)
@@ -2107,7 +2104,7 @@ gsap.to(["#S6-FG img[id^='S6-R']"], {
 
 
 
-const s7_layers = document.querySelectorAll('.S7:not(#S7-FG):not(#S7-FG-1)');
+const s7_layers = document.querySelectorAll('.S7:not(#S7-FG):not(#S7-FG-1):not(#S7-BG)');
 const S7_totalLayers = s7_layers.length;
 
 s7_layers.forEach((layer, index) => {

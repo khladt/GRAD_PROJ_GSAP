@@ -12,13 +12,13 @@ export const files = {
             `Kingdom fought kingdom.<br>` +
             `City fought city.<br>` +
             `Neighbor fought neighbor.<br><br>` +
-            `Flags flew from every roof, yet no one felt at home.<br>` +
-            `Champions stood on every corner, yet no one came to save us.<br><br>` +
-            `Streets were paved with "victory," yet the people were lost.<br>` +
+            `Flags flew from every roof, yet <b>no one felt at home.</b><br>` +
+            `Champions stood on every corner, yet <b>no one came to save us</b>.<br><br>` +
+            `Streets were paved with "victory," yet <b>the people were lost.</b><br>` +
             `Children learned the drums of war before the songs of joy.<br><br>` +
-            `Every land claimed they were right.<br>` +
-            `Every ruler claimed they were chosen.<br>` +
-            `Every army promised the next battle would be the last.<br><br>` +
+            `Every land claimed <b>they were right.</b><br>` +
+            `Every ruler claimed <b>they were chosen.</b><br>` +
+            `Every army promised <b>the next battle would be the last.</b><br><br>` +
             `<b>But the sun always rose on a world still clashing with swords...</b><br>`,
 
             `Then came <b>Arno von Vivian.</b><br><br>` +
@@ -74,7 +74,7 @@ export const files = {
             <b>I felt my world fracture.</b><br> Fracture like a glass under a hammer<br><br>
     
             I felt pressure without force.<br>
-            Motion without direction.<br>
+            Motion without direction. <br><br>
 
             I am afraid. Afraid that if I were to stop writing.<br>
             I am afraid that when I do, whatever is holding me together<br> will realize I am dead.`
@@ -102,7 +102,7 @@ export const files = {
 
 
             This is not my world.<br>
-            <b>Where am I?</b><br>`
+            <b>Did I truly escape?</b><br>`
     ]
     },
     
@@ -363,20 +363,19 @@ projectv:{
         `<b>OVERVIEW:</b> In the event that Emperor Arno von Vivian succumbed to his illness, Project Vivian will initiate in the hope that his body might fail, but his "soul" would not.<br><br>` +
 
         '<b>THE MATERIAL:</b> The defining breakthrough of <b>Project VIVIAN</b> was not the Pod itself, but the discovery of its construction medium.<br>' +
-        'The material was first observed forming naturally in regions surrounding the <b>World Shard</b>. '+
-        'Beyond the Shard’s influence, the material exhibits absolute structural stability.<br>' +
-        'It cannot be cut, fractured, melted, or altered through any known mechanical or energetic process.' ,
+        'The material was first observed forming naturally in regions surrounding the <b>World Shard</b>.<br><br>'+
+        'Beyond the Shard’s range, the material exhibits absolute structural stability.<br>' +
+        'It cannot be cut, fractured, melted, or altered through any known mechanical or energetic process.' +
 
         'Proximity to the Shard produces <b>the inverse effect.</b><br>' +
-        'As the material gets close to the World Shard, it progressively loses rigidity.<br>' +
-        'Within close range, it becomes moldable, and responsive to applied force, comparable to soft composite clay.<br><br>' +
+        'Within close range, it becomes moldable, and responsive to applied force, comparable to soft composite clay.<br><br>',
 
         '<b>THE POD:</b> Each VIVI Pod is designed to host a living brain<br>'+
         `Replicating the sensory and regulatory feedback normally provided by a biological body.<br><br>` +
 
         '<b>THE BACKUP PERSONALITY:</b> A secondary cognitive framework is embedded within the Pod.<br>' +
         'This framework functions as a fallback system in the event of host failure, instability, or loss of executive control.<br><br>' +
-        'When activated, <b>VIVI</b> assumes operational autonomy and guides the Pod toward the nearest viable point of <b>safety</b> or recovery.<br><br>',
+        'When activated, <b>VIVI</b> assumes operational autonomy and guides the Pod toward the nearest viable point of <b>safety</b> or recovery.<br><br>' +
 
         '<b>AUGMENTATION:</b> The Pod can be equipped with various defense and mobility systems.<br>' +
         'These include electromagnetic discharge capabilities and short-range propulsion.<br><br>' +
