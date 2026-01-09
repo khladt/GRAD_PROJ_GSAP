@@ -1496,7 +1496,7 @@ if (aspectRatio > 1.81){
 .to('#chara-rahal', { opacity: 0, duration: 10 }, "<")
 .to('#chara-seven', { opacity: 1, duration: 10 }, "<")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
-.to('.dialogue-text', { text: "Hmmmmmmmm... let me see my schdeule.", duration: 25 }, ">")
+.to('.dialogue-text', { text: "Hmmmmmmmm...", duration: 25 }, ">")
 
 .to('.dialogue-box', { x: "50vw", y: "-80vh", duration: 15, ease: "back.out(2)" }, "+=15")
 
@@ -1510,18 +1510,20 @@ if (aspectRatio > 1.81){
 .fromTo("#S6-R0",{filter:"blur(50px)",opacity: 0}, {filter:"blur(0px)",opacity: 1, duration: 15.5, stagger: 0.05, ease: "power2.inOut"},"<")
 
 
-.to(["#S6-FLOATS-ITREE","#S6-FG"],{y:"150%", duration :15},"<+=30")
+.to(["#S6-FLOATS-ITREE","#S6-FG"],{y:"150%", duration :55},"<+=20")
 .to('.dialogue-text', { text: "", duration: 0 }, "<")
-.to('.dialogue-text', { text: "<i>Although you did deserve it</i>", duration: 25 }, "<")
 .to(["#S6-ITREE","#S6-LHOUSE","#S6-IUPDOWN","#S6-FLOATS-ITREE,#S6-FLOAT0"],{y:"150%", duration :50},"<")
 .to(["#S6-FLOAT1","#S6-ISLAND"],{y:"150%", duration :75},"<")
 .to(['#S6-BG',"#S6-BG-CLOUDS"],{opacity:0 ,duration: 100 },"<")
+
+.to('.dialogue-text', { text: "<i>Although you did deserve it</i>", duration: 5 }, "<+=20")
+
 .fromTo('.S7',{opacity:0}, {opacity:1,duration: 100 },"<")
 
 
 //PART 2 : 
 
-.to('.dialogue-box', {scale:0,x: "70vw", y: "-80vh", duration: 15, ease: "back.out(2)" }, "+=16")
+.to('.dialogue-box', {scale:0,x: "70vw", y: "-80vh", duration: 15, ease: "back.out(2)" })
 
 
 
@@ -1568,7 +1570,8 @@ if (aspectRatio > 1.81){
 
 .fromTo("#S7-FG",{y:"100%",scale:0.5},{scale:2,y:"0%",duration: 355},"<")
 .fromTo(["#VIVI-3D","#RAHAL-3D","#ARFOP-3D"],{x:"150%"},{x:"0%",duration: 555},"<")
-.fromTo("#S7-FG-1",{y:"300%"},{y:"50%",duration: 133},"<")
+.fromTo(["#S7-FG-1"],{y:"300%"},{y:"50%",duration: 133},"<")
+.fromTo(["#S7-FG-2"],{y:"300%"},{y:"60%",duration: 133},"<")
 
 .fromTo("#S7-L0",{x:"-150%"},{x:"100%",duration: 1250},"<")
 
@@ -1674,6 +1677,7 @@ if (aspectRatio > 1.81){
 .to("#VIVI-3D",{x:"-50%",duration:55},"<")
 .to(["#S7-L1","S7-L2","#S7-L0","#S7-FG"],{scale:1,duration: 35},"<")
 .to(["#S7-FG-1"],{scale:2,duration: 55},"<")
+.to(["#S7-FG-2"],{y:"40%",scale:0.8,duration: 55},"<")
 
 .fromTo("#S7-L2",{x:"-200%"},{x:"200%",duration: 555},"<")
 
@@ -1741,7 +1745,8 @@ if (aspectRatio > 1.81){
 
 .to(["#VIVI-3D","#RAHAL-3D","#ARFOP-3D"],{x:"-50%",duration: 150},"<")
 .to(["#S7-L1","S7-L2","#S7-L0","#S7-FG"],{scale:0.5,duration: 85},"<")
-.to(["#S7-FG-1"],{scale:1.5,y:"20%",duration: 85},"<")
+.to(["#S7-FG-1"],{scale:1,y:"25%",duration: 85},"<")
+.to(["#S7-FG-2"],{scale:0.5,y:"15%",duration: 85},"<")
 
 
 .to('#chara-seven', { opacity: 1, duration: 1 }, "<")
@@ -1762,7 +1767,7 @@ if (aspectRatio > 1.81){
 
 
 .to("#S7-FG",{y:"100%",duration: 55},"<")
-.to("#S7-FG-1",{y:"200%",duration: 88},"<")
+.to(["#S7-FG-1","#S7-FG-2"],{y:"200%",duration: 88},"<")
 .to(".S7",{filter:"blur(50px)",opacity:0,duration:35},">")
 
 .to('#rahal-p1',  
@@ -2104,7 +2109,7 @@ gsap.to(["#S6-FG img[id^='S6-R']"], {
 
 
 
-const s7_layers = document.querySelectorAll('.S7:not(#S7-FG):not(#S7-FG-1):not(#S7-BG)');
+const s7_layers = document.querySelectorAll('.S7:not(#S7-FG):not(#S7-FG-1):not(#S7-FG-2):not(#S7-BG)');
 const S7_totalLayers = s7_layers.length;
 
 s7_layers.forEach((layer, index) => {

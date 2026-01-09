@@ -253,7 +253,7 @@
 
 
 #S6-BG{
-    filter: brightness(1.5);
+    filter: brightness(2) saturate(0.5) contrast(1.2);
     transform: scale(1);}
 
 #S6-BG-CLOUDS{
@@ -397,7 +397,11 @@ animation: R-4drama-rahal 2s infinite;}
 }
 
 
-#S7-FG-00,#S7-FG-0,#S7-FG-1,#S7-L0,#S7-L1,#S7-L2,#S7-BG,#S7-BG-CLOUDS,#VIVI-3D,#RAHAL-3D,#ARFOP-3D{animation: DayCycle 48s infinite;}
+#S7-FG-00,#S7-FG-0,#S7-FG-1,#S7-FG-2,#S7-L0,#S7-L1,#S7-L2,#S7-BG-CLOUDS,#VIVI-3D,#RAHAL-3D,#ARFOP-3D{animation: DayCycle 48s infinite;}
+
+#S7-BG{
+    animation: DayCycle2 48S infinite;
+}
 
 @keyframes DayCycle{
     0%{filter: hue-rotate(0deg) brightness(1);}
@@ -406,6 +410,13 @@ animation: R-4drama-rahal 2s infinite;}
     75%{filter: hue-rotate(300deg) brightness(1.5);}
     100%{filter: hue-rotate(360deg) brightness(1);}
 }
+
+@keyframes DayCycle2{
+    0%{filter: hue-rotate(0deg) brightness(2) contrast(1.2) saturate(0.6);}
+    25%{filter: hue-rotate(90deg) brightness(2.5) contrast(1) saturate(0.6);}
+    50%{filter: hue-rotate(150deg) brightness(3) contrast(0.9) saturate(0.8);}
+    75%{filter: hue-rotate(300deg) brightness(2.5) contrast(1) saturate(0.6);}
+    100%{filter: hue-rotate(360deg) brightness(2) contrast(1.2) saturate(0.6);}}
 
 #S7-FG-00{
     position: relative;
@@ -440,6 +451,20 @@ animation: R-4drama-rahal 2s infinite;}
     DayCycle 48s infinite,
     S7-FG 128s steps(2024) infinite;
     transform: scale(2.5);
+}
+
+#S7-FG-2{
+    background-image: url('img/Layers/S7/S7-FG-0.webp');
+    background-repeat: repeat-x;
+    width: 200vw;
+    height: 150vh;
+    left: -50%;
+    background-position: 0% 100%;
+    background-size: 100% 100%;
+    animation: 
+    DayCycle 48s infinite,
+    S7-FG 256s steps(4096) infinite;
+    transform: scale(1);
 }
 
 
